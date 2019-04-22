@@ -1,0 +1,191 @@
+@import "colors";
+// Your custom styles
+.title{
+  font-weight: 800;
+}
+.footer{
+  height: 60px;
+  padding: 18px;
+  text-align: center;
+  background-color: #262626;
+  color: #5ecaee;
+}
+
+//navbar
+.navbar {
+  box-shadow: none !important;
+  font-weight: 300;
+}
+.link-nav{
+  color: $ac-primary;
+  padding: 0px 15px;
+  font-weight: 400;
+}
+.divider-vertical-link{
+  width: 1.5px;
+  height: 16px;
+  position: relative;
+  top: 4px;
+  background: $ac-primary;
+}
+
+//Section Plan style
+.secction-plan{
+  background-color: $ac-dark;
+  padding: 30px 0px;
+}
+.section-plan-circle{
+  background-color: $ac-primary;
+  padding: 40px;
+  border: 10px solid $ac-dark;
+  border-radius: 100%;
+  margin: 50px 0px;
+  z-index: 99;
+}
+.secction-plan-divider{
+  width: 90%;
+  height: 4px;
+  background: $ac-primary;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  top: 60%;
+}
+.text-spacing-plan{
+  margin: 0px 10%;
+}
+
+// Section Basic Information
+.section-information{
+  background-color: $ac-primary;
+  padding: 100px 0px;
+}
+
+//section-comment
+.section-comment{
+  background-color: $ac-dark;
+  padding: 100px 0px;
+}
+.text-comment{
+  color: $ac-primary;
+}
+.section-blog{
+  background-color: $ac-primary;
+  padding: 100px 0px;
+}
+.section-comment-form{
+  padding-left: 90px;
+}
+.section-comment-btn-blue{
+  border-radius: 100px;
+  width: 150px;
+  margin: 0;
+  height: 40px;
+  padding: 11px;
+  background-color: $ac-primary !important;
+  color: $ac-dark;
+  font-weight: 700;
+}
+.section-comment-btn-dark{
+  border-radius: 100px;
+  width: 150px;
+  margin: 0;
+  height: 40px;
+  padding: 11px;
+  background-color: $ac-dark !important;
+  color: $ac-primary;
+  font-weight: 700;
+}
+
+//Section Blog
+.section-blog-card{
+  background-color: $ac-dark;
+  color: #fff !important;
+}
+.section-blog-btn-blue{
+  border-radius: 100px;
+  width: 150px;
+  margin: 0;
+  height: 40px;
+  padding: 11px;
+  background-color: $ac-primary !important;
+  font-weight: 700;
+}
+
+//Steppers
+// .step {
+  
+//   padding: 10px;
+  
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-start;
+  
+//   background-color: cream;
+// }
+
+// .v-stepper {
+//   position: relative;
+// /*   visibility: visible; */
+// }
+
+
+// /* regular step */
+// .step .circle {
+//   background-color: white;
+//   border: 3px solid gray;
+//   border-radius: 100%;
+//   width: 20px;    /* +6 for border */
+//   height: 20px;
+//   display: inline-block;
+// }
+
+// .step .line {
+//     top: 23px;
+//   left: 12px;
+// /*   height: 120px; */
+//   height: 100%;
+    
+//     position: absolute;
+//     border-left: 3px solid gray;
+// }
+
+// .step.completed .circle {
+//   visibility: visible;
+//   background-color: rgb(6,150,215);
+//   border-color: rgb(6,150,215);
+// }
+
+// .step.completed .line {
+//   border-left: 3px solid rgb(6,150,215);
+// }
+
+// .step.active .circle {
+// visibility: visible;
+//   border-color: rgb(6,150,215);
+// }
+
+// .step.empty .circle {
+//     visibility: hidden;
+// }
+
+// .step.empty .line {
+// /*     visibility: hidden; */
+// /*   height: 150%; */
+//   top: 0;
+//   height: 150%;
+// }
+
+
+// .step:last-child .line {
+//   border-left: 3px solid white;
+//   z-index: -1; /* behind the circle to completely hide */
+// }
+
+// .content {
+//   margin-left: 20px;
+//   display: inline-block;
+// }
+
+
