@@ -5,25 +5,25 @@ import {
   MDBView, 
   MDBContainer,
   MDBBtn,
-  MDBFormInline
 } from "mdbreact";
 
 //img
 import BgHeader from '../../assets/img/bg/background-home-web.png';
-import CoachingIcon from '../../assets/img/Coaching-black.png';
-import ActivitiesIcon from '../../assets/img/Activities-black.png';
-import ContentIcon from '../../assets/img/Content-black.png';
-
-//Components
-import NavBar from '../../components/navbar';
-import Stepper from '../../components/steppers';
-import FormComment from '../../components/form-comment'
-import FormSubscribe from '../../components/form-subscribe'
 
 //css
 import '../../assets/scss/style.scss';
+
+//Components
+import NavBar from '../../components/navbar';
+import StepperVertical from '../../components/steppers-vertical';
+import FormSubscribe from '../../components/form-subscribe'
 import CardBlogSm from '../../components/card-blog-sm';
 import CardBlogLg from '../../components/card-blog-lg';
+import SectionComment from '../../components/section-comment';
+import Footer from '../../components/footer';
+import PlanPreviews from '../../components/plan-previews';
+import PlanPreviesCarousel from '../../components/plan-previews-carousel';
+import CardBlogCarousel from '../../components/card-blog-carousel'
 
 class Landing extends Component {
   
@@ -39,49 +39,19 @@ class Landing extends Component {
         <div className="secction-plan">
           <MDBContainer>
             <MDBRow className="py-5">
-              <MDBCol md="12" className="text-center">
-                <h1 className="text-center text-white title">Plan</h1>
-
-                <div class="d-flex d-flex justify-content-between">
-                  <div className="section-plan-circle">
-                    <img src={ CoachingIcon } alt=""/>
-                  </div>
-
-                  <div className="secction-plan-divider"/>
-
-                  <div className="section-plan-circle">
-                    <img src={ ActivitiesIcon } alt=""/>
-                  </div>
-
-                  <div className="section-plan-circle">
-                    <img src={ ContentIcon } alt=""/>
-                  </div>
-                </div>
+              <MDBCol md="12">
+                <h1 className="text-center text-white title-plan">Plan</h1>
               </MDBCol>
-              <MDBCol md="12" className="text-center">
-                  <div class="d-flex d-flex justify-content-between">
-                    <div>
-                    <h1 className="text-white text-center">Coaching</h1>
-                      <p className="text-white text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. 
-                      </p>
-                    </div>
-                    <div className="text-spacing-plan">
-                    <h1 className="text-white text-center">Activities</h1>
-                      <p className="text-white text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. 
-                      </p>
-                    </div>
-                    <div>
-                    <h1 className="text-white text-center">Content</h1>
-                      <p className="text-white text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. 
-                      </p>
-                    </div>
-                  </div>
-                  <div className="text-center mt-5">
-                    <MDBBtn className="section-comment-btn-blue">Read More</MDBBtn>
-                  </div>
+              <div className="d-none d-sm-block">
+                <PlanPreviews/>
+              </div>
+              <div className="d-block d-sm-none">
+                <PlanPreviesCarousel/>
+              </div>
+              <MDBCol md="12">
+              <div className="text-center mt-5">
+                <MDBBtn className="section-comment-btn-blue">Read More</MDBBtn>
+              </div>
               </MDBCol>
             </MDBRow>
           </MDBContainer>
@@ -97,30 +67,19 @@ class Landing extends Component {
                 <p> ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
               </MDBCol>
               <MDBCol md="6">
-                <Stepper/>
+                <StepperVertical/>
               </MDBCol>
             </MDBRow>
           </MDBContainer>
         </div>
         <div className="section-comment">
-          <MDBContainer>
-            <MDBRow>
-              <MDBCol md="6">
-                <h1 className="text-white title">Need something specific? <br/> Lorem ipsum dolor</h1>
-                <hr/>
-                <p className="text-comment"> ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
-                <p className="text-comment"> ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
-              </MDBCol>
-              <MDBCol md="6" className="section-comment-form">
-                <FormComment/>
-              </MDBCol>
-            </MDBRow>
-          </MDBContainer>
+          <SectionComment/>
         </div>
         <div id="blog" className="section-blog">
           <MDBContainer>
-            <h1 className="title text-white text-center mb-5">Blog</h1>
-            <MDBRow className="pb-5">
+            <h1 className="title-blog text-white text-center mb-5">Blog</h1>
+            <div className="d-none d-sm-block">
+            <MDBRow className="pb-5 ">
               <MDBCol md="3">
                 <CardBlogSm/>
               </MDBCol>
@@ -131,15 +90,17 @@ class Landing extends Component {
               <CardBlogSm/>
               </MDBCol>
             </MDBRow>
+            </div>
+            <div className="d-block d-sm-none">
+              <CardBlogCarousel/>
+            </div> 
             <div className="d-flex flex-column justify-content-center mt-5">
-              <h2 className="text-white text-center">Subscribe For Our NewsLetter</h2>
+              <h2 className="text-center title-subscribe-blog">Subscribe For Our NewsLetter</h2>
               <FormSubscribe/>
             </div>
           </MDBContainer>
         </div>
-        <div className="footer">
-          @Copy2019 All Right Reserved.
-        </div>
+        <Footer/>
       </main>
     </>
     );

@@ -1,14 +1,45 @@
 @import "colors";
 // Your custom styles
+a:hover {
+  color: $ac-primary;
+  text-decoration: none;
+  opacity: 0.7;
+}
 .title{
-  font-weight: 800;
+  font-weight: 700;
 }
 .footer{
   height: 60px;
   padding: 18px;
   text-align: center;
-  background-color: #262626;
-  color: #5ecaee;
+  background-color: $ac-dark;
+  color: $ac-primary;
+}
+.media .media-left img {
+  box-shadow: none !important;
+}
+.primary-text{
+  color: $ac-primary !important;
+}
+.navbar.navbar-dark .navbar-toggler-icon {
+  background-image: url('../img//menuIcon.png') !important;
+  cursor: pointer;
+}
+.input-bg-dark{
+  border-bottom: 1px solid $ac-primary !important;
+}
+.input-bg-dark:focus{
+  box-shadow: 0 1px 0 0 $ac-primary !important;
+}
+// .md-form label{
+//   color: $ac-primary !important;
+// }
+
+.input-bg-blue{
+  border-bottom: 1px solid $ac-dark !important;
+}
+.input-bg-blue:focus{
+  box-shadow: 0 1px 0 0 $ac-dark !important;
 }
 
 //navbar
@@ -30,6 +61,10 @@
 }
 
 //Section Plan style
+.title-plan{
+  font-size: 3.5rem;
+  font-weight: 400;
+}
 .secction-plan{
   background-color: $ac-dark;
   padding: 30px 0px;
@@ -43,23 +78,130 @@
   z-index: 99;
 }
 .secction-plan-divider{
-  width: 90%;
+  width: 75%;
+  left: 150px;
   height: 4px;
-  background: $ac-primary;
+  background: #5ECAEE;
   justify-content: center;
   align-items: center;
   align-content: center;
   position: absolute;
-  top: 60%;
+  top: 50%;
+}
+.section-preview{
+  padding: 0px 80px;
 }
 .text-spacing-plan{
   margin: 0px 10%;
 }
+@media (max-width: 991px) {
+  .section-preview{
+    padding: 0px 20px;
+  }
+}
+//Carousel plan mobile
+.carousel-indicators {
+  position: relative !important;
+}
+
 
 // Section Basic Information
 .section-information{
   background-color: $ac-primary;
   padding: 100px 0px;
+}
+// .MuiPaper-root-9 {
+//   background-color: transparent !important;
+// }
+
+//stepper
+.stepper{
+  flex-direction: column;
+  height: 45vh;
+}
+.line-stepper{
+  width: 5px;
+  height: 40vh;
+  display: inline;
+  background-color: #262626;
+  position: absolute;
+  left: 57px;
+  top: 30px;
+}
+.circle-active-step{
+  background-color: $ac-white;
+  height: 90px;
+  width: 90px;
+  padding: 25px;
+  border-radius: 100px;
+  box-shadow: 0 7px 19px 0 rgba(0, 0, 0, 0.16), 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.circle-active-step-finish{
+  background-color: $ac-dark;
+  height: 90px;
+  width: 90px;
+  padding: 25px;
+  border-radius: 100px;
+  box-shadow: 0 7px 19px 0 rgba(0, 0, 0, 0.16), 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.circle-step{
+  background-color: $ac-primary;
+  height: 90px;
+  width: 90px;
+  padding: 22px;
+  border-radius: 100px;
+  border: 4px solid $ac-dark;
+  box-shadow: 0 7px 19px 0 rgba(0, 0, 0, 0.16), 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.circle-step:hover{
+  background-color: $ac-white;
+  border: 4px solid $ac-white;
+}
+.btn-step-2{
+  background-color: #5ECAEE !important;
+  color: #262626;
+  border: 2px solid #262626;
+  font-size: 11px;
+  height: 35px;
+  text-transform: capitalize;
+  border-radius: 100px;
+  margin: 0px;
+  width: 120px;
+}
+.link-step-3{
+  color: $ac-dark;
+  text-decoration: underline;
+}
+.link-step-3:hover{
+  color: $ac-dark;
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .stepper{
+    flex-direction: row;
+    height: 15vh;
+    margin-top: 25px;
+  }
+  .line-stepper {
+    width: 40vh;
+    height: 5px;
+    display: inline;
+    background-color: #262626;
+    position: absolute;
+    left: 57px;
+    top: 70px;
+}
 }
 
 //section-comment
@@ -77,31 +219,41 @@
 .section-comment-form{
   padding-left: 90px;
 }
+@media (max-width: 576px) {
+  .section-comment-form{
+    padding-left: 15px;
+  }
+}
 .section-comment-btn-blue{
   border-radius: 100px;
   width: 150px;
   margin: 0;
   height: 40px;
-  padding: 11px;
+  padding: 5px;
   background-color: $ac-primary !important;
   color: $ac-dark;
   font-weight: 700;
+  font-size: 14px;
 }
 .section-comment-btn-dark{
   border-radius: 100px;
   width: 150px;
   margin: 0;
   height: 40px;
-  padding: 11px;
+  padding: 5px;
   background-color: $ac-dark !important;
   color: $ac-primary;
   font-weight: 700;
+  font-size: 14px;
+  
 }
-
+.section-comment-btn-dark:hover{
+  color: $ac-primary;
+}
 //Section Blog
 .section-blog-card{
   background-color: $ac-dark;
-  color: #fff !important;
+  color: $ac-white !important;
 }
 .section-blog-btn-blue{
   border-radius: 100px;
@@ -111,81 +263,211 @@
   padding: 11px;
   background-color: $ac-primary !important;
   font-weight: 700;
+  font-size: 12px;
+}
+.title-blog{
+  color: $ac-dark !important;
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+.title-subscribe-blog{
+  color: $ac-dark;
 }
 
-//Steppers
-// .step {
-  
-//   padding: 10px;
-  
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: flex-start;
-  
-//   background-color: cream;
-// }
+//About Us view
+.about-bg-half{
+  height: 90vh !important;
+}
+@media (max-width: 576px) {
+  .about-bg-half{
+    height: 100vh !important;
+  }
+  .media{
+    flex-direction: column;
+  }
+  .media .media-left img {
+    box-shadow: none !important;
+    margin-bottom: 55px;
+  }
+}
+.section-about-us{
+  background-color: $ac-dark;
+  padding: 100px 0px;
+  color: $ac-primary;
+}
+.section-about-description{
+  background-color: $ac-primary;
+  padding: 100px 0px;
+  color: $ac-dark;
+}
 
-// .v-stepper {
-//   position: relative;
-// /*   visibility: visible; */
-// }
+//FAQ
+.about-bg-half-two{
+  height: 50vh !important;
+}
+.section-faq{
+  min-height: 45vh;
+  background-color: $ac-primary;
+  padding: 80px 0px;
+}
+.btn-collapse{
+  background-color: $ac-dark !important;
+  color: $ac-primary !important;
+  font-size: 22px;
+  text-transform: initial;
+  border-radius: 10px;
+}
+.card-collapse{
+  background-color: $ac-dark !important;
+  text-align: justify;
+  font-weight: 600;
+  border-top: 2px solid $ac-primary;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  padding: 15px 5px;
 
+}
 
-// /* regular step */
-// .step .circle {
-//   background-color: white;
-//   border: 3px solid gray;
-//   border-radius: 100%;
-//   width: 20px;    /* +6 for border */
-//   height: 20px;
-//   display: inline-block;
-// }
+//Checkbox
+.pure-material-checkbox {
+  z-index: 0;
+  position: relative;
+  display: inline-block;
+  color: rgba( 0, 0, 0, 0.87);
+  font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+  font-size: 16px;
+  line-height: 1.5;
+}
 
-// .step .line {
-//     top: 23px;
-//   left: 12px;
-// /*   height: 120px; */
-//   height: 100%;
-    
-//     position: absolute;
-//     border-left: 3px solid gray;
-// }
+/* Input */
+.pure-material-checkbox > input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: -1;
+  position: absolute;
+  left: -10px;
+  top: -8px;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: none;
+  outline: none;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+}
 
-// .step.completed .circle {
-//   visibility: visible;
-//   background-color: rgb(6,150,215);
-//   border-color: rgb(6,150,215);
-// }
+/* Span */
+.pure-material-checkbox > span {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
 
-// .step.completed .line {
-//   border-left: 3px solid rgb(6,150,215);
-// }
+/* Box */
+.pure-material-checkbox > span::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 3px 11px 3px 1px;
+  border: solid 2px; /* Safari */
+  border-color: rgba( 0, 0, 0, 0.6);
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+  vertical-align: top;
+  transition: border-color 0.2s, background-color 0.2s;
+}
 
-// .step.active .circle {
-// visibility: visible;
-//   border-color: rgb(6,150,215);
-// }
+/* Checkmark */
+.pure-material-checkbox > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  width: 10px;
+  height: 5px;
+  border: solid 2px transparent;
+  border-right: none;
+  border-top: none;
+  transform: translate(3px, 4px) rotate(-45deg);
+}
 
-// .step.empty .circle {
-//     visibility: hidden;
-// }
+/* Checked, Indeterminate */
+.pure-material-checkbox > input:checked,
+.pure-material-checkbox > input:indeterminate {
+  background-color:$ac-primary
+}
 
-// .step.empty .line {
-// /*     visibility: hidden; */
-// /*   height: 150%; */
-//   top: 0;
-//   height: 150%;
-// }
+.pure-material-checkbox > input:checked + span::before,
+.pure-material-checkbox > input:indeterminate + span::before {
+  border-color:$ac-primary;
+  background-color:$ac-primary;
+}
 
+.pure-material-checkbox > input:checked + span::after,
+.pure-material-checkbox > input:indeterminate + span::after {
+  border-color: rgb( 255, 255, 255);
+}
 
-// .step:last-child .line {
-//   border-left: 3px solid white;
-//   z-index: -1; /* behind the circle to completely hide */
-// }
+.pure-material-checkbox > input:indeterminate + span::after {
+  border-left: none;
+  transform: translate(4px, 3px);
+}
 
-// .content {
-//   margin-left: 20px;
-//   display: inline-block;
-// }
+/* Hover, Focus */
+.pure-material-checkbox:hover > input {
+  opacity: 0.04;
+}
+
+.pure-material-checkbox > input:focus {
+  opacity: 0.12;
+}
+
+.pure-material-checkbox:hover > input:focus {
+  opacity: 0.16;
+}
+
+/* Active */
+.pure-material-checkbox > input:active {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+}
+
+.pure-material-checkbox > input:active + span::before {
+  border-color: $ac-primary;
+}
+
+.pure-material-checkbox > input:checked:active + span::before {
+  border-color: transparent;
+  background-color: rgba( 0, 0, 0, 0.6);
+}
+
+/* Disabled */
+.pure-material-checkbox > input:disabled {
+  opacity: 0;
+}
+
+.pure-material-checkbox > input:disabled + span {
+  color: rgba( 0, 0, 0, 0.38);
+  cursor: initial;
+}
+
+.pure-material-checkbox > input:disabled + span::before {
+  border-color: currentColor;
+}
+
+.pure-material-checkbox > input:checked:disabled + span::before,
+.pure-material-checkbox > input:indeterminate:disabled + span::before {
+  border-color: transparent;
+  background-color: currentColor;
+}
 
 

@@ -7,9 +7,9 @@ import { MDBInput, MDBBtn } from "mdbreact";
 const FormComment = () => {
   return (
     <React.Fragment>
-      <MDBInput label="Name" />
-      <MDBInput label="Email" />
-      <MDBInput label="Comment" />
+      <MDBInput className="input-bg-dark" label="Name" />
+      <MDBInput className="input-bg-dark" label="Email" />
+      <MDBInput className="input-bg-dark" label="Comment" />
       <div className="text-right">
         <MDBBtn className="section-comment-btn-blue">Submit</MDBBtn>
       </div>

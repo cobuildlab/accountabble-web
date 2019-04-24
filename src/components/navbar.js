@@ -45,11 +45,11 @@ const NavBar = () =>{
             <MDBNavItem active>
               <Link className="link-nav" to="/">BLOG</Link>
             </MDBNavItem>
-            <div className="divider-vertical-link"/>
+            <div className="divider-vertical-link d-none d-sm-block"/>
             <MDBNavItem>
               <Link className="link-nav" to="/faq">FAQ</Link>
             </MDBNavItem>
-            <div className="divider-vertical-link"/>
+            <div className="divider-vertical-link d-none d-sm-block"/>
             <MDBNavItem>
               <Link className="link-nav" to="/about-us">ABOUT US</Link>
             </MDBNavItem>
