@@ -13,7 +13,7 @@ const Step1 = ({ onClick }) => {
       <div className="mt-4 mb-5">
         <label class="pure-material-checkbox">
           <input type="checkbox"/>
-          <span><Link to="/" className="link-step-3">I agree to the terms and conditions</Link></span>
+          <span><Link to="/terms" className="link-step-3">I agree to the terms and conditions</Link></span>
         </label>
         <label class="pure-material-checkbox">
           <input type="checkbox"/>
@@ -21,7 +21,7 @@ const Step1 = ({ onClick }) => {
         </label>
       </div>
       <div className="text-right">
-        <MDBBtn className="section-comment-btn-dark" onClick={() => onClick('previous')}>Previous</MDBBtn>
+        <MDBBtn className="section-comment-btn-dark mr-3" onClick={() => onClick('previous')}>Previous</MDBBtn>
         <MDBBtn className="section-comment-btn-dark" onClick={() => onClick('next')}>Finish</MDBBtn>
       </div>
     </React.Fragment>

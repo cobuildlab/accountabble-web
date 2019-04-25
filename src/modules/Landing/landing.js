@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import {
   MDBRow, 
   MDBCol,   
@@ -50,7 +51,7 @@ class Landing extends Component {
               </div>
               <MDBCol md="12">
               <div className="text-center mt-5">
-                <MDBBtn className="section-comment-btn-blue">Read More</MDBBtn>
+                <Link to='/plan' className="secction-plan-btn">Read More</Link>
               </div>
               </MDBCol>
             </MDBRow>

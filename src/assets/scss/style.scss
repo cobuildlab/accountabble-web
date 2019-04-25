@@ -5,6 +5,11 @@ a:hover {
   text-decoration: none;
   opacity: 0.7;
 }
+.link-back{
+  color: $ac-white;
+  padding: 0px 15px;
+  font-weight: 400;
+}
 .title{
   font-weight: 700;
 }
@@ -14,6 +19,11 @@ a:hover {
   text-align: center;
   background-color: $ac-dark;
   color: $ac-primary;
+}
+.secction-view{
+  background-color: $ac-dark;
+  padding: 150px 0px;
+  height: 100%;
 }
 .media .media-left img {
   box-shadow: none !important;
@@ -37,6 +47,13 @@ a:hover {
 
 .input-bg-blue{
   border-bottom: 1px solid $ac-dark !important;
+}
+.input-bg-blue-step{
+  border-bottom: 1px solid $ac-dark !important;
+  width: 100% !important;
+}
+.input-bg-blue-step:focus{
+  box-shadow: 0 1px 0 0 $ac-dark !important;
 }
 .input-bg-blue:focus{
   box-shadow: 0 1px 0 0 $ac-dark !important;
@@ -69,6 +86,7 @@ a:hover {
   background-color: $ac-dark;
   padding: 30px 0px;
 }
+
 .section-plan-circle{
   background-color: $ac-primary;
   padding: 40px;
@@ -93,6 +111,28 @@ a:hover {
 }
 .text-spacing-plan{
   margin: 0px 10%;
+}
+.secction-plan-btn{
+  border-radius: 100px;
+  width: 150px;
+  margin: 0;
+  height: 40px;
+  padding: 10px 40px;
+  background-color: #5ECAEE !important;
+  color: #262626;
+  font-weight: 700;
+  font-size: 14px;
+}
+.secction-plan-btn:hover{
+  border-radius: 100px;
+  width: 150px;
+  margin: 0;
+  height: 40px;
+  padding: 10px 40px;
+  background-color: #5ECAEE !important;
+  color: #262626;
+  font-weight: 700;
+  font-size: 14px;
 }
 @media (max-width: 991px) {
   .section-preview{
@@ -176,6 +216,34 @@ a:hover {
   border-radius: 100px;
   margin: 0px;
   width: 120px;
+}
+.btn-step{
+  border-radius: 100px;
+  width: 150px;
+  margin: 0;
+  height: 40px;
+  padding: 5px;
+  background-color: $ac-dark !important;
+  color: $ac-primary;
+  font-weight: 700;
+  font-size: 14px;
+}
+@media (max-width: 576px) {
+  .col-xs-btn-step-2{
+    width: 50%;
+    display: inline-block;
+  }
+  .btn-step{
+    border-radius: 100px;
+    width: 45%;
+    margin: 0;
+    height: 40px;
+    padding: 5px;
+    background-color: $ac-dark !important;
+    color: $ac-primary;
+    font-weight: 700;
+    font-size: 12px;
+  }
 }
 .link-step-3{
   color: $ac-dark;
@@ -413,7 +481,7 @@ a:hover {
 
 .pure-material-checkbox > input:checked + span::after,
 .pure-material-checkbox > input:indeterminate + span::after {
-  border-color: rgb( 255, 255, 255);
+  border-color:$ac-dark;
 }
 
 .pure-material-checkbox > input:indeterminate + span::after {
@@ -468,6 +536,88 @@ a:hover {
 .pure-material-checkbox > input:indeterminate:disabled + span::before {
   border-color: transparent;
   background-color: currentColor;
+}
+
+//stepper-plan
+.step {
+  
+  padding: 10px;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+  background-color: cream;
+}
+
+.v-stepper {
+  position: relative;
+/*   visibility: visible; */
+}
+
+
+/* regular step */
+.step .circle {
+  background-color: white;
+  border: 3px solid $ac-primary;
+  border-radius: 100%;
+  width: 90px;    /* +6 for border */
+  height: 90px;
+  display: inline-block;
+  padding: 25px;
+  box-shadow: 0 7px 19px 0 rgba(0, 0, 0, 0.16), 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  position: relative
+}
+
+.step .line {
+    top: 60px;
+  left: 43px;
+/*   height: 120px; */
+  height: 100%;
+    
+    position: absolute;
+    border-left: 5px solid gray;
+}
+
+.step.completed .circle {
+  visibility: visible;
+  background-color: $ac-primary;
+  border-color: $ac-primary;
+}
+
+.step.completed .line {
+  border-left: 5px solid $ac-primary;
+}
+
+.step.active .circle {
+visibility: visible;
+  border-color: rgb(6,150,215);
+}
+
+.step.empty .circle {
+    visibility: hidden;
+}
+
+.step.empty .line {
+/*     visibility: hidden; */
+/*   height: 150%; */
+  top: 0;
+  height: 150%;
+}
+
+
+.step:last-child .line {
+  border-left: 3px solid white;
+  z-index: -1; /* behind the circle to completely hide */
+}
+
+.content {
+  margin-left: 30px;
+  display: inline-block;
+  color: $ac-primary;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 
