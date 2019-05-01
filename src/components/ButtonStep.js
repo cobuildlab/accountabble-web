@@ -1,9 +1,9 @@
 import React from 'react';
 import { MDBBtn } from 'mdbreact';
 
-const ButtonStep = ({ className = "btn-step-2 mr-2 mb-3", onClick, text = '' }) => {
+const ButtonStep = ({ className = "btn-step-2 mr-2 mb-3", onClick, text = '', active = false }) => {
   return (
-    <MDBBtn className="btn-step-2 mr-2 mb-3" onClick={onClick} className={className}>
+    <MDBBtn className={`${className} ${active ? 'active-category' : ''}`} onClick={onClick}>
       {text}
     </MDBBtn>
   )

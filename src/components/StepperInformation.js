@@ -10,19 +10,21 @@ import IconCheck from '../assets/img/check-black.png'
 //component
 import StepOne from './StepOne'
 import StepTwo from './StepTwo'
-import Step3 from './step-3'
+import StepThree from './StepThree'
 
 //css
 import '../assets/scss/style.scss'
 
 
-const StepperInformation = ({ onChange = function() {}}) => {
+const StepperInformation = ({ onChange = function() {}, onStep = function() {}, values}) => {
   const [step, setStep] = React.useState(0);
-
   function calculateStep (stateFromStep) {
+    onStep(step);
     switch(stateFromStep) {
-      case 'next': return setStep(state => state + 1);
-      case 'previous': return setStep(state => state - 1);
+      case 'next': setStep(state => state + 1);
+      break;
+      case 'previous': setStep(state => state - 1);
+      break;
       default: return;
     }
   }
@@ -51,9 +53,21 @@ const StepperInformation = ({ onChange = function() {}}) => {
         </MDBCol>
         <MDBCol md="10" className="pl-5 pr-5">
           {getStepperByIndex([
-            <StepOne onClick={calculateStep} onChange={(state) => onChange('basicInformation', state)} />, 
-            <StepTwo onClick={calculateStep} />, 
-            <Step3 onClick={calculateStep} />]
+            <StepOne
+              value={getStepperByIndex(values)}
+              onClick={calculateStep} 
+              onChange={(state) => onChange('basicInformation', state)} 
+            />, 
+            <StepTwo
+              value={getStepperByIndex(values)} 
+              onClick={calculateStep} 
+              onChange={(state) => onChange('coaching', state)} 
+            />, 
+            <StepThree
+              value={getStepperByIndex(values)} 
+              onClick={calculateStep} 
+              onChange={(state) => onChange('terms', state)} />
+            ]
             )}
         </MDBCol>
       </MDBRow>

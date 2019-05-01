@@ -1,11 +1,11 @@
 import React from "react";
 import { MDBInput, MDBBtn } from "mdbreact";
 import '../assets/scss/style.scss';
+import stepperStore, { STEP_1_INFO } from './stepperStore';
 
-
-const StepOne = ({ onClick, onChange }) => {
-  const [state, setState] = React.useState({ name: '', email: ''});
-  
+const StepOne = ({ onClick, onChange, value }) => {
+  console.log(value);
+  const [state, setState] = React.useState(value);
   /**
    * @function onChangeBasicInformation
    * @type {Event} controls the state internally of the input.
@@ -14,7 +14,7 @@ const StepOne = ({ onClick, onChange }) => {
   const onChangeBasicInformation = ({ target: { value }}, name) => {
     setState(prevState => ({...prevState, [name]: value }));
     onChange({...state});
-  };
+  };  
 
   const onStepChange = () => {
     onClick('next');
@@ -41,7 +41,7 @@ const StepOne = ({ onClick, onChange }) => {
         <MDBBtn 
           className="section-comment-btn-dark" 
           onClick={onStepChange} 
-          disabled={(state.name === '' && state.email === '')}
+          disabled={state.name === '' || state.email === ''}
           >
           Next
         </MDBBtn>

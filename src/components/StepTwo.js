@@ -1,28 +1,58 @@
 import React from "react";
-import '../assets/scss/style.scss';
 import ButtonStep from './ButtonStep';
+import '../assets/scss/style.scss';
 //MDB
-import { MDBInput, MDBBtn, MDBRow, MDBCol, MDBFormInline } from "mdbreact";
+import { MDBBtn, MDBRow, MDBCol, MDBFormInline } from "mdbreact";
 
-const StepTwo = ({ onClick, onChange = function() {} }) => {
-  const [weeks, setWeeks] = React.useState(0);
+const StepTwo = ({ onClick, onChange = function() {}, value }) => {
+  const [frequency, setFrequency] = React.useState(value.frequency);
+  const [categories, setCategory] = React.useState(value.categories);
+  const [weeks, setWeeks] = React.useState(value.weeks);
 
   /**
    * Changes the value of the input allows to enter only number values.
+   * @param {event}
    */
   const onChangeWeeks = ({ target: { value }}) => {
     const inputArray = value.split('');
     const chars = inputArray.filter(char => char.charCodeAt() >= 48 && char.charCodeAt() <= 57);
     setWeeks(chars.join(''));
+    onChangeState();
   };
 
-  const categories = [
-    { name: 'Meditation' },
-    { name: 'Sleep Exercise' },
-    { name: 'Write/Read' },
-    { name: 'Diet/Eat' },
-    { name: 'Healthy' }
-  ];
+  /**
+   * Set the category selected of the stepper.
+   * @param {number} categoryIndex
+   */
+  const onSelectCategory = (categoryIndex) => {
+    setCategory(prevState => prevState.map((category, index) => {
+      if(categoryIndex === index) return {...category, selected: true };
+      return {...category, selected: false };
+    }));
+    onChangeState();
+  };
+
+  /**
+   * Set the frequency of the Stepper.
+   * @param {number} frequency 
+   */
+  const onSetFrequency = (frequency) => {
+    setFrequency(frequency);
+    onChangeState();
+  };
+
+  /**
+   * @function onChangeState call all data to pass to parent Component.
+   */
+  const onChangeState = () => {
+    const state = {
+      category: categories.find((category) => category.selected).name,
+      frequency,
+      categories,
+      weeks
+    };
+    onChange({...state});
+  };
 
   const frequencies = [3, 4, 5];
   return (
@@ -33,7 +63,11 @@ const StepTwo = ({ onClick, onChange = function() {} }) => {
         <MDBRow>
           {categories.map((category, index) => (
             <MDBCol md="4" className="col-xs-btn-step-2" key={index}>
-              <ButtonStep text={category.name} />
+              <ButtonStep 
+                text={category.name} 
+                active={category.selected} 
+                onClick={() => onSelectCategory(index)}
+              />
             </MDBCol>
           ))}
         </MDBRow>
@@ -43,9 +77,13 @@ const StepTwo = ({ onClick, onChange = function() {} }) => {
 
         <h6 className="title mt-4 mb-3">Sets frequency a week</h6>
         <MDBRow className="mt-4">
-          {frequencies.map((frequency, index) => (
+          {frequencies.map((freq, index) => (
             <MDBCol md="4" className="col-xs-btn-step-2" key={index}>
-              <ButtonStep text={frequency} />
+              <ButtonStep 
+                text={freq} 
+                onClick={() => onSetFrequency(freq)} 
+                active={freq === frequency}
+                />
             </MDBCol>
           ))}
         </MDBRow>
@@ -65,8 +103,12 @@ const StepTwo = ({ onClick, onChange = function() {} }) => {
           />
       </MDBFormInline>
       <div className="text-right">
-        <MDBBtn className="btn-step mr-3" onClick={() => onClick('previous')}>Previous</MDBBtn>
-        <MDBBtn className="btn-step" onClick={() => onClick('next')}>Next</MDBBtn>
+        <MDBBtn className="btn-step mr-3" onClick={() => onClick('previous')}>
+          Previous
+        </MDBBtn>
+        <MDBBtn className="btn-step" onClick={() => onClick('next')}>
+          Next
+        </MDBBtn>
       </div>
     </React.Fragment>
   );
