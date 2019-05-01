@@ -16,12 +16,12 @@ import StepThree from './StepThree'
 import '../assets/scss/style.scss'
 
 
-const StepperInformation = ({ onChange = function() {}, onStep = function() {}, values}) => {
-  const [step, setStep] = React.useState(0);
+const StepperInformation = ({ onChange, onSubmit, values }) => {
+  const maxSteps = 3;
+  const [step, setStep] = React.useState(1);
   function calculateStep (stateFromStep) {
-    onStep(step);
     switch(stateFromStep) {
-      case 'next': setStep(state => state + 1);
+      case 'next': step < maxSteps ? setStep(state => state + 1) : onSubmit();
       break;
       case 'previous': setStep(state => state - 1);
       break;
@@ -30,7 +30,7 @@ const StepperInformation = ({ onChange = function() {}, onStep = function() {}, 
   }
 
   function getStepperByIndex (steppers) {
-    const stepper = steppers.findIndex((_, index) => index === step);
+    const stepper = steppers.findIndex((_, index) => index + 1 === step);
     return steppers[stepper];
   };
 

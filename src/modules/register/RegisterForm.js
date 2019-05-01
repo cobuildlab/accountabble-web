@@ -1,6 +1,7 @@
 import React from 'react';
 import View from 'react-flux-state';
 import StepperInformation from '../../components/StepperInformation';
+import registerStore, { REGISTER_EVENT } from './register-store';
 
 class RegisterForm extends View {
   state = {
@@ -26,10 +27,20 @@ class RegisterForm extends View {
     },
   };
 
+  componentDidMount() {
+    this.subscribe(registerStore, REGISTER_EVENT, (state) => {
+
+    });
+  }
+
   handleStepperChange = (stepperName, state) => {
     this.setState({
       [stepperName]: state
     });
+  };
+
+  handleSubmit = () => {
+    window.alert('Submited!');
   };
 
   render() {
@@ -38,7 +49,8 @@ class RegisterForm extends View {
       <React.Fragment>
         <StepperInformation
           values={[ basicInformation, coaching, terms ]}
-          onChange={this.handleStepperChange} 
+          onChange={this.handleStepperChange}
+          onSubmit={this.handleSubmit} 
           />
       </React.Fragment>
     );

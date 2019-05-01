@@ -42,8 +42,16 @@ const StepThree = ({ onClick, onChange = function() {}, value }) => {
         </label>
       </div>
       <div className="text-right">
-        <MDBBtn className="section-comment-btn-dark mr-3" onClick={() => onClick('previous')}>Previous</MDBBtn>
-        <MDBBtn className="section-comment-btn-dark" onClick={() => onClick('next')}>Finish</MDBBtn>
+        <MDBBtn className="section-comment-btn-dark mr-3" onClick={() => onClick('previous')}>
+          Previous
+        </MDBBtn>
+        <MDBBtn 
+          className="section-comment-btn-dark" 
+          onClick={() => onClick('next')}
+          disabled={!terms.agreeTerms && !terms.newsletterStatus}
+          >
+          Finish
+        </MDBBtn>
       </div>
     </React.Fragment>
   );
