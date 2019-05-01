@@ -10,9 +10,7 @@ import IconCheck from '../assets/img/check-black.png'
 import IconContent from '..//assets/img/Content-black.png'
 
 //component
-import Step1 from './step-1'
-import Step2 from './step-2'
-import Step3 from './step-3'
+import StepOne from './StepOne'
 
 //css
 import '../assets/scss/style.scss'

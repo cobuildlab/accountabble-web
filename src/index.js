@@ -8,11 +8,12 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
-
-//import components
+import firebase from 'firebase';
+import { firebaseConfig } from './config/firebase';
 import App from './App';
-
 import { BrowserRouter } from 'react-router-dom';
+
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
 <BrowserRouter>

@@ -8,17 +8,16 @@ import IconCoaching from '../assets/img/Coaching-black.png'
 import IconCheck from '../assets/img/check-black.png'
 
 //component
-import Step1 from '../components/step-1'
-import Step2 from '../components/step-2'
-import Step3 from '../components/step-3'
+import StepOne from './StepOne'
+import StepTwo from './StepTwo'
+import Step3 from './step-3'
 
 //css
 import '../assets/scss/style.scss'
 
 
-const StepperVertical = () => {
+const StepperInformation = ({ onChange = function() {}}) => {
   const [step, setStep] = React.useState(0);
-  const [status, setStatus] = React.useState([{ active: true }, { active: false }, { active: false }]);
 
   function calculateStep (stateFromStep) {
     switch(stateFromStep) {
@@ -51,11 +50,15 @@ const StepperVertical = () => {
           </div>
         </MDBCol>
         <MDBCol md="10" className="pl-5 pr-5">
-          {getStepperByIndex([<Step1 onClick={calculateStep}/>, <Step2 onClick={calculateStep} />, <Step3 onClick={calculateStep} />])}
+          {getStepperByIndex([
+            <StepOne onClick={calculateStep} onChange={(state) => onChange('basicInformation', state)} />, 
+            <StepTwo onClick={calculateStep} />, 
+            <Step3 onClick={calculateStep} />]
+            )}
         </MDBCol>
       </MDBRow>
     </React.Fragment>
   );
 }
 
-export default StepperVertical;
+export default StepperInformation;

@@ -5,7 +5,7 @@ import '../assets/scss/style.scss';
 //MDB
 import { MDBInput, MDBBtn } from "mdbreact";
 
-const Step1 = ({ onClick }) => {
+const Step1 = ({ onClick, onChange = function() {}}) => {
   return (
     <React.Fragment>
     <h1 className="title text-left text-weight-bold mt-4">Finish</h1>

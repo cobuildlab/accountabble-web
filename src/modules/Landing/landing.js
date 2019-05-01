@@ -16,7 +16,7 @@ import '../../assets/scss/style.scss';
 
 //Components
 import NavBar from '../../components/navbar';
-import StepperVertical from '../../components/steppers-vertical';
+import StepperInformation from '../../components/StepperInformation';
 import FormSubscribe from '../../components/form-subscribe'
 import CardBlogSm from '../../components/card-blog-sm';
 import CardBlogLg from '../../components/card-blog-lg';
@@ -25,6 +25,7 @@ import Footer from '../../components/footer';
 import PlanPreviews from '../../components/plan-previews';
 import PlanPreviesCarousel from '../../components/plan-previews-carousel';
 import CardBlogCarousel from '../../components/card-blog-carousel'
+import RegisterForm from '../register/RegisterForm';
 
 class Landing extends Component {
   
@@ -68,7 +69,7 @@ class Landing extends Component {
                 <p> ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
               </MDBCol>
               <MDBCol md="6">
-                <StepperVertical/>
+                <RegisterForm />
               </MDBCol>
             </MDBRow>
           </MDBContainer>
