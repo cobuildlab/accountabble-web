@@ -29,8 +29,20 @@ class RegisterForm extends View {
   };
 
   componentDidMount() {
-    this.subscribe(registerStore, REGISTER_EVENT, (state) => {
-      console.log('Registered!');
+    const { properties } = this.props;
+    this.subscribe(registerStore, REGISTER_EVENT, () => {
+      const { basicInformation: { email, name }, coaching: { category, frequency, weeks}, terms } = this.state;
+      properties.history.push('/success', {
+        authorized: true,
+        message: {
+          email,
+          name,
+          category,
+          frequency,
+          weeks,
+          terms:  terms.newsletterStatus ? 'Authorized to received newsletter' : 'Declined newsletter'
+        }
+      });
     });
 
     this.subscribe(registerStore, REGISTER_ERROR, (err) => {

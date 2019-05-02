@@ -68,7 +68,7 @@ class Landing extends Component {
                 <p> ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
               </MDBCol>
               <MDBCol md="6">
-                <RegisterForm />
+                <RegisterForm properties={this.props}/>
               </MDBCol>
             </MDBRow>
           </MDBContainer>

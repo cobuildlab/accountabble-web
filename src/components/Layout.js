@@ -2,11 +2,11 @@ import React from 'react';
 import Navbar from './Navbar';
 import FooterComponent from './FooterComponent';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, transition }) => {
   return (
     <React.Fragment>
       <Navbar />
-        <div className="view">
+        <div className={`view d-flex justify-content-center align-items-center ${transition ? 'fade-in' : ''}`}>
           {children}
         </div>
       <FooterComponent />
