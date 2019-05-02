@@ -3,7 +3,7 @@ import Layout from '../../components/Layout';
 import { MDBView, MDBContainer } from 'mdbreact';
 import BgHeader from '../../assets/img/bg/background-AboutUS.png';
 import TitlePrimary from '../../components/TitlePrimary';
-import CardComponent from '../../components/CardComponent';
+import CardComponent from '../../components/CardComponent'; 
 
 
 
