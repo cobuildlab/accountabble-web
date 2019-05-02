@@ -12,7 +12,7 @@ MDBContainer
 
 import Logo from '../assets/img/accountabble-c.png'
 
-const NavBar = () =>{
+const Navbar = () => {
   const [toggle, setToggle] = useState("");
 
   const toggleNavbar = (collapseID) => {
@@ -62,4 +62,4 @@ const NavBar = () =>{
   )
 }
 
-export default NavBar;
+export default Navbar;

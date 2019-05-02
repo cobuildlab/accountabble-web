@@ -8,8 +8,8 @@ import BgHeader from '../../assets/img/bg/background-faq.png';
 import '../../assets/scss/style.scss';
 
 //Components
-import NavBar from '../../components/navbar';
-import FooterComponent from '../../components/footer';
+import Navbar from '../../components/Navbar';
+import FooterComponent from '../../components/FooterComponent';
 import CollapseComponent from '../../components/faq-collapse';
 
 
@@ -20,8 +20,8 @@ class Faq extends Component {
   render(){
     return(
     <>
-      {/* navbar component */}
-      <NavBar/>
+      {/* Navbar component */}
+      <Navbar/>
       <MDBView className="about-bg-half-two" src={ BgHeader }>
         <MDBMask className="d-flex justify-content-center align-items-center">
           <MDBContainer>

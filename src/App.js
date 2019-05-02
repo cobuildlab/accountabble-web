@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-//landing
 import Landing from './modules/Landing/landing'
-//About us
-import AboutUs from './modules/about-us/about-us'
-//FAQ
+import AboutUsView from './modules/about-us/AboutUSView'
 import Faq from './modules/faq/faq'
-//Plan
 import Plan from './modules/plan/plan'
-//Terms & conditions
 import Terms from './modules/terms/terms'
+import SucessView from './modules/register/SucessView';
 
+const routes = [
+  { component: Landing, path: '/' },
+  { component: SucessView, path: '/success' },
+  { component: Terms, path: '/terms-and-conditions' },
+  { component: Plan, path: '/plan' },
+  { component: Faq, path: '/faq' },
+  { component: AboutUsView, path: '/about-us' }
+];
 
 export default class App extends Component {
 
@@ -19,11 +23,7 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' component={Landing}/>
-          <Route exact path='/about-us' component={AboutUs}/>
-          <Route exact path='/faq' component={Faq}/>
-          <Route exact path='/plan' component= {Plan}/>
-          <Route exact path='/terms' component= {Terms}/>
+          {routes.map((route) => <Route exact path={route.path} component={route.component} key={route.path} />)}
         </Switch>
       </BrowserRouter>
 

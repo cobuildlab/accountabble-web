@@ -12,8 +12,8 @@ import BgHeader from '../../assets/img/bg/background-faq.png';
 import '../../assets/scss/style.scss';
 
 //Components
-import NavBar from '../../components/navbar';
-import FooterComponent from '../../components/footer'
+import Navbar from '../../components/Navbar';
+import FooterComponent from '../../components/FooterComponent'
 import StepperPlan from '../../components/steppers-plan'
 
 
@@ -25,7 +25,7 @@ class Plan extends Component {
     return(
     <>
       {/* navbar component */}
-      <NavBar/>
+      <Navbar/>
         <div className="secction-view">
           <MDBContainer>
             <MDBRow>

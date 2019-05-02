@@ -1,45 +1,47 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { MDBView, MDBMask, MDBRow, MDBContainer, MDBCol, MDBMedia} from 'mdbreact'
 
-//Components
-import NavBar from '../../components/navbar';
+import Navbar from '../../components/Navbar';
 import SectionComment from '../../components/section-comment';
-import FooterComponent from '../../components/footer';
+import FooterComponent from '../../components/FooterComponent';
+import { SectionAboutUS, SectionAboutUSDescription, SectionCommentComponent } from '../../components/Sections';
 
-//img
 import BgHeader from '../../assets/img/bg/background-AboutUS.png';
 import IsoIcon from '../../assets/img/bg/accountabble-r.png';
 import People1 from '../../assets/img/bg/people1.jpg';
 import People2 from '../../assets/img/bg/people2.jpg';
 import PeopleH from '../../assets/img/bg/people-h.png'
 import Quotes from '../../assets/img/bg/quotes.png';
-
-//css
 import '../../assets/scss/style.scss';
 
 
-class AboutUs extends Component {
-  
-  render(){
-    return(
-    <>
-      {/* navbar component */}
-      <NavBar/>
+const AboutUSView = () => {
+  return (
+    <React.Fragment>
+      <Navbar/>
       <MDBView className="about-bg-half" src={ BgHeader } fixed>
         <MDBMask className="d-flex justify-content-center align-items-center">
           <MDBContainer>
             <MDBRow>
               <MDBCol md="12" className="mb-4 white-text text-center">
-                <h1 class="display-2 mb-0 pt-md-5 pt-5 primary-text font-weight-bold text-uppercase d-none d-sm-block"><span>ABOUT</span> <span className="white-text font-weight-light">US</span></h1>
-                <h1 class="display-4 mb-0 pt-md-5 pt-5 mt-5 primary-text font-weight-bold text-uppercase d-block d-sm-none"><span>ABOUT</span> <span className="white-text font-weight-light">US</span></h1>
-                <h2 className="pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text text-left">"<span className="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque."</h2>
+                <h1 class="display-2 mb-0 pt-md-5 pt-5 primary-text font-weight-bold text-uppercase d-none d-sm-block">
+                  <span> ABOUT </span> 
+                  <span className="white-text font-weight-light"> US </span>
+                </h1>
+                <h1 class="display-4 mb-0 pt-md-5 pt-5 mt-5 primary-text font-weight-bold text-uppercase d-block d-sm-none">
+                  <span>ABOUT</span> 
+                  <span className="white-text font-weight-light"> US </span>
+                </h1>
+                <h2 className="pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text text-left">"
+                  <span className="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque."
+                </h2>
               </MDBCol>
             </MDBRow>
           </MDBContainer>
         </MDBMask>
       </MDBView>
       <main>
-        <div className="section-about-us">
+        <SectionAboutUS>
           <MDBContainer>
             <MDBRow>
               <MDBCol md="12">
@@ -58,8 +60,8 @@ class AboutUs extends Component {
               </MDBCol>
             </MDBRow>
           </MDBContainer>
-        </div>
-        <div className="section-about-description">
+        </SectionAboutUS>
+        <SectionAboutUSDescription>
           <MDBContainer>
             <MDBRow>
               <MDBCol md="5" xs="5">
@@ -80,15 +82,14 @@ class AboutUs extends Component {
               </MDBCol>
             </MDBRow>
           </MDBContainer>
-        </div>
-        <div className="section-comment">
+        </SectionAboutUSDescription>
+        <SectionCommentComponent>
           <SectionComment/>
-        </div>
-        <FooterComponent/>
-      </main>
-    </>
-    );
-  }
+        </SectionCommentComponent>
+      <FooterComponent/>
+    </main>
+  </React.Fragment>
+  );
+};
 
-}
-export default AboutUs;
+export default AboutUSView;

@@ -15,13 +15,12 @@ import BgHeader from '../../assets/img/bg/background-home-web.png';
 import '../../assets/scss/style.scss';
 
 //Components
-import NavBar from '../../components/navbar';
-import StepperInformation from '../../components/StepperInformation';
+import Navbar from '../../components/Navbar';
 import FormSubscribe from '../../components/form-subscribe'
 import CardBlogSm from '../../components/card-blog-sm';
 import CardBlogLg from '../../components/card-blog-lg';
 import SectionComment from '../../components/section-comment';
-import Footer from '../../components/footer';
+import Footer from '../../components/FooterComponent';
 import PlanPreviews from '../../components/plan-previews';
 import PlanPreviesCarousel from '../../components/plan-previews-carousel';
 import CardBlogCarousel from '../../components/card-blog-carousel'
@@ -33,7 +32,7 @@ class Landing extends Component {
     return(
     <>
       {/* navbar component */}
-      <NavBar/>
+      <Navbar/>
 
       <MDBView src={ BgHeader } fixed>
       </MDBView>
