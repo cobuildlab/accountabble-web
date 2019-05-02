@@ -17,7 +17,12 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
     const inputArray = value.split('');
     const chars = inputArray.filter(char => char.charCodeAt() >= 48 && char.charCodeAt() <= 57);
     setWeeks(chars.join(''));
-    onChangeState();
+    onChange({
+      category: categories.find((category) => category.selected).name,
+      frequency,
+      weeks: chars.join(''),
+      categories: [...categories]
+    });
   };
 
   /**
@@ -25,11 +30,16 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
    * @param {number} categoryIndex
    */
   const onSelectCategory = (categoryIndex) => {
-    setCategory(prevState => prevState.map((category, index) => {
+    const categorySelected = categories.map((category, index) => {
       if(categoryIndex === index) return {...category, selected: true };
       return {...category, selected: false };
-    }));
-    onChangeState();
+    });
+    onChange({ 
+      category: categorySelected.find((category) => category.selected).name, 
+      frequency: frequency, 
+      categories: categorySelected,
+      weeks });
+    setCategory(categorySelected);
   };
 
   /**
@@ -37,21 +47,12 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
    * @param {number} frequency 
    */
   const onSetFrequency = (frequency) => {
+    onChange({ 
+      category: categories.find((category) => category.selected).name, 
+      frequency: frequency, 
+      categories: [...categories], 
+      weeks });
     setFrequency(frequency);
-    onChangeState();
-  };
-
-  /**
-   * @function onChangeState call all data to pass to parent Component.
-   */
-  const onChangeState = () => {
-    const state = {
-      category: categories.find((category) => category.selected).name,
-      frequency,
-      categories,
-      weeks
-    };
-    onChange({...state});
   };
 
   const frequencies = [3, 4, 5];

@@ -1,7 +1,8 @@
 import React from 'react';
 import View from 'react-flux-state';
 import StepperInformation from '../../components/StepperInformation';
-import registerStore, { REGISTER_EVENT } from './register-store';
+import registerStore, { REGISTER_EVENT, REGISTER_ERROR } from './register-store';
+import { registerAction } from './register-action';
 
 class RegisterForm extends View {
   state = {
@@ -29,7 +30,11 @@ class RegisterForm extends View {
 
   componentDidMount() {
     this.subscribe(registerStore, REGISTER_EVENT, (state) => {
+      console.log('Registered!');
+    });
 
+    this.subscribe(registerStore, REGISTER_ERROR, (err) => {
+      console.log(err);
     });
   }
 
@@ -40,7 +45,16 @@ class RegisterForm extends View {
   };
 
   handleSubmit = () => {
-    window.alert('Submited!');
+    const { basicInformation, coaching: { category, frequency, weeks }, terms: { newsletterStatus } } = this.state;
+    registerAction({
+      basicInformation,
+      coaching: {
+        category,
+        frequency,
+        weeks: parseInt(weeks)
+      },
+      newsletterStatus
+    });
   };
 
   render() {

@@ -1,11 +1,13 @@
 import React from "react";
-import { MDBRow, MDBCol } from 'mdbreact'
+import { MDBRow, MDBCol } from 'mdbreact';
 
 //image
-import IconUser from '../assets/img/user.png'
-import IconUserB from '../assets/img/user-b.png'
-import IconCoaching from '../assets/img/Coaching-black.png'
-import IconCheck from '../assets/img/check-black.png'
+import IconUser from '../assets/img/user.png';
+import IconUserB from '../assets/img/user-b.png';
+import IconCoaching from '../assets/img/Coaching-black.png';
+import IconCoachingB from '../assets/img/Coaching-b.png';
+import IconCheck from '../assets/img/check-black.png';
+import IconCheckB from '../assets/img/check-b.png';
 
 //component
 import StepOne from './StepOne'
@@ -19,6 +21,12 @@ import '../assets/scss/style.scss'
 const StepperInformation = ({ onChange, onSubmit, values }) => {
   const maxSteps = 3;
   const [step, setStep] = React.useState(1);
+  const stepsMap = [
+    { callback: (booleanProperty) => booleanProperty ? IconUserB : IconUser },
+    { callback: (booleanProperty) => booleanProperty ? IconCoachingB : IconCoaching },
+    { callback: (booleanProperty) => booleanProperty ? IconCheckB : IconCheck, className: 'pt-2' }
+  ];
+
   function calculateStep (stateFromStep) {
     switch(stateFromStep) {
       case 'next': step < maxSteps ? setStep(state => state + 1) : onSubmit();
@@ -34,21 +42,22 @@ const StepperInformation = ({ onChange, onSubmit, values }) => {
     return steppers[stepper];
   };
 
+
   return (
     <React.Fragment>
       <MDBRow>
         <MDBCol md="2">
           <div className="line-stepper"/>
           <div className="stepper d-flex justify-content-between">
-            <div className={"circle-active-step"}>
-              <img src={IconUserB} alt="User" className="img-fluid"/>
-            </div>
-            <div className={"circle-step"}>
-              <img src={IconCoaching} alt="User" className="img-fluid"/>
-            </div>
-            <div className="circle-step">
-              <img src={IconCheck} alt="User" className="img-fluid pt-2"/>
-            </div>
+            {stepsMap.map((property, index) => (
+              <div className={(index + 1) === step ? 'circle-active-step' : 'circle-step'} key={index}>
+                <img 
+                  src={property.callback(index + 1 === step)} 
+                  className={`img-fluid ${property.className ? property.className : ''}`} 
+                  alt="icon"
+                  />
+              </div>
+            ))}
           </div>
         </MDBCol>
         <MDBCol md="10" className="pl-5 pr-5">
