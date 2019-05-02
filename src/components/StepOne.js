@@ -1,13 +1,9 @@
 import React from "react";
 import { MDBInput, MDBBtn } from "mdbreact";
 import '../assets/scss/style.scss';
-import { validateName } from '../utils/regexp';
 
 const StepOne = ({ onClick, onChange, value }) => {
-  console.log(value);
   const [state, setState] = React.useState(value);
-  const [nameInput, setNameInput] = React.useState('');
-  const [emailInput, setEmailInput] = React.useState('');
   
   /**
    * @function onChangeBasicInformation
