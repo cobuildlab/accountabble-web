@@ -271,14 +271,30 @@ a:hover {
     font-size: 12px;
   }
 }
-.link-step-3{
+.link-step-3 {
   color: $ac-dark;
   text-decoration: underline;
+  transition: ease-in 0.6s;
 }
-.link-step-3:hover{
+
+.link-step-3-invalid { 
+  color: $ac-danger;
+  text-decoration: underline;
+  transition: ease-in 0.6s;
+};
+
+.link-step-3-invalid { 
+  color: $ac-danger;
+  text-decoration: underline;
+  opacity: 0.7;
+  transition: ease-in 0.6s;
+}
+
+.link-step-3:hover {
   color: $ac-dark;
   opacity: 0.7;
   text-decoration: underline;
+  transition: ease-in 0.6s;
 }
 
 @media (max-width: 576px) {

@@ -27,7 +27,7 @@ const StepThree = ({ onClick, onChange = function() {}, value }) => {
             checked={terms.agreeTerms}
             />
           <span>
-            <Link to="/terms" className="link-step-3">
+            <Link to="/terms-and-conditions" className={'link-step-3'}>
               I agree to the terms and conditions
             </Link>
           </span>
@@ -49,7 +49,7 @@ const StepThree = ({ onClick, onChange = function() {}, value }) => {
         <MDBBtn 
           className="section-comment-btn-dark" 
           onClick={() => onClick('next')}
-          disabled={!terms.agreeTerms && !terms.newsletterStatus}
+          disabled={!terms.agreeTerms}
           >
           Next
         </MDBBtn>

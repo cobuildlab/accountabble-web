@@ -4,7 +4,7 @@ const classes = {
   about: 'section-about-us',
   description: 'section-about-description',
   comment: 'section-comment',
-  plan: 'section-plan',
+  plan: 'secction-plan',
   information: 'section-information',
   blog: 'section-blog'
 };

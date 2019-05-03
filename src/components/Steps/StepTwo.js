@@ -25,7 +25,7 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
       weeks: chars.join(''),
       categories: [...categories]
     });
-    setValidation(value === '0');
+    setValidation(value === '0' || value.split('').every((char) => char === '0'));
   };
 
   /**
