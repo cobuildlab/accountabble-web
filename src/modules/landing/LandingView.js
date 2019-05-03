@@ -1,63 +1,57 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import React, { Component } from './node_modules/react';
+import { Link } from './node_modules/react-router-dom'
 import {
   MDBRow, 
   MDBCol,   
   MDBView, 
   MDBContainer,
-  MDBBtn,
-} from "mdbreact";
+} from "./node_modules/mdbreact";
 
-//img
 import BgHeader from '../../assets/img/bg/background-home-web.png';
-
-//css
-import '../../assets/scss/style.scss';
-
-//Components
-import Navbar from '../../components/Navbar';
 import FormSubscribe from '../../components/form-subscribe'
 import CardBlogSm from '../../components/card-blog-sm';
 import CardBlogLg from '../../components/card-blog-lg';
 import SectionComment from '../../components/section-comment';
-import Footer from '../../components/FooterComponent';
 import PlanPreviews from '../../components/plan-previews';
 import PlanPreviesCarousel from '../../components/plan-previews-carousel';
 import CardBlogCarousel from '../../components/card-blog-carousel'
 import RegisterForm from '../register/RegisterForm';
+import Layout from '../../components/Layout';
+import '../../assets/scss/style.scss';
+import { 
+  SectionPlan, 
+  SectionInformation, 
+  SectionCommentComponent, 
+  SectionBlog 
+} from '../../components/Sections';
 
 class Landing extends Component {
-  
-  render(){
-    return(
-    <>
-      {/* navbar component */}
-      <Navbar/>
-
-      <MDBView src={ BgHeader } fixed>
-      </MDBView>
-      <main>
-        <div className="secction-plan">
-          <MDBContainer>
-            <MDBRow className="py-5">
-              <MDBCol md="12">
-                <h1 className="text-center text-white title-plan">Plan</h1>
-              </MDBCol>
-              <div className="d-none d-sm-block">
-                <PlanPreviews/>
-              </div>
-              <div className="d-block d-sm-none">
-                <PlanPreviesCarousel/>
-              </div>
-              <MDBCol md="12">
-              <div className="text-center mt-5">
-                <Link to='/plan' className="secction-plan-btn">Read More</Link>
-              </div>
-              </MDBCol>
-            </MDBRow>
-          </MDBContainer>
-        </div>
-        <div className="section-information">
+  render () {
+    return (
+      <Layout transition>
+        <MDBView src={ BgHeader } fixed></MDBView>
+        <main>
+          <SectionPlan>
+            <MDBContainer>
+              <MDBRow className="py-5">
+                <MDBCol md="12">
+                  <h1 className="text-center text-white title-plan">Plan</h1>
+                </MDBCol>
+                <div className="d-none d-sm-block">
+                  <PlanPreviews />
+                </div>
+                <div className="d-block d-sm-none">
+                  <PlanPreviesCarousel />
+                </div>
+                <MDBCol md="12">
+                  <div className="text-center mt-5">
+                    <Link to='/plan' className="secction-plan-btn">Read More</Link>
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </MDBContainer>
+          </SectionPlan>
+        <SectionInformation>
           <MDBContainer>
             <MDBRow>
               <MDBCol md="6">
@@ -72,25 +66,25 @@ class Landing extends Component {
               </MDBCol>
             </MDBRow>
           </MDBContainer>
-        </div>
-        <div className="section-comment">
+        </SectionInformation>
+        ,<SectionCommentComponent>
           <SectionComment/>
-        </div>
-        <div id="blog" className="section-blog">
+        </SectionCommentComponent>
+        <SectionBlog id="blog">
           <MDBContainer>
             <h1 className="title-blog text-white text-center mb-5">Blog</h1>
             <div className="d-none d-sm-block">
-            <MDBRow className="pb-5 ">
-              <MDBCol md="3">
-                <CardBlogSm/>
-              </MDBCol>
-              <MDBCol md="6">
-              <CardBlogLg/>
-              </MDBCol>
-              <MDBCol md="3">
-              <CardBlogSm/>
-              </MDBCol>
-            </MDBRow>
+              <MDBRow className="pb-5 ">
+                <MDBCol md="3">
+                  <CardBlogSm />
+                </MDBCol>
+                <MDBCol md="6">
+                  <CardBlogLg/>
+                </MDBCol>
+                <MDBCol md="3">
+                  <CardBlogSm/>
+                </MDBCol>
+              </MDBRow>
             </div>
             <div className="d-block d-sm-none">
               <CardBlogCarousel/>
@@ -100,12 +94,12 @@ class Landing extends Component {
               <FormSubscribe/>
             </div>
           </MDBContainer>
-        </div>
-        <Footer/>
+        </SectionBlog>
       </main>
-    </>
+    </Layout>
     );
-  }
+  };
+};
 
-}
+
 export default Landing;

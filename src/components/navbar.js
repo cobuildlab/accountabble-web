@@ -9,7 +9,6 @@ MDBNavbarToggler,
 MDBCollapse,
 MDBContainer 
 } from "mdbreact";
-
 import Logo from '../assets/img/accountabble-c.png'
 
 const Navbar = () => {
@@ -31,7 +30,9 @@ const Navbar = () => {
     >
       <MDBContainer>
         <MDBNavbarBrand>
-          <img src={ Logo } alt="Logo" width="200"></img>
+          <Link to="/">
+            <img src={Logo} alt="Logo" width={200} />
+          </Link>
         </MDBNavbarBrand>
         <MDBNavbarToggler
           onClick={() => toggleNavbar("navbarCollapse")}

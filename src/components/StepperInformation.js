@@ -17,7 +17,7 @@ import StepContainer from './Steps/StepContainer';
 
 
 const StepperInformation = ({ onChange, onSubmit, values }) => {
-  const maxSteps = 3;
+  const maxSteps = 4;
   const [step, setStep] = React.useState(4);
   const stepsMap = [
     { callback: (booleanProperty) => booleanProperty ? IconUserB : IconUser },
@@ -26,6 +26,14 @@ const StepperInformation = ({ onChange, onSubmit, values }) => {
     { callback: (booleanProperty) => booleanProperty ? IconCreditCardB : IconCreditCard, className: 'pt-2' }
   ];
 
+  /**
+   * 
+   * @param {string} stateFromStep
+   * Check the argument on the function, and jump a step to show the current step.
+   * @example
+   * calculateStep('next') output: state + 1..
+   * calculateStep('previous') output: state - 1.. 
+   */
   function calculateStep (stateFromStep) {
     switch(stateFromStep) {
       case 'next': step < maxSteps ? setStep(state => state + 1) : onSubmit();
