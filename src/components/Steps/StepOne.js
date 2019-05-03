@@ -49,14 +49,14 @@ const StepOne = ({ onClick, onChange, value }) => {
         value={state.name} 
         onChange={({ target: { value }}) => onChangeBasicInformation(value, 'name')}
       />
-      {errors.name && <InputInfomration message={'Name should not contain numbers and characters'} />}
+      {errors.name && <InputInfomration message={'Name should contain only characters'} />}
       <MDBInput 
         className={validInputExpressionEmail((!validateEmail(state.email) || isEmpty(state.email)))}
         label="Email" 
         value={state.email} 
         onChange={({ target: { value }}) => onChangeBasicInformation(value, 'email')} 
       />
-      {errors.email && <InputInfomration message={'Email should be valid and contains @'} />}
+      {errors.email && <InputInfomration message={'Email should be valid'} />}
       <div className="text-right">
         <MDBBtn 
           className="section-comment-btn-dark" 
