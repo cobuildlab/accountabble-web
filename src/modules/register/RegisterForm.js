@@ -26,9 +26,15 @@ class RegisterForm extends View {
       newsletterStatus: false,
       agreeTerms: false
     },
-    creditCard: [
-      '0', '0', '0', '0'
-    ]
+    creditCard: {
+      owner: '',
+      cvv: '',
+      cardNumber: '',
+      expirationDate: {
+        month: '',
+        year: ''
+      }
+    }
   };
 
   componentDidMount() {

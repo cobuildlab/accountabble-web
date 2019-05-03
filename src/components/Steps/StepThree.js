@@ -16,10 +16,10 @@ const StepThree = ({ onClick, onChange = function() {}, value }) => {
 
   return (
     <React.Fragment>
-    <StepTitle message={"Finish"} />
-      {/* Material unchecked */}
-      <div className="mt-4 mb-5">
-        <label class="pure-material-checkbox">
+      <StepTitle message={"Finish"} />
+        {/* Material unchecked */}
+        <div className="mt-4 mb-5">
+          <label class="pure-material-checkbox">
           <input 
             type="checkbox"
             name="agreeTerms"
