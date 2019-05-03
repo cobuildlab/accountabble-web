@@ -1,11 +1,11 @@
 import React, { Component } from './node_modules/react';
-import { Link } from './node_modules/react-router-dom'
+import { Link } from 'react-router-dom';
 import {
   MDBRow, 
   MDBCol,   
   MDBView, 
   MDBContainer,
-} from "./node_modules/mdbreact";
+} from "mdbreact";
 
 import BgHeader from '../../assets/img/bg/background-home-web.png';
 import FormSubscribe from '../../components/form-subscribe'
@@ -25,7 +25,7 @@ import {
   SectionBlog 
 } from '../../components/Sections';
 
-class Landing extends Component {
+class LandingView extends Component {
   render () {
     return (
       <Layout transition>
@@ -102,4 +102,4 @@ class Landing extends Component {
 };
 
 
-export default Landing;
+export default LandingView;
