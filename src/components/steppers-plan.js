@@ -4,9 +4,7 @@ import { MDBRow, MDBCol } from 'mdbreact'
 
 //image
 import IconUser from '../assets/img/user.png'
-import IconUserB from '../assets/img/user-b.png'
 import IconCoaching from '../assets/img/Coaching-black.png'
-import IconCheck from '../assets/img/check-black.png'
 import IconContent from '..//assets/img/Content-black.png'
 import '../assets/scss/style.scss'
 

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { MDBView, MDBMask, MDBRow, MDBContainer, MDBCol} from 'mdbreact'
+import {  MDBRow, MDBContainer, MDBCol} from 'mdbreact'
 import { Link } from 'react-router-dom'
 
 import {Icon} from 'react-icons-kit'
 import {thinLeft} from 'react-icons-kit/entypo/thinLeft'
 
 //img
-import BgHeader from '../../assets/img/bg/background-faq.png';
 
 //css
 import '../../assets/scss/style.scss';

@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBCol, MDBBtn } from 'mdbreact';
+import { MDBCol  } from 'mdbreact';
 
 //css
 import '../assets/scss/style.scss';
