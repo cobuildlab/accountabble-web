@@ -20,7 +20,7 @@ class RegisterForm extends View {
         { name: 'Diet/Eat', selected: false },
         { name: 'Healthy', selected: false }
       ],
-      weeks: '0'
+      weeks: '1'
     },
     terms: {
       newsletterStatus: false,

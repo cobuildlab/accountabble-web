@@ -1,20 +1,14 @@
 import React from "react";
 import { MDBRow, MDBCol } from 'mdbreact';
-
-//image
 import IconUser from '../assets/img/user.png';
 import IconUserB from '../assets/img/user-b.png';
 import IconCoaching from '../assets/img/Coaching-black.png';
 import IconCoachingB from '../assets/img/Coaching-b.png';
 import IconCheck from '../assets/img/check-black.png';
 import IconCheckB from '../assets/img/check-b.png';
-
-//component
-import StepOne from './StepOne'
-import StepTwo from './StepTwo'
-import StepThree from './StepThree'
-
-//css
+import StepOne from './Steps/StepOne'
+import StepTwo from './Steps/StepTwo'
+import StepThree from './Steps/StepThree'
 import '../assets/scss/style.scss'
 
 

@@ -48,13 +48,37 @@ a:hover {
 .input-bg-blue{
   border-bottom: 1px solid $ac-dark !important;
 }
+
+.input-bg-blue-invalid {
+  border-bottom: 2px solid $ac-danger !important;
+}
+
+.input-bg-blue:focus {
+  box-shadow: 0 1px 0 0 #262626 !important;
+}
+
+.input-bg-blue-invalid:focus {
+  box-shadow: 0 0px 0 0 $ac-danger !important;
+}
+
 .input-bg-blue-step{
   border-bottom: 1px solid $ac-dark !important;
   width: 100% !important;
 }
-.input-bg-blue-step:focus{
+
+.input-bg-blue-step-invalid {
+  border-bottom: 1px solid $ac-danger !important;
+  width: 100% !important;
+}
+
+.input-bg-blue-step:focus {
   box-shadow: 0 1px 0 0 $ac-dark !important;
 }
+
+.input-bg-blue-step-invalid:focus {
+  box-shadow: 0 1px 0 0 $ac-danger !important;
+}
+
 .input-bg-blue:focus{
   box-shadow: 0 1px 0 0 $ac-dark !important;
 }
@@ -662,4 +686,11 @@ visibility: visible;
 
 .white-text { 
   color: $ac-white;
+}
+
+.message-information {
+  position: relative;
+  bottom: 26px;
+  left: 0px;
+  color: #ff3547;
 }

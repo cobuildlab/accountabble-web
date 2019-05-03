@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import { MDBBtn } from "mdbreact";
-import '../assets/scss/style.scss';
+import '../../assets/scss/style.scss';
+import StepTitle from "./StepTitle";
 
 const StepThree = ({ onClick, onChange = function() {}, value }) => {
   const [terms, setTerms] = React.useState({ newsletterStatus: value.newsletterStatus, agreeTerms: value.agreeTerms });
@@ -15,7 +16,7 @@ const StepThree = ({ onClick, onChange = function() {}, value }) => {
 
   return (
     <React.Fragment>
-    <h1 className="title text-left text-weight-bold mt-4">Finish</h1>
+    <StepTitle message={"Finish"} />
       {/* Material unchecked */}
       <div className="mt-4 mb-5">
         <label class="pure-material-checkbox">

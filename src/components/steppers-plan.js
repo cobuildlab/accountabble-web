@@ -8,11 +8,6 @@ import IconUserB from '../assets/img/user-b.png'
 import IconCoaching from '../assets/img/Coaching-black.png'
 import IconCheck from '../assets/img/check-black.png'
 import IconContent from '..//assets/img/Content-black.png'
-
-//component
-import StepOne from './StepOne'
-
-//css
 import '../assets/scss/style.scss'
 
 

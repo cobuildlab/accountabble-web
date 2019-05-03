@@ -1,13 +1,15 @@
 import React from "react";
 import ButtonStep from './ButtonStep';
-import '../assets/scss/style.scss';
-//MDB
+import '../../assets/scss/style.scss';
 import { MDBBtn, MDBRow, MDBCol, MDBFormInline } from "mdbreact";
+import InputInfomration from "../InputInformation";
+import StepTitle from "./StepTitle";
 
 const StepTwo = ({ onClick, onChange = function() {}, value }) => {
   const [frequency, setFrequency] = React.useState(value.frequency);
   const [categories, setCategory] = React.useState(value.categories);
   const [weeks, setWeeks] = React.useState(value.weeks);
+  const [validation, setValidation] = React.useState(false);
 
   /**
    * Changes the value of the input allows to enter only number values.
@@ -23,6 +25,7 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
       weeks: chars.join(''),
       categories: [...categories]
     });
+    setValidation(value === '0');
   };
 
   /**
@@ -58,7 +61,7 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
   const frequencies = [3, 4, 5];
   return (
     <React.Fragment>
-    <h1 className="title text-left text-weight-bold mt-4">Coaching</h1>
+    <StepTitle message={"Coaching"} />
       <div>
         <h6 className="title mt-2 mb-3">Category</h6>
         <MDBRow>
@@ -95,19 +98,20 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
       </h6>
       <MDBFormInline className="md-form ">
         <input 
-          className="form-control input-bg-blue-step" 
+          className={`form-control ${validation ? 'input-bg-blue-step-invalid' : 'input-bg-blue-step'}`}
           type="text" 
           placeholder="Weeks" 
           aria-label="Weeks"
           value={weeks} 
           onChange={onChangeWeeks}
           />
+        {validation && <InputInfomration message={"Weeks can't be zero"} style={{ top: 2 }}/>}
       </MDBFormInline>
       <div className="text-right">
         <MDBBtn className="btn-step mr-3" onClick={() => onClick('previous')}>
           Previous
         </MDBBtn>
-        <MDBBtn className="btn-step" onClick={() => onClick('next')}>
+        <MDBBtn className="btn-step" onClick={!validation ? () => onClick('next') : null}>
           Next
         </MDBBtn>
       </div>
