@@ -26,6 +26,9 @@ class RegisterForm extends View {
       newsletterStatus: false,
       agreeTerms: false
     },
+    creditCard: [
+      '0', '0', '0', '0'
+    ]
   };
 
   componentDidMount() {
@@ -70,11 +73,11 @@ class RegisterForm extends View {
   };
 
   render() {
-    const { basicInformation, coaching, terms } = this.state;
+    const { basicInformation, coaching, terms, creditCard} = this.state;
     return (
       <React.Fragment>
         <StepperInformation
-          values={[ basicInformation, coaching, terms ]}
+          values={[ basicInformation, coaching, terms, creditCard ]}
           onChange={this.handleStepperChange}
           onSubmit={this.handleSubmit} 
           />

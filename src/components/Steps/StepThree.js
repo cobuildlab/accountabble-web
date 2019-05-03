@@ -51,7 +51,7 @@ const StepThree = ({ onClick, onChange = function() {}, value }) => {
           onClick={() => onClick('next')}
           disabled={!terms.agreeTerms && !terms.newsletterStatus}
           >
-          Finish
+          Next
         </MDBBtn>
       </div>
     </React.Fragment>

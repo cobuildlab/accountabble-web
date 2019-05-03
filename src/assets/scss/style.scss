@@ -181,17 +181,19 @@ a:hover {
 //stepper
 .stepper{
   flex-direction: column;
-  height: 45vh;
+  height: 70vh;
 }
-.line-stepper{
+
+.line-stepper {
   width: 5px;
-  height: 40vh;
+  height: 60vh;
   display: inline;
   background-color: #262626;
   position: absolute;
   left: 57px;
   top: 30px;
 }
+
 .circle-active-step{
   background-color: $ac-white;
   height: 90px;

@@ -10,6 +10,7 @@ import StepOne from './Steps/StepOne'
 import StepTwo from './Steps/StepTwo'
 import StepThree from './Steps/StepThree'
 import '../assets/scss/style.scss'
+import StepFour from "./Steps/StepFour";
 
 
 const StepperInformation = ({ onChange, onSubmit, values }) => {
@@ -70,7 +71,12 @@ const StepperInformation = ({ onChange, onSubmit, values }) => {
               value={getStepperByIndex(values)} 
               onClick={calculateStep} 
               onChange={(state) => onChange('terms', state)} />
-            ]
+            ],
+            <StepFour
+              value={getStepperByIndex(values)}
+              onClick={null}
+              onChange={null}
+            />
             )}
         </MDBCol>
       </MDBRow>

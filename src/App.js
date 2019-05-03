@@ -14,7 +14,7 @@ const routes = [
   { component: Terms, path: '/terms-and-conditions' },
   { component: Plan, path: '/plan' },
   { component: Faq, path: '/faq' },
-  { component: AboutUsView, path: '/about-us' }
+  { component: AboutUsView, path: '/about-us' },
 ];
 
 export default class App extends Component {
