@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Landing from './modules/Landing/landing'
+import Landing from './modules/landing/landing'
 import AboutUsView from './modules/about-us/AboutUSView'
 import Faq from './modules/faq/faq'
 import Plan from './modules/plan/plan'
