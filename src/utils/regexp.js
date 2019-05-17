@@ -52,7 +52,7 @@ export const messageIsRequiredWith = (message, minLength, maxLength) => {
  * @function validateName validates name based on argument.
  * @param {string} name
  */
-export const validateName = (name) => {
+export const validateName = (name) => { 
   const nameExpression = new RegExp(/^[a-z ,.'-]+$/i);
   return nameExpression.test(name);
 };
