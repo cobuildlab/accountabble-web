@@ -10,7 +10,6 @@ import '../assets/scss/style.scss'
 
 
 const StepperPlan = () => {
-
   return (
     <React.Fragment>
       <MDBRow className="mt-4">
@@ -24,7 +23,7 @@ const StepperPlan = () => {
             </div>
 
             <div class="content">
-              <h1 className="text-white title">Coaching</h1>
+              <h1 className="text-white title">Plan</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
             </div>

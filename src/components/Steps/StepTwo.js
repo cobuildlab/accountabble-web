@@ -60,7 +60,7 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
 
   const frequencies = [3, 4, 5];
   return (
-    <React.Fragment>
+    <div className="animated fadeIn">
     <StepTitle message={"Coaching"} />
       <div>
         <h6 className="title mt-2 mb-3">Category</h6>
@@ -115,7 +115,7 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
           Next
         </MDBBtn>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

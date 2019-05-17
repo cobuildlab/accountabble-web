@@ -22,8 +22,8 @@ const StepperInformation = ({ onChange, onSubmit, values }) => {
   const stepsMap = [
     { callback: (booleanProperty) => booleanProperty ? IconUserB : IconUser },
     { callback: (booleanProperty) => booleanProperty ? IconCoachingB : IconCoaching },
+    { callback: (booleanProperty) => booleanProperty ? IconCreditCardB : IconCreditCard, className: 'pt-2' },
     { callback: (booleanProperty) => booleanProperty ? IconCheckB : IconCheck },
-    { callback: (booleanProperty) => booleanProperty ? IconCreditCardB : IconCreditCard, className: 'pt-2' }
   ];
 
   /**

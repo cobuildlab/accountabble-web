@@ -11,13 +11,14 @@ import '../../assets/scss/style.scss';
 import Navbar from '../../components/Navbar';
 import FooterComponent from '../../components/FooterComponent';
 import FrequentQuestion from '../../components/FrequentQuestion';
+import RouteChangeContainer from '../../components/RouteChangeContainer';
 
 
 
 
 const FaqView = (props) => {
-  return(
-    <React.Fragment>
+  return (
+    <RouteChangeContainer>
       <Navbar/>
       <MDBView className="about-bg-half-two" src={ BgHeader }>
         <MDBMask className="d-flex justify-content-center align-items-center">
@@ -81,7 +82,7 @@ const FaqView = (props) => {
         </div>
         <FooterComponent/>
       </main>
-    </React.Fragment>
+    </RouteChangeContainer>
   );
 }
 export default FaqView;

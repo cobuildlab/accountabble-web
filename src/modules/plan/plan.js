@@ -2,22 +2,16 @@ import React, { Component } from 'react';
 import { MDBRow, MDBContainer, MDBCol} from 'mdbreact'
 import { Link } from 'react-router-dom'
 
-import {Icon} from 'react-icons-kit'
-import {thinLeft} from 'react-icons-kit/entypo/thinLeft'
-import '../../assets/scss/style.scss';
+import {Icon} from 'react-icons-kit';
+import {thinLeft} from 'react-icons-kit/entypo/thinLeft';
 import Navbar from '../../components/Navbar';
-import FooterComponent from '../../components/FooterComponent'
-import StepperPlan from '../../components/steppers-plan'
+import FooterComponent from '../../components/FooterComponent';
+import StepperPlan from '../../components/StepperPlan';
+import '../../assets/scss/style.scss';
 
-
-
-
-class Plan extends Component {
-  
-  render(){
-    return(
-    <>
-      {/* navbar component */}
+const Plan = ({}) => {
+  return(
+    <React.Fragment>
       <Navbar/>
         <div className="secction-view">
           <MDBContainer>
@@ -31,15 +25,13 @@ class Plan extends Component {
                 </span>
                   Plan
                 </h1>
-                <StepperPlan/>
+                <StepperPlan />
               </MDBCol>
             </MDBRow>
           </MDBContainer>
         </div>
-        <FooterComponent/>
-    </>
-    );
-  }
-
+      <FooterComponent/>
+    </React.Fragment>
+  );
 }
 export default Plan;

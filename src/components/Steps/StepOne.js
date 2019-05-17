@@ -41,7 +41,7 @@ const StepOne = ({ onClick, onChange, value }) => {
 
   const shouldStepIf = ((!errors.name && !errors.email) && (state.name !== '' && state.email !== ''));
   return (
-    <React.Fragment>
+    <div className="animated fadeIn">
       <StepTitle message={"Basic Information"} />
       <MDBInput 
         className={validInputExpressionName((validateName(state.name) || isEmpty(state.name)))}
@@ -65,7 +65,7 @@ const StepOne = ({ onClick, onChange, value }) => {
           Next
         </MDBBtn>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

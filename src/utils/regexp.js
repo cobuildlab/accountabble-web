@@ -53,7 +53,7 @@ export const messageIsRequiredWith = (message, minLength, maxLength) => {
  * @param {string} name
  */
 export const validateName = (name) => {
-  const nameExpression = new RegExp(/^[a-zA-Z]+$/);
+  const nameExpression = new RegExp(/^[a-z ,.'-]+$/i);
   return nameExpression.test(name);
 };
 
