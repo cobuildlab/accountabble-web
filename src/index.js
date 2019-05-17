@@ -12,6 +12,7 @@ import firebase from 'firebase';
 import { firebaseConfig } from './config/firebase';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
+import 'animate.css';
 
 firebase.initializeApp(firebaseConfig);
 

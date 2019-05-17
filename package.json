@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animate.css": "^3.7.0",
     "bootstrap": "^4.3.1",
     "firebase": "^5.11.0",
     "flux-state": "^4.1.0",
