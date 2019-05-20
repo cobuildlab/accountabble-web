@@ -14,6 +14,8 @@ import StepThree from './Steps/StepThree'
 import '../assets/scss/style.scss'
 import StepFour from "./Steps/StepFour";
 import StepContainer from './Steps/StepContainer';
+import { changeStepAction } from "./stepper-actions";
+import { stepsInformation } from '../stores/stepper-store';
 
 
 const StepperInformation = ({ onChange, onSubmit, values }) => {
@@ -36,10 +38,14 @@ const StepperInformation = ({ onChange, onSubmit, values }) => {
    */
   function calculateStep (stateFromStep) {
     switch(stateFromStep) {
-      case 'next': step < maxSteps ? setStep(state => state + 1) : onSubmit();
-      break;
-      case 'previous': setStep(state => state - 1);
-      break;
+      case 'next': {
+        changeStepAction(stepsInformation.find((stepInformation, index) => (index + 1) === step + 1));
+        return step < maxSteps ? setStep(state => state + 1) : onSubmit();
+      }
+      case 'previous': {
+        changeStepAction(stepsInformation.find((stepInformation, index) => (index + 1) === step - 1));
+        return setStep(state => state - 1);
+      }
       default: return;
     }
   }

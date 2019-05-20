@@ -9,7 +9,7 @@ import FooterComponent from '../../components/FooterComponent';
 import StepperPlan from '../../components/StepperPlan';
 import '../../assets/scss/style.scss';
 
-const Plan = ({}) => {
+const Plan = () => {
   return(
     <React.Fragment>
       <Navbar/>
