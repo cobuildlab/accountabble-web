@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const H1 = () => (
-  <h1 class="display-2 mb-0 pt-md-5 pt-5 primary-text font-weight-bold text-uppercase d-none d-sm-block">
+  <h1 className="display-2 mb-0 pt-md-5 pt-5 primary-text font-weight-bold text-uppercase d-none d-sm-block">
     <span>ABOUT</span> 
     <span className="white-text font-weight-light">US</span>
   </h1>

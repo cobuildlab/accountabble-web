@@ -25,7 +25,7 @@ const FaqView = (props) => {
           <MDBContainer>
             <MDBRow>
               <MDBCol md="12" className="mb-4 white-text text-center">
-                <h1 class="display-3 mb-0 pt-md-5 pt-5 font-weight-bold white-text"><span>Frequent</span> <span className="primary-text font-weight-light">Question</span></h1>
+                <h1 className="display-3 mb-0 pt-md-5 pt-5 font-weight-bold white-text"><span>Frequent</span> <span className="primary-text font-weight-light">Question</span></h1>
               </MDBCol>
             </MDBRow>
           </MDBContainer>

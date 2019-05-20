@@ -21,6 +21,8 @@ import Navbar from '../../components/Navbar';
 import RouteChangeContainer from '../../components/RouteChangeContainer';
 import View from 'react-flux-state';
 import stepperStore, { ON_CHANGE_STEP, stepsInformation } from '../../stores/stepper-store';
+import blogStore, { GET_BLOGS, ERROR_BLOGS } from '../blogs/blog-store';
+import { getBlogsAction } from '../blogs/blog-actions';
 
 class LandingView extends View {
   constructor(props) {
@@ -42,6 +44,16 @@ class LandingView extends View {
         }
       });
     });
+
+    this.subscribe(blogStore, GET_BLOGS, (state) => {
+      console.log(state);
+    });
+
+    this.subscribe(blogStore, ERROR_BLOGS, (err) => {
+      console.log(err);
+    });
+
+    getBlogsAction();
   };
 
 

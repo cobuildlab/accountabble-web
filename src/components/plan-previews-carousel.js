@@ -25,7 +25,7 @@ const PlanPreviesCarousel = () => {
             <MDBCarouselItem itemId="1">
               <MDBView>
                 <MDBCol sm="12" className="text-center">
-                  <div class="d-flex d-flex justify-content-center">
+                  <div className="d-flex d-flex justify-content-center">
                     <div className="section-plan-circle">
                       <img src={ CoachingIcon } alt=""/>
                     </div>
@@ -42,7 +42,7 @@ const PlanPreviesCarousel = () => {
             <MDBCarouselItem itemId="2">
               <MDBView>
                 <MDBCol sm="12" className="text-center">
-                  <div class="d-flex d-flex justify-content-center">
+                  <div className="d-flex d-flex justify-content-center">
                     <div className="section-plan-circle">
                       <img src={ ActivitiesIcon } alt=""/>
                     </div>
@@ -59,7 +59,7 @@ const PlanPreviesCarousel = () => {
             <MDBCarouselItem itemId="3">
               <MDBView>
                 <MDBCol sm="12" className="text-center">
-                  <div class="d-flex d-flex justify-content-center">
+                  <div className="d-flex d-flex justify-content-center">
                     <div className="section-plan-circle">
                       <img src={ ContentIcon } alt=""/>
                     </div>

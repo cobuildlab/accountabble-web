@@ -9,7 +9,7 @@ const PlanPreview = () => {
   return (
     <React.Fragment>
       <MDBCol md="12" className="text-center section-preview">
-        <div class="d-flex d-flex justify-content-between">
+        <div className="d-flex d-flex justify-content-between">
           <div className="section-plan-circle">
             <img src={ CoachingIcon } alt=""/>
           </div>
@@ -26,7 +26,7 @@ const PlanPreview = () => {
         </div>
       </MDBCol>
       <MDBCol md="12" className="text-center">
-        <div class="d-flex d-flex justify-content-between">
+        <div className="d-flex d-flex justify-content-between">
           <div>
           <h1 className="text-white text-center">Plan</h1>
             <p className="text-white text-center">

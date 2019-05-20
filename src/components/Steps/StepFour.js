@@ -19,7 +19,7 @@ const StepFour = ({ onClick, onChange = function() {}, value }) => {
       <StepTitle message={"Finish"} />
         {/* Material unchecked */}
         <div className="mt-4 mb-5">
-          <label class="pure-material-checkbox">
+          <label className="pure-material-checkbox">
           <input 
             type="checkbox"
             name="agreeTerms"
@@ -32,7 +32,7 @@ const StepFour = ({ onClick, onChange = function() {}, value }) => {
             </Link>
           </span>
         </label>
-        <label class="pure-material-checkbox">
+        <label className="pure-material-checkbox">
           <input 
             type="checkbox" 
             name="newsletterStatus" 
