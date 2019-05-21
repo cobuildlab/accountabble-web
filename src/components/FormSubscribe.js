@@ -1,6 +1,6 @@
 import React from "react";
-import '../assets/scss/style.scss'
 import { MDBFormInline, MDBBtn } from 'mdbreact'
+import '../assets/scss/style.scss'
 
 const FormSubscribe = () => {
   return (

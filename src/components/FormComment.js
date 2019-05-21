@@ -1,7 +1,5 @@
 import React from "react";
 import '../assets/scss/style.scss';
-
-//MDB
 import { MDBInput, MDBBtn } from "mdbreact";
 
 const FormComment = () => {

@@ -15,6 +15,7 @@ const routes = [
   { component: Plan, path: '/plan' },
   { component: FaqView, path: '/faq' },
   { component: AboutUsView, path: '/about-us' },
+  /** { component: BlogDetailView, path: '/blog-posts/:id } */
 ];
 
 class App extends Component {

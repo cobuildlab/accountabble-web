@@ -2,7 +2,7 @@ import React from 'react';
 import { MDBView, MDBMask, MDBRow, MDBContainer, MDBCol, MDBMedia} from 'mdbreact'
 
 import Navbar from '../../components/Navbar';
-import SectionComment from '../../components/section-comment';
+import SectionComment from '../../components/SectionComment';
 import FooterComponent from '../../components/FooterComponent';
 import { SectionAboutUS, SectionAboutUSDescription, SectionCommentComponent } from '../../components/Sections';
 
@@ -84,7 +84,7 @@ const AboutUSView = () => {
           </MDBContainer>
         </SectionAboutUSDescription>
         <SectionCommentComponent>
-          <SectionComment/>
+          <SectionComment />
         </SectionCommentComponent>
       <FooterComponent/>
     </main>

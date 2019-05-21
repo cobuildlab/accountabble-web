@@ -1,13 +1,7 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from "mdbreact";
-
-//css
+import CardBlogSmall from './CardBlogSmall';
 import '../assets/scss/style.scss';
-
-//component
-import CardBlogSm from '../components/card-blog-sm'
-
-import '../assets/scss/style.scss'
 
 const CardBlogCarousel = () => {
   return (
@@ -22,17 +16,17 @@ const CardBlogCarousel = () => {
           <MDBCarouselInner>
             <MDBCarouselItem itemId="1">
               <MDBView>
-                <CardBlogSm/>
+                <CardBlogSmall />
               </MDBView>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
               <MDBView>
-                <CardBlogSm/>
+                <CardBlogSmall />
               </MDBView>
             </MDBCarouselItem>
             <MDBCarouselItem itemId="3">
               <MDBView>
-                <CardBlogSm/>
+                <CardBlogSmall />
               </MDBView>
             </MDBCarouselItem>
           </MDBCarouselInner>
