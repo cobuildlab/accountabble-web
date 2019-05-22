@@ -152,6 +152,33 @@ class LandingView extends View {
                             ))}
                           </div>
                         )}
+                        {blogItems.length >= 3 && (
+                          <div className='d-flex justify-content-center animated fadeIn'>
+                            {blogItems.filter((_, index) => index < 3).map((blog, index) => {
+                              if(index === 1)
+                                  return (
+                                    <MDBCol md={'6'}>
+                                      <CardBlogLarge
+                                        blogTtile={blog.title} 
+                                        content={blog.content}
+                                        author={blog.author.displayName}
+                                        published={blog.published}
+                                      />  
+                                    </MDBCol>
+                                  );
+                              return (
+                                <MDBCol md={'3'}>
+                                  <CardBlogLarge
+                                    blogTtile={blog.title} 
+                                    content={blog.content}
+                                    author={blog.author.displayName}
+                                    published={blog.published}
+                                  /> 
+                                </MDBCol>
+                              );
+                            })}
+                          </div>
+                        )}
                       </MDBRow>
                     ) : (
                       <div className="d-flex justify-content-center animated fadeIn">

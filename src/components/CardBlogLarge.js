@@ -21,7 +21,6 @@ const CardBlogLarge = ({ blogTtile, content, author, published }) => {
         <MDBCardBody>
           <MDBCardTitle>{blogTtile}</MDBCardTitle>
           <MDBCardText>
-            {text}
           </MDBCardText>
           <MDBCardText>
             <small>author: </small>
