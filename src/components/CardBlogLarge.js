@@ -2,20 +2,37 @@ import React from "react";
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from 'mdbreact';
 import PropTypes from 'prop-types';
 import '../assets/scss/style.scss'
+import { parseStringIntoDOM, getSourceAttribute, getPreviewText } from  '../utils/parser';
+import $ from 'cheerio';
 
+const CardBlogLarge = ({ blogTtile, content, author, published }) => {
+  console.log(content);
+  const div = parseStringIntoDOM(content).html('div');
+  const text = getPreviewText('div', div);
+  const anchor  = parseStringIntoDOM(content).html('a');
+  const src = getSourceAttribute('a', anchor);
 
-const CardBlogLarge = ({ blogTtile }) => {
+  function getImageOrDefault() {
+    return src === null ? "https://mdbootstrap.com/img/Photos/Others/images/43.jpg" : src;
+  };
   return (
     <React.Fragment>
       <MDBCard className="section-blog-card mb-4">
-      <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+      <MDBCardImage className="img-fluid" src={getImageOrDefault()} waves />
         <MDBCardBody>
           <MDBCardTitle>{blogTtile}</MDBCardTitle>
           <MDBCardText>
-            Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.
+            {text}
           </MDBCardText>
           <MDBCardText>
-            Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.
+            <small>author: </small>
+            <small className="white-text">
+              {author}
+            </small><br />
+            <small>published: </small>
+            <small className="white-text">
+              {new Date(published).toDateString()}
+            </small>
           </MDBCardText>
           <MDBBtn href="#" className="section-blog-btn-blue">Read this post</MDBBtn>
         </MDBCardBody>

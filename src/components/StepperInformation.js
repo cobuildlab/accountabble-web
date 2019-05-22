@@ -18,7 +18,7 @@ import { changeStepAction } from "./stepper-actions";
 import { stepsInformation } from '../stores/stepper-store';
 
 
-const StepperInformation = ({ onChange, onSubmit, values }) => {
+const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
   const maxSteps = 4;
   const [step, setStep] = React.useState(1);
   const stepsMap = [
@@ -92,6 +92,7 @@ const StepperInformation = ({ onChange, onSubmit, values }) => {
               value={getStepperByIndex(values)}
               onClick={calculateStep}
               onChange={(state) => onChange('creditCard', state)}
+              loadingForm={loadingStepper}
             />
             ],
             )}

@@ -5,13 +5,13 @@ import LandingView from './modules/landing/LandingView';
 import AboutUsView from './modules/about-us/AboutUSView';
 import FaqView from './modules/faq/FaqView';
 import Plan from './modules/plan/Plan';
-import Terms from './modules/terms/terms';
+import TermsView from './modules/terms/TermsView';
 import SucessView from './modules/register/SucessView';
 
 const routes = [
   { component: LandingView, path: '/' },
   { component: SucessView, path: '/success' },
-  { component: Terms, path: '/terms-and-conditions' },
+  { component: TermsView, path: '/terms-and-conditions' },
   { component: Plan, path: '/plan' },
   { component: FaqView, path: '/faq' },
   { component: AboutUsView, path: '/about-us' },

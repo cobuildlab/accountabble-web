@@ -5,43 +5,47 @@ import registerStore, { REGISTER_EVENT, REGISTER_ERROR } from './register-store'
 import { registerAction } from './register-action';
 
 class RegisterForm extends View {
-  state = {
-    basicInformation: {
-      email: '',
-      name: ''
-    },
-    coaching: {
-      category: '',
-      frequency: 3,
-      categories: [
-        { name: 'Meditation', selected: true },
-        { name: 'Sleep Exercise', selected: false },
-        { name: 'Write/Read', selected: false },
-        { name: 'Diet/Eat', selected: false },
-        { name: 'Healthy', selected: false }
-      ],
-      weeks: '1'
-    },
-    terms: {
-      newsletterStatus: false,
-      agreeTerms: false
-    },
-    creditCard: {
-      owner: '',
-      cvv: '',
-      cardNumber: '',
-      expirationDate: {
-        month: '',
-        year: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: false,
+      basicInformation: {
+        email: '',
+        name: ''
+      },
+      coaching: {
+        category: 'Mediation',
+        frequency: 3,
+        categories: [
+          { name: 'Meditation', selected: true },
+          { name: 'Sleep Exercise', selected: false },
+          { name: 'Write/Read', selected: false },
+          { name: 'Diet/Eat', selected: false },
+          { name: 'Healthy', selected: false }
+        ],
+        weeks: '1'
+      },
+      terms: {
+        newsletterStatus: false,
+        agreeTerms: false
+      },
+      creditCard: {
+        owner: '',
+        cvv: '',
+        cardNumber: '',
+        expirationDate: {
+          month: '',
+          year: ''
+        }
       }
-    }
-  };
+    };
+  }
 
   componentDidMount() {
-    const { properties } = this.props;
+    const { history } = this.props;
     this.subscribe(registerStore, REGISTER_EVENT, () => {
       const { basicInformation: { email, name }, coaching: { category, frequency, weeks}, terms } = this.state;
-      properties.history.push('/success', {
+      history.push('/success', {
         authorized: true,
         message: {
           email,
@@ -67,25 +71,30 @@ class RegisterForm extends View {
 
   handleSubmit = () => {
     const { basicInformation, coaching: { category, frequency, weeks }, terms: { newsletterStatus } } = this.state;
-    registerAction({
-      basicInformation,
-      coaching: {
-        category,
-        frequency,
-        weeks: parseInt(weeks)
-      },
-      newsletterStatus
-    });
+    this.setState({
+      isLoading: true
+    }, () => {
+      registerAction({
+        basicInformation,
+        coaching: {
+          category,
+          frequency,
+          weeks: parseInt(weeks)
+        },
+        newsletterStatus
+      });
+    })  
   };
 
   render() {
-    const { basicInformation, coaching, terms, creditCard} = this.state;
+    const { basicInformation, coaching, terms, creditCard, isLoading } = this.state;
     return (
       <React.Fragment>
         <StepperInformation
           values={[ basicInformation, coaching, terms, creditCard ]}
           onChange={this.handleStepperChange}
-          onSubmit={this.handleSubmit} 
+          onSubmit={this.handleSubmit}
+          loadingStepper={isLoading}
           />
       </React.Fragment>
     );

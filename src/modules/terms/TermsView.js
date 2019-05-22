@@ -17,8 +17,7 @@ import FooterComponent from '../../components/FooterComponent'
 
 
 
-class Terms extends Component {
-  
+class TermsView extends Component {
   render(){
     return(
     <>
@@ -55,4 +54,4 @@ class Terms extends Component {
   }
 
 }
-export default Terms;
+export default TermsView;

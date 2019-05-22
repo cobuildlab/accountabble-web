@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import {
   MDBRow, 
   MDBCol,   
@@ -8,7 +7,6 @@ import {
 } from "mdbreact";
 
 import BgHeader from '../../assets/img/bg/background-home-web.png';
-import FormSubscribe from '../../components/FormSubscribe'
 import CardBlogSmall from '../../components/CardBlogSmall';
 import CardBlogLarge from '../../components/CardBlogLarge';
 import SectionComment from '../../components/SectionComment';
@@ -36,18 +34,20 @@ class LandingView extends View {
       blogs: {},
       blogItems: [],
       loading: true,
-      updatedView: false
+      updatedView: false,
+      errorView: false
     };
   }
 
   componentDidMount() {
     this.subscribe(stepperStore, ON_CHANGE_STEP, (currentStepInformation) => {
-      this.setState({
-        currentStepInformation: {
-          title: currentStepInformation.title,
-          description: currentStepInformation.description
-        }
-      });
+      if(currentStepInformation !== undefined)
+        this.setState({
+          currentStepInformation: {
+            title: currentStepInformation.title,
+            description: currentStepInformation.description
+          }
+        });
     });
 
     this.subscribe(blogStore, GET_BLOGS, (blogs) => {
@@ -67,7 +67,10 @@ class LandingView extends View {
     });
 
     this.subscribe(blogStore, ERROR_BLOGS, (err) => {
-      console.log(err);
+      this.setState({
+        errorView: true,
+        loading: false
+      })
     });
 
     getBlogsAction();
@@ -75,7 +78,7 @@ class LandingView extends View {
 
 
   render() {
-    const { currentStepInformation: { title, description }, loading, blogItems } = this.state;
+    const { currentStepInformation: { title, description }, loading, errorView, blogItems } = this.state;
     return (
       <RouteChangeContainer>
         <Navbar/>
@@ -109,7 +112,7 @@ class LandingView extends View {
                     </p>
                   </MDBCol>
                   <MDBCol md="6">
-                    <RegisterForm />
+                    <RegisterForm history={this.props.history}/>
                   </MDBCol>
                 </MDBRow>
               </MDBContainer>
@@ -124,24 +127,40 @@ class LandingView extends View {
                   {loading ? (
                     <BlogSpinner status={loading} />
                   ) : (
-                    <MDBRow className="PB-5">
-                      {blogItems.length === 1 && (
-                        <div className="d-flex justify-content-center animated fadeIn ">
-                          <MDBCol md={"6"}>
-                            <CardBlogLarge blogTtile={blogItems[0].title} />
-                          </MDBCol>
-                        </div>
-                      )}
-                      {blogItems.length === 2 && (
-                         <div className="d-flex justify-content-center animated fadeIn">
-                          {blogItems.map((blog, index) => (
-                            <MDBCol md={"6"} key={index}>
-                              <CardBlogLarge blogTtile={blog.title} />
+                    !errorView ? (
+                      <MDBRow className="PB-5">
+                        {blogItems.length === 1 && (
+                          <div className="d-flex justify-content-center animated fadeIn ">
+                            <MDBCol md={"6"}>
+                              <CardBlogLarge 
+                                blogTtile={blogItems[0].title}
+                                content={blogItems[0].content} 
+                                />
                             </MDBCol>
-                          ))}
-                        </div>
-                      )}
-                    </MDBRow>
+                          </div>
+                        )}
+                        {blogItems.length === 2 && (
+                          <div className="d-flex justify-content-center animated fadeIn">
+                            {blogItems.map((blog, index) => (
+                              <MDBCol md={"6"} key={index}>
+                                <CardBlogLarge 
+                                  blogTtile={blog.title} 
+                                  content={blog.content}
+                                  author={blog.author.displayName}
+                                  published={blog.published}
+                                  />
+                              </MDBCol>
+                            ))}
+                          </div>
+                        )}
+                      </MDBRow>
+                    ) : (
+                      <div className="d-flex justify-content-center animated fadeIn">
+                        <h5 className="title-blog text-white text-center mb-5">
+                          Something went wrong..
+                        </h5>
+                      </div>
+                    )
                   )}
                   {/* <MDBCol md="3">
                       <CardBlogSmall />

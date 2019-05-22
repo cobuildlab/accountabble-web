@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import { MDBBtn } from "mdbreact";
 import '../../assets/scss/style.scss';
 import StepTitle from "./StepTitle";
+import RegisterSpinner from "../../modules/register/components/RegisterSpinner";
 
-const StepFour = ({ onClick, onChange = function() {}, value }) => {
+const StepFour = ({ onClick, onChange = function() {}, value, loadingForm }) => {
   const [terms, setTerms] = React.useState({ newsletterStatus: value.newsletterStatus, agreeTerms: value.agreeTerms });
 
   const onSetTerms = ({ target: { name }}) => {
@@ -53,6 +54,9 @@ const StepFour = ({ onClick, onChange = function() {}, value }) => {
           >
           Next
         </MDBBtn>
+        <div className="mt-3">
+          <RegisterSpinner status={loadingForm} />
+        </div>
       </div>
     </div>
   );

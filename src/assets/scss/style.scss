@@ -113,17 +113,19 @@ a:hover {
 
 .section-plan-circle{
   background-color: $ac-primary;
-  padding: 40px;
-  border: 10px solid $ac-dark;
-  border-radius: 100%;
-  margin: 50px 0px;
-  z-index: 99;
+    width: 170px;
+    height: 170px;
+    padding: 40px;
+    border: 10px solid $ac-dark;
+    border-radius: 100%;
+    margin: 50px 0px;
+    z-index: 99;
 }
 .secction-plan-divider{
   width: 75%;
   left: 150px;
   height: 4px;
-  background: #5ECAEE;
+  background: $ac-primary;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -131,7 +133,7 @@ a:hover {
   top: 50%;
 }
 .section-preview{
-  padding: 0px 80px;
+  padding: 0px 105px;
 }
 .text-spacing-plan{
   margin: 0px 10%;
@@ -668,6 +670,11 @@ visibility: visible;
 }
 
 .view {
+  height: 43.4vh;
+  background-color: $ac-dark;
+}
+
+.view-success {
   height: 92.4vh;
   background-color: $ac-dark;
 }
@@ -711,4 +718,7 @@ visibility: visible;
   bottom: 26px;
   left: 0px;
   color: #ff3547;
+}
+.blue-text {
+  color: #5ECAEE;
 }

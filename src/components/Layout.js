@@ -6,7 +6,7 @@ const Layout = ({ children, transition }) => {
   return (
     <React.Fragment>
       <Navbar />
-        <div className={`view d-flex justify-content-center align-items-center ${transition ? 'fade-in' : ''}`}>
+        <div className={`view-success d-flex justify-content-center align-items-center ${transition ? 'fade-in' : ''}`}>
           {children}
         </div>
       <FooterComponent />

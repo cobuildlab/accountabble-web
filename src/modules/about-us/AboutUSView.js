@@ -1,11 +1,9 @@
 import React from 'react';
 import { MDBView, MDBMask, MDBRow, MDBContainer, MDBCol, MDBMedia} from 'mdbreact'
-
 import Navbar from '../../components/Navbar';
 import SectionComment from '../../components/SectionComment';
 import FooterComponent from '../../components/FooterComponent';
 import { SectionAboutUS, SectionAboutUSDescription, SectionCommentComponent } from '../../components/Sections';
-
 import BgHeader from '../../assets/img/bg/background-AboutUS.png';
 import IsoIcon from '../../assets/img/bg/accountabble-r.png';
 import People1 from '../../assets/img/bg/people1.jpg';
@@ -13,11 +11,12 @@ import People2 from '../../assets/img/bg/people2.jpg';
 import PeopleH from '../../assets/img/bg/people-h.png'
 import Quotes from '../../assets/img/bg/quotes.png';
 import '../../assets/scss/style.scss';
+import RouteChangeContainer from '../../components/RouteChangeContainer';
 
 
 const AboutUSView = () => {
   return (
-    <React.Fragment>
+    <RouteChangeContainer>
       <Navbar/>
       <MDBView className="about-bg-half" src={ BgHeader } fixed>
         <MDBMask className="d-flex justify-content-center align-items-center">
@@ -32,8 +31,10 @@ const AboutUSView = () => {
                   <span>ABOUT</span> 
                   <span className="white-text font-weight-light"> US </span>
                 </h1>
-                <h2 className="pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text text-left">"
-                  <span className="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque."
+                <h2 className="pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text text-left">
+                  <span className="font-weight-bold">
+                    We are a personal accountability platform that helps you become your best self. At Accountabble, beginners, coaches, friends, partners, seasoned self-development actors, and anyone who is on the path of growth meet and help each other reach their goals.
+                  </span>
                 </h2>
               </MDBCol>
             </MDBRow>
@@ -88,7 +89,7 @@ const AboutUSView = () => {
         </SectionCommentComponent>
       <FooterComponent/>
     </main>
-  </React.Fragment>
+  </RouteChangeContainer>
   );
 };
 
