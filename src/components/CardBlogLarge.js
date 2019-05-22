@@ -6,7 +6,6 @@ import { parseStringIntoDOM, getSourceAttribute, getPreviewText } from  '../util
 import $ from 'cheerio';
 
 const CardBlogLarge = ({ blogTtile, content, author, published }) => {
-  console.log(content);
   const div = parseStringIntoDOM(content).html('div');
   const text = getPreviewText('div', div);
   const anchor  = parseStringIntoDOM(content).html('a');

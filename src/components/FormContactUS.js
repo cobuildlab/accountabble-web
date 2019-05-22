@@ -47,7 +47,7 @@ class FormContactUS extends View {
       <React.Fragment>
         <MDBInput
           type="text" 
-          className={classNames.name}
+          className={classNames.name.input}
           name="name" 
           label="Name" 
           onChange={this.onChange}
@@ -55,7 +55,7 @@ class FormContactUS extends View {
         />
         <MDBInput 
           type="email"
-          className={classNames.email}
+          className={classNames.email.input}
           label="Email"
           onChange={this.onChange}
           name="email"
@@ -63,7 +63,7 @@ class FormContactUS extends View {
         />
         <MDBInput
           type="text" 
-          className={classNames.comment}
+          className={classNames.comment.input}
           label="Comment"
           name="comment"
           onChange={this.onChange} 

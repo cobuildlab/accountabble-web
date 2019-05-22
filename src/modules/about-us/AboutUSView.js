@@ -23,11 +23,11 @@ const AboutUSView = () => {
           <MDBContainer>
             <MDBRow>
               <MDBCol md="12" className="mb-4 white-text text-center">
-                <h1 class="display-2 mb-0 pt-md-5 pt-5 primary-text font-weight-bold text-uppercase d-none d-sm-block">
+                <h1 className="display-2 mb-0 pt-md-5 pt-5 primary-text font-weight-bold text-uppercase d-none d-sm-block">
                   <span> ABOUT </span> 
                   <span className="white-text font-weight-light"> US </span>
                 </h1>
-                <h1 class="display-4 mb-0 pt-md-5 pt-5 mt-5 primary-text font-weight-bold text-uppercase d-block d-sm-none">
+                <h1 className="display-4 mb-0 pt-md-5 pt-5 mt-5 primary-text font-weight-bold text-uppercase d-block d-sm-none">
                   <span>ABOUT</span> 
                   <span className="white-text font-weight-light"> US </span>
                 </h1>
@@ -51,7 +51,7 @@ const AboutUSView = () => {
                     <img src={IsoIcon} alt="Accoutabble" className="img-fluid" />
                   </MDBMedia>
                   <MDBMedia body>
-                    <h1 className="title text-white mb-4" heading>
+                    <h1 className="title text-white mb-4" heading={true.toString()}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </h1>
                     <p>Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam. Sed imperdiet libero magna, eget vulputate lacus iaculis et. Curabitur et nunc risus. </p>

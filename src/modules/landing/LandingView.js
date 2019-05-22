@@ -52,7 +52,6 @@ class LandingView extends View {
 
     this.subscribe(blogStore, GET_BLOGS, (blogs) => {
       const { items } = blogs;
-      console.log(items);
       const postsByDate = [...items].sort((a, b) => {
         const dateA = new Date(a.published);
         const dateB = new Date(b.published);
