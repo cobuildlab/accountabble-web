@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LandingView from './modules/landing/LandingView';
 import AboutUsView from './modules/about-us/AboutUSView';
 import FaqView from './modules/faq/FaqView';
-import Plan from './modules/plan/Plan-2';
+import Plan from './modules/plan/Plan';
 import TermsView from './modules/terms/TermsView';
 import SucessView from './modules/register/SucessView';
 
