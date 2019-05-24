@@ -20,7 +20,7 @@ import { stepsInformation } from '../stores/stepper-store';
 
 const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
   const maxSteps = 4;
-  const [step, setStep] = React.useState(1);
+  const [step, setStep] = React.useState(2);
   const stepsMap = [
     { callback: (booleanProperty) => booleanProperty ? IconUserB : IconUser },
     { callback: (booleanProperty) => booleanProperty ? IconCoachingB : IconCoaching },

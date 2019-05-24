@@ -106,7 +106,7 @@ class LandingView extends View {
                       {title}
                     </h1>
                     <br/>
-                    <p className="animated fadeIn">
+                    <p className="animated fadeIn text-form">
                       {description}
                     </p>
                   </MDBCol>

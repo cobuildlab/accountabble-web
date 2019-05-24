@@ -17,11 +17,11 @@ class RegisterForm extends View {
         category: 'Mediation',
         frequency: 3,
         categories: [
-          { name: 'Meditation', selected: true },
-          { name: 'Sleep Exercise', selected: false },
-          { name: 'Write/Read', selected: false },
-          { name: 'Diet/Eat', selected: false },
-          { name: 'Healthy', selected: false }
+          { name: 'Sleep Better', selected: true },
+          { name: 'Mediate Regularly', selected: false },
+          { name: 'Exercise Regularly', selected: false },
+          { name: 'Eat Healthier', selected: false },
+          { name: 'Read/Write More', selected: false }
         ],
         weeks: '1'
       },

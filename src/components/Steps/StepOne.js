@@ -59,7 +59,7 @@ const StepOne = ({ onClick, onChange, value }) => {
       {errors.email && <InputInfomration message={'Email should be valid'} />}
       <div className="text-right">
         <MDBBtn 
-          className="section-comment-btn-dark" 
+          className="section-comment-btn-dark btn-form" 
           onClick={shouldStepIf ? onStepChange : null} 
           >
           Next

@@ -238,7 +238,7 @@ a:hover {
   background-color: #5ECAEE !important;
   color: #262626;
   border: 2px solid #262626;
-  font-size: 11px;
+  font-size: 10px;
   height: 35px;
   text-transform: capitalize;
   border-radius: 100px;
@@ -720,5 +720,54 @@ visibility: visible;
   color: #ff3547;
 }
 .blue-text {
-  color: #5ECAEE;
+  color: #5ECAEE !important;
+}
+
+.text-form {
+  font-size: 18px;
+}
+
+.react-datepicker__month-container {
+  background-color: $ac-dark;
+}
+
+.react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+  color: #33b5e5 !important;
+}
+
+.react-datepicker__header {
+  text-align: center;
+  background-color: $ac-dark;
+  border-bottom: 1px solid #747575;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  padding-top: 8px;
+  position: relative;
+}
+
+.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+  margin-top: 0;
+  color: #33b5e5 !important;
+  font-weight: lighter !important;
+  font-size: 1rem;
+}
+
+.react-datepicker__navigation--next {
+  right: 10px;
+  border-left-color: #33b5e5;
+}
+
+.react-datepicker__navigation--previous {
+  left: 10px;
+  border-right-color: #33b5e5 !important;
+}
+
+.social {
+  position: relative;
+  bottom: 3px;
+}
+
+.btn-form {
+  position: relative;
+  top: 240px;
 }

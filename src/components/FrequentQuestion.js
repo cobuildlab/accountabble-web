@@ -5,7 +5,7 @@ import { Icon } from 'react-icons-kit';
 import PropTypes from 'prop-types';
 
 const FrequentQuestion = ({ question, answer }) => {
-  const [collapse, setCollapse] = React.useState('');
+  const [collapse, setCollapse] = React.useState('collapse');
 
   function toggleCollapse(collapseID) {
     setCollapse(prevState => prevState === '' ? collapseID : '');
@@ -18,7 +18,7 @@ const FrequentQuestion = ({ question, answer }) => {
       </MDBBtn>
       <MDBCollapse id={"collapse"} isOpen={collapse}>
         <MDBCard className="card-collapse">
-          <MDBCardBody className={`animated zoomIn ${collapse === '' && 'zoomOut'}`}>
+          <MDBCardBody className={`animated blue-text zoomIn ${collapse === '' && 'zoomOut'}`}>
             {answer}
           </MDBCardBody>
         </MDBCard>

@@ -10,6 +10,8 @@ MDBCollapse,
 MDBContainer 
 } from "mdbreact";
 import Logo from '../assets/img/accountabble-c.png'
+import Facebook from '../assets/img/facebook-logo.png';
+import Instagram from '../assets/img/instagram.png';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState("");
@@ -53,6 +55,12 @@ const Navbar = () => {
             <div className="divider-vertical-link d-none d-sm-block"/>
             <MDBNavItem>
               <Link className="link-nav" to="/about-us">ABOUT US</Link>
+            </MDBNavItem>
+            <MDBNavItem>
+              <img className={'social'}  src={Facebook} alt="logo" />
+            </MDBNavItem>
+            <MDBNavItem>
+              <img className={'ml-3 social'} src={Instagram} alt="logo" />
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
