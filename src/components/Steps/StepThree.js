@@ -6,10 +6,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import AmexImg from '../../assets/img/amex.png';
 import VisaImg from '../../assets/img/visa.png';
 import MasterCard from '../../assets/img/mastercard.png';
-
+import { Link } from 'react-router-dom';
 
 const StepThree = ({ onClick, onChange, value }) => {
   const [state] = React.useState(value);
+  const [terms, setTerms] = React.useState({ newsletterStatus: value.newsletterStatus, agreeTerms: value.agreeTerms });
 
   function onChangeValue (name, value) {
     onChange({...state, [name]: value });
@@ -20,6 +21,14 @@ const StepThree = ({ onClick, onChange, value }) => {
     const chars = numberValues.filter(char => char.charCodeAt() >= 48 && char.charCodeAt() <= 57);
     onChange({...state, [name]: chars.join('') });
   };
+
+  const onSetTerms = ({ target: { name }}) => {
+    const term = terms[name];
+    const newTerms = {...terms, [name]: !term };
+    setTerms(newTerms);
+    onChange(newTerms);
+  };
+
 
   return (
     <div className="animated fadeIn">
@@ -53,7 +62,33 @@ const StepThree = ({ onClick, onChange, value }) => {
           <h6 className="title mt-4 mb-3">
             Expiration Date
           </h6>
-          <DatePicker className="input-bg-blue" />
+          <DatePicker className="input-bg-blue input-date-picker" />
+        </MDBCol>
+        <MDBCol md="12">
+        <div className="mt-4">
+          <label className="pure-material-checkbox">
+          <input 
+            type="checkbox"
+            name="agreeTerms"
+            onChange={onSetTerms}
+            checked={terms.agreeTerms}
+            />
+          <span>
+            <Link to="/terms-and-conditions" className={'link-step-3'}>
+              I agree to the terms and conditions
+            </Link>
+          </span>
+        </label>
+        <label className="pure-material-checkbox">
+          <input 
+            type="checkbox" 
+            name="newsletterStatus" 
+            onChange={onSetTerms}
+            checked={terms.newsletterStatus}
+            />
+          <span>I want to receive newsletter</span>
+        </label>
+      </div>
         </MDBCol>
         <MDBCol md="12">
           <div className="d-flex justify-content-start mt-3">

@@ -16,15 +16,14 @@ import StepFour from "./Steps/StepFour";
 import StepContainer from './Steps/StepContainer';
 import { changeStepAction } from "./stepper-actions";
 import { stepsInformation } from '../stores/stepper-store';
-
+import { Progress } from 'reactstrap'; 
 
 const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
-  const maxSteps = 4;
+  const maxSteps = 3;
   const [step, setStep] = React.useState(2);
   const stepsMap = [
     { callback: (booleanProperty) => booleanProperty ? IconUserB : IconUser },
     { callback: (booleanProperty) => booleanProperty ? IconCoachingB : IconCoaching },
-    { callback: (booleanProperty) => booleanProperty ? IconCreditCardB : IconCreditCard, className: 'pt-2' },
     { callback: (booleanProperty) => booleanProperty ? IconCheckB : IconCheck },
   ];
 
@@ -55,7 +54,9 @@ const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
     return steppers[stepper];
   };
 
-
+  function getCurrentProgress (currentStep, maxSteps) {
+    return  Math.ceil((currentStep - 1) / maxSteps * 100);
+  }
   return (
     <React.Fragment>
       <MDBRow>
@@ -73,6 +74,13 @@ const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
           </StepContainer>
         </MDBCol>
         <MDBCol md="10" className="pl-5 pr-5">
+          <div className={'text-center'}>
+            <small className="text-white font-weight-bold"> {getCurrentProgress(step, maxSteps)}%</small>
+          </div>
+          <Progress 
+            value={getCurrentProgress(step, maxSteps)}
+            className={'bg-custom-dark'}
+            />
           {getStepperByIndex([
             <StepOne
               value={getStepperByIndex(values)}
@@ -88,12 +96,6 @@ const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
               value={getStepperByIndex(values)} 
               onClick={calculateStep} 
               onChange={(state) => onChange('terms', state)} />,
-            <StepFour
-              value={getStepperByIndex(values)}
-              onClick={calculateStep}
-              onChange={(state) => onChange('creditCard', state)}
-              loadingForm={loadingStepper}
-            />
             ],
             )}
         </MDBCol>

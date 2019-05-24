@@ -87,11 +87,11 @@ class RegisterForm extends View {
   };
 
   render() {
-    const { basicInformation, coaching, terms, creditCard, isLoading } = this.state;
+    const { basicInformation, coaching, terms, isLoading } = this.state;
     return (
       <React.Fragment>
         <StepperInformation
-          values={[ basicInformation, coaching, terms, creditCard ]}
+          values={[ basicInformation, coaching, terms ]}
           onChange={this.handleStepperChange}
           onSubmit={this.handleSubmit}
           loadingStepper={isLoading}

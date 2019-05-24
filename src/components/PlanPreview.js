@@ -34,7 +34,7 @@ const PlanPreview = () => {
             </p>
           </MDBCol>
           <MDBCol>
-            <h1 className="text-white text-center">ACT</h1>
+            <h1 className="text-white text-center">Action</h1>
             <p className="text-white text-center">
               The rules you’re given are comprehensive and based on minimal effort and dosage. They trigger the exact flip in emotions that you need to take actions. As the data shows, action leads to more action. Motivation begets motivation. 
             </p>

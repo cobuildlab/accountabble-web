@@ -83,6 +83,10 @@ a:hover {
   box-shadow: 0 1px 0 0 $ac-dark !important;
 }
 
+.input-date-picker{
+  background-color: transparent;
+  border: none;
+}
 //navbar
 .navbar {
   box-shadow: none !important;
@@ -769,5 +773,17 @@ visibility: visible;
 
 .btn-form {
   position: relative;
-  top: 240px;
+  top: 190px;
+}
+
+.progress-bar {
+  background-color: $ac-dark;
+}
+.progress {
+  display: flex;
+  height: .5rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #fff;
+  border-radius: 1.25rem;
 }
