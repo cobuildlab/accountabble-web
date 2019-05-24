@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
 import {  MDBRow, MDBContainer, MDBCol} from 'mdbreact'
 import { Link } from 'react-router-dom'
-
-import {Icon} from 'react-icons-kit'
-import {thinLeft} from 'react-icons-kit/entypo/thinLeft'
-
-//img
-
-//css
-import '../../assets/scss/style.scss';
-
-//Components
+import { Icon } from 'react-icons-kit'
+import { thinLeft } from 'react-icons-kit/entypo/thinLeft'
 import Navbar from '../../components/Navbar';
 import FooterComponent from '../../components/FooterComponent'
-
-
-
+import '../../assets/scss/style.scss';
+import RouteChangeContainer from '../../components/RouteChangeContainer';
 
 class TermsView extends Component {
   render(){
     return(
-    <>
-      {/* navbar component */}
+    <RouteChangeContainer>
       <Navbar/>
         <div className="secction-view">
           <MDBContainer>
@@ -49,7 +39,7 @@ class TermsView extends Component {
           </MDBContainer>
         </div>
         <FooterComponent/>
-    </>
+    </RouteChangeContainer>
     );
   }
 

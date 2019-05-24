@@ -54,7 +54,11 @@ const Navbar = () => {
             </MDBNavItem>
             <div className="divider-vertical-link d-none d-sm-block"/>
             <MDBNavItem>
-              <Link className="link-nav" to="/about-us">ABOUT US</Link>
+              <Link className="link-nav" to="/about-us">ABOUT</Link>
+            </MDBNavItem>
+            <div className="divider-vertical-link d-none d-sm-block"/>
+            <MDBNavItem>
+              <Link className="link-nav" to="/">CONTACT US</Link>
             </MDBNavItem>
             <MDBNavItem>
               <img className={'social'}  src={Facebook} alt="logo" />

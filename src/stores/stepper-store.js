@@ -24,10 +24,6 @@ export const stepsInformation = [
     description: "As you share your actions with ACCOUNTABBLE by sharing pictures or videos through our platform, one of our coaches will check up on you by looking at those files.",
     stepText: 'The First Step to become your better Self'
   },
-  {
-    title: 'Our Process',
-    description: "ACCOUNTABBLE works by tracking your progress day and day out. We help you to stay on track and consistently do what you chose to do every week. We match you with an accountability partner or coach that will keep track of your tasks based on what you set out."
-  }
 ];
 
 class StepperStore extends Flux.DashStore {
