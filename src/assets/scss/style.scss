@@ -48,17 +48,45 @@ a:hover {
 .input-bg-blue{
   border-bottom: 1px solid $ac-dark !important;
 }
+
+.input-bg-blue-invalid {
+  border-bottom: 2px solid $ac-danger !important;
+}
+
+.input-bg-blue:focus {
+  box-shadow: 0 1px 0 0 #262626 !important;
+}
+
+.input-bg-blue-invalid:focus {
+  box-shadow: 0 0px 0 0 $ac-danger !important;
+}
+
 .input-bg-blue-step{
   border-bottom: 1px solid $ac-dark !important;
   width: 100% !important;
 }
-.input-bg-blue-step:focus{
+
+.input-bg-blue-step-invalid {
+  border-bottom: 1px solid $ac-danger !important;
+  width: 100% !important;
+}
+
+.input-bg-blue-step:focus {
   box-shadow: 0 1px 0 0 $ac-dark !important;
 }
+
+.input-bg-blue-step-invalid:focus {
+  box-shadow: 0 1px 0 0 $ac-danger !important;
+}
+
 .input-bg-blue:focus{
   box-shadow: 0 1px 0 0 $ac-dark !important;
 }
 
+.input-date-picker{
+  background-color: transparent;
+  border: none;
+}
 //navbar
 .navbar {
   box-shadow: none !important;
@@ -89,17 +117,19 @@ a:hover {
 
 .section-plan-circle{
   background-color: $ac-primary;
-  padding: 40px;
-  border: 10px solid $ac-dark;
-  border-radius: 100%;
-  margin: 50px 0px;
-  z-index: 99;
+    width: 170px;
+    height: 170px;
+    padding: 40px;
+    border: 10px solid $ac-dark;
+    border-radius: 100%;
+    margin: 50px 0px;
+    z-index: 99;
 }
 .secction-plan-divider{
   width: 75%;
   left: 150px;
   height: 4px;
-  background: #5ECAEE;
+  background: $ac-primary;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -107,7 +137,7 @@ a:hover {
   top: 50%;
 }
 .section-preview{
-  padding: 0px 80px;
+  padding: 0px 105px;
 }
 .text-spacing-plan{
   margin: 0px 10%;
@@ -157,17 +187,19 @@ a:hover {
 //stepper
 .stepper{
   flex-direction: column;
-  height: 45vh;
+  height: 70vh;
 }
-.line-stepper{
+
+.line-stepper {
   width: 5px;
-  height: 40vh;
+  height: 60vh;
   display: inline;
   background-color: #262626;
   position: absolute;
   left: 57px;
   top: 30px;
 }
+
 .circle-active-step{
   background-color: $ac-white;
   height: 90px;
@@ -210,7 +242,7 @@ a:hover {
   background-color: #5ECAEE !important;
   color: #262626;
   border: 2px solid #262626;
-  font-size: 11px;
+  font-size: 10px;
   height: 35px;
   text-transform: capitalize;
   border-radius: 100px;
@@ -245,14 +277,30 @@ a:hover {
     font-size: 12px;
   }
 }
-.link-step-3{
+.link-step-3 {
   color: $ac-dark;
   text-decoration: underline;
+  transition: ease-in 0.6s;
 }
-.link-step-3:hover{
+
+.link-step-3-invalid { 
+  color: $ac-danger;
+  text-decoration: underline;
+  transition: ease-in 0.6s;
+};
+
+.link-step-3-invalid { 
+  color: $ac-danger;
+  text-decoration: underline;
+  opacity: 0.7;
+  transition: ease-in 0.6s;
+}
+
+.link-step-3:hover {
   color: $ac-dark;
   opacity: 0.7;
   text-decoration: underline;
+  transition: ease-in 0.6s;
 }
 
 @media (max-width: 576px) {
@@ -620,4 +668,122 @@ visibility: visible;
   font-size: 12px;
 }
 
+.active-category {
+  background-color: #262626 !important;
+  color: #fff;
+}
 
+.view {
+  height: 43.4vh;
+  background-color: $ac-dark;
+}
+
+.view-success {
+  height: 92.4vh;
+  background-color: $ac-dark;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:0.30s;
+  -moz-animation-duration:0.30s;
+  animation-duration:0.30s;
+}
+
+.fade-in.one {
+  -webkit-animation-delay: 0.30s;
+  -moz-animation-delay: 0.30s;
+  animation-delay: 0.30s;
+}
+
+.card-component {
+  background-color: $ac-dark;
+  color: $ac-white;
+}
+
+.white-text { 
+  color: $ac-white;
+}
+
+.message-information {
+  position: relative;
+  bottom: 26px;
+  left: 0px;
+  color: #ff3547;
+}
+.blue-text {
+  color: #5ECAEE !important;
+}
+
+.text-form {
+  font-size: 18px;
+}
+
+.react-datepicker__month-container {
+  background-color: $ac-dark;
+}
+
+.react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+  color: #33b5e5 !important;
+}
+
+.react-datepicker__header {
+  text-align: center;
+  background-color: $ac-dark;
+  border-bottom: 1px solid #747575;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  padding-top: 8px;
+  position: relative;
+}
+
+.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+  margin-top: 0;
+  color: #33b5e5 !important;
+  font-weight: lighter !important;
+  font-size: 1rem;
+}
+
+.react-datepicker__navigation--next {
+  right: 10px;
+  border-left-color: #33b5e5;
+}
+
+.react-datepicker__navigation--previous {
+  left: 10px;
+  border-right-color: #33b5e5 !important;
+}
+
+.social {
+  position: relative;
+  bottom: 3px;
+}
+
+.btn-form {
+  position: relative;
+  top: 190px;
+}
+
+.progress-bar {
+  background-color: $ac-dark;
+}
+.progress {
+  display: flex;
+  height: .5rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #fff;
+  border-radius: 1.25rem;
+}

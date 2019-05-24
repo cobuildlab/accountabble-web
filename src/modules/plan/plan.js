@@ -1,31 +1,18 @@
 import React, { Component } from 'react';
-import { MDBView, MDBMask, MDBRow, MDBContainer, MDBCol} from 'mdbreact'
+import { MDBRow, MDBContainer, MDBCol} from 'mdbreact'
 import { Link } from 'react-router-dom'
 
-import {Icon} from 'react-icons-kit'
-import {thinLeft} from 'react-icons-kit/entypo/thinLeft'
-
-//img
-import BgHeader from '../../assets/img/bg/background-faq.png';
-
-//css
+import {Icon} from 'react-icons-kit';
+import {thinLeft} from 'react-icons-kit/entypo/thinLeft';
+import Navbar from '../../components/Navbar';
+import FooterComponent from '../../components/FooterComponent';
+import StepperPlan from '../../components/StepperPlan';
 import '../../assets/scss/style.scss';
 
-//Components
-import NavBar from '../../components/navbar';
-import FooterComponent from '../../components/footer'
-import StepperPlan from '../../components/steppers-plan'
-
-
-
-
-class Plan extends Component {
-  
-  render(){
-    return(
-    <>
-      {/* navbar component */}
-      <NavBar/>
+const Plan = () => {
+  return(
+    <React.Fragment>
+      <Navbar/>
         <div className="secction-view">
           <MDBContainer>
             <MDBRow>
@@ -38,15 +25,13 @@ class Plan extends Component {
                 </span>
                   Plan
                 </h1>
-                <StepperPlan/>
+                <StepperPlan />
               </MDBCol>
             </MDBRow>
           </MDBContainer>
         </div>
-        <FooterComponent/>
-    </>
-    );
-  }
-
+      <FooterComponent/>
+    </React.Fragment>
+  );
 }
 export default Plan;
