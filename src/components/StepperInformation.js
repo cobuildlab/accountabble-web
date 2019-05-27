@@ -20,7 +20,11 @@ import { Progress } from 'reactstrap';
 
 const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
   const maxSteps = 3;
-  const [step, setStep] = React.useState(2);
+  const [step, setStep] = React.useState(1);
+  /**
+   * @typedef {[ callback: function ]} stepsMap
+   * @description Contains all icons, if we're in a current step, the icon will be displayed.
+   */
   const stepsMap = [
     { callback: (booleanProperty) => booleanProperty ? IconUserB : IconUser },
     { callback: (booleanProperty) => booleanProperty ? IconCoachingB : IconCoaching },
@@ -38,11 +42,11 @@ const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
   function calculateStep (stateFromStep) {
     switch(stateFromStep) {
       case 'next': {
-        changeStepAction(stepsInformation.find((stepInformation, index) => (index + 1) === step + 1));
+        changeStepAction(stepsInformation.find((_, index) => (index + 1) === step + 1));
         return step < maxSteps ? setStep(state => state + 1) : onSubmit();
       }
       case 'previous': {
-        changeStepAction(stepsInformation.find((stepInformation, index) => (index + 1) === step - 1));
+        changeStepAction(stepsInformation.find((_, index) => (index + 1) === step - 1));
         return setStep(state => state - 1);
       }
       default: return;
@@ -55,7 +59,7 @@ const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
   };
 
   function getCurrentProgress (currentStep, maxSteps) {
-    return  Math.ceil((currentStep - 1) / maxSteps * 100);
+    return  Math.ceil((currentStep - 1) / maxSteps * 150);
   }
   return (
     <React.Fragment>
