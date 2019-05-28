@@ -46,7 +46,8 @@ class LandingView extends View {
         this.setState({
           currentStepInformation: {
             title: currentStepInformation.title,
-            description: currentStepInformation.description
+            description: currentStepInformation.description,
+            stepText: currentStepInformation.stepText
           }
         });
     });
@@ -121,11 +122,13 @@ class LandingView extends View {
               </MDBContainer>
             </div>
             <div className="section-comment">
-              <SectionComment/>
+              <SectionComment />
             </div>
             <div id="blog" className="section-blog">
               <MDBContainer>
-                <h1 className="title-blog text-white text-center mb-5">Blog</h1>
+                <h1 className="title-blog text-white text-center mb-5">
+                  Blog
+                </h1>
                 <div className="d-none d-sm-block">
                   {loading ? (
                     <BlogSpinner status={loading} />
@@ -133,17 +136,17 @@ class LandingView extends View {
                     !errorView ? (
                       <MDBRow className="PB-5">
                         {blogItems.length === 1 && (
-                          <div className="d-flex justify-content-center animated fadeIn ">
+                          <React.Fragment>
                             <MDBCol md={"6"}>
                               <CardBlogLarge 
                                 blogTtile={blogItems[0].title}
                                 content={blogItems[0].content} 
                                 />
                             </MDBCol>
-                          </div>
+                          </React.Fragment>
                         )}
                         {blogItems.length === 2 && (
-                          <div className="d-flex justify-content-center animated fadeIn">
+                         <React.Fragment>
                             {blogItems.map((blog, index) => (
                               <MDBCol md={"6"} key={index}>
                                 <CardBlogLarge 
@@ -154,10 +157,10 @@ class LandingView extends View {
                                   />
                               </MDBCol>
                             ))}
-                          </div>
+                          </React.Fragment>
                         )}
                         {blogItems.length >= 3 && (
-                          <div className='d-flex justify-content-center animated fadeIn'>
+                          <React.Fragment>
                             {blogItems.filter((_, index) => index < 3).map((blog, index) => {
                               if(index === 1)
                                   return (
@@ -181,7 +184,7 @@ class LandingView extends View {
                                 </MDBCol>
                               );
                             })}
-                          </div>
+                          </React.Fragment>
                         )}
                       </MDBRow>
                     ) : (

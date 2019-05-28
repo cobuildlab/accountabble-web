@@ -12,7 +12,7 @@ export const stepsInformation = [
     title: 'Accountabble Mission',
     description: `We at ACCOUNTABBLE  believe that humans have the capacity to easily develop change and become superheroes. 
     We believe humans have a deep seated potential locked inside the way we live our lives and that we can get access to it if we look for it.`,
-    stepText: 'Accountabble probe that I can reach any goal that I set'
+    stepText: 'Accountabble probe that I can reach any goal that I set.'
   },
   {
     title: 'Your Jorney',
