@@ -1,13 +1,13 @@
 import React from "react";
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText } from 'mdbreact';
 import PropTypes from 'prop-types';
 import '../assets/scss/style.scss'
 import { parseStringIntoDOM, getSourceAttribute, getPreviewText } from  '../utils/parser';
-import $ from 'cheerio';
+import BlogImage from "./BlogImage";
 
 const CardBlogLarge = ({ blogTtile, content, author, published }) => {
   const div = parseStringIntoDOM(content).html('div');
-  const text = getPreviewText('div', div);
+  // const text = getPreviewText('div', div);
   const anchor  = parseStringIntoDOM(content).html('a');
   const src = getSourceAttribute('a', anchor);
 
@@ -17,7 +17,9 @@ const CardBlogLarge = ({ blogTtile, content, author, published }) => {
   return (
     <React.Fragment>
       <MDBCard className="section-blog-card mb-4">
-      <MDBCardImage className="img-fluid" src={getImageOrDefault()} waves />
+        <div className={'animated fadeIn'}>
+          <BlogImage url={getImageOrDefault()} />
+        </div>
         <MDBCardBody>
           <MDBCardTitle>{blogTtile}</MDBCardTitle>
           <MDBCardText>
