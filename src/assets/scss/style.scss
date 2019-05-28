@@ -1,51 +1,62 @@
 @import "colors";
+
 // Your custom styles
 a:hover {
   color: $ac-primary;
   text-decoration: none;
   opacity: 0.7;
 }
-.link-back{
+
+.link-back {
   color: $ac-white;
   padding: 0px 15px;
   font-weight: 400;
 }
-.title{
+
+.title {
   font-weight: 700;
 }
-.footer{
+
+.footer {
   height: 60px;
   padding: 18px;
   text-align: center;
   background-color: $ac-dark;
   color: $ac-primary;
 }
-.secction-view{
+
+.secction-view {
   background-color: $ac-dark;
   padding: 150px 0px;
   height: 100%;
 }
+
 .media .media-left img {
   box-shadow: none !important;
 }
-.primary-text{
+
+.primary-text {
   color: $ac-primary !important;
 }
+
 .navbar.navbar-dark .navbar-toggler-icon {
   background-image: url('../img//menuIcon.png') !important;
   cursor: pointer;
 }
-.input-bg-dark{
+
+.input-bg-dark {
   border-bottom: 1px solid $ac-primary !important;
 }
-.input-bg-dark:focus{
+
+.input-bg-dark:focus {
   box-shadow: 0 1px 0 0 $ac-primary !important;
 }
+
 // .md-form label{
 //   color: $ac-primary !important;
 // }
 
-.input-bg-blue{
+.input-bg-blue {
   border-bottom: 1px solid $ac-dark !important;
 }
 
@@ -61,7 +72,7 @@ a:hover {
   box-shadow: 0 0px 0 0 $ac-danger !important;
 }
 
-.input-bg-blue-step{
+.input-bg-blue-step {
   border-bottom: 1px solid $ac-dark !important;
   width: 100% !important;
 }
@@ -79,25 +90,28 @@ a:hover {
   box-shadow: 0 1px 0 0 $ac-danger !important;
 }
 
-.input-bg-blue:focus{
+.input-bg-blue:focus {
   box-shadow: 0 1px 0 0 $ac-dark !important;
 }
 
-.input-date-picker{
+.input-date-picker {
   background-color: transparent;
   border: none;
 }
+
 //navbar
 .navbar {
   box-shadow: none !important;
   font-weight: 300;
 }
-.link-nav{
+
+.link-nav {
   color: $ac-primary;
   padding: 0px 15px;
   font-weight: 400;
 }
-.divider-vertical-link{
+
+.divider-vertical-link {
   width: 1.5px;
   height: 16px;
   position: relative;
@@ -106,26 +120,28 @@ a:hover {
 }
 
 //Section Plan style
-.title-plan{
+.title-plan {
   font-size: 3.5rem;
   font-weight: 400;
 }
-.secction-plan{
+
+.secction-plan {
   background-color: $ac-dark;
   padding: 30px 0px;
 }
 
-.section-plan-circle{
+.section-plan-circle {
   background-color: $ac-primary;
-    width: 170px;
-    height: 170px;
-    padding: 40px;
-    border: 10px solid $ac-dark;
-    border-radius: 100%;
-    margin: 50px 0px;
-    z-index: 99;
+  width: 170px;
+  height: 170px;
+  padding: 40px;
+  border: 10px solid $ac-dark;
+  border-radius: 100%;
+  margin: 50px 0px;
+  z-index: 99;
 }
-.secction-plan-divider{
+
+.secction-plan-divider {
   width: 75%;
   left: 150px;
   height: 4px;
@@ -136,13 +152,16 @@ a:hover {
   position: absolute;
   top: 50%;
 }
-.section-preview{
+
+.section-preview {
   padding: 0px 105px;
 }
-.text-spacing-plan{
+
+.text-spacing-plan {
   margin: 0px 10%;
 }
-.secction-plan-btn{
+
+.secction-plan-btn {
   border-radius: 100px;
   width: 150px;
   margin: 0;
@@ -153,7 +172,8 @@ a:hover {
   font-weight: 700;
   font-size: 14px;
 }
-.secction-plan-btn:hover{
+
+.secction-plan-btn:hover {
   border-radius: 100px;
   width: 150px;
   margin: 0;
@@ -164,11 +184,13 @@ a:hover {
   font-weight: 700;
   font-size: 14px;
 }
+
 @media (max-width: 991px) {
-  .section-preview{
+  .section-preview {
     padding: 0px 20px;
   }
 }
+
 //Carousel plan mobile
 .carousel-indicators {
   position: relative !important;
@@ -176,16 +198,17 @@ a:hover {
 
 
 // Section Basic Information
-.section-information{
+.section-information {
   background-color: $ac-primary;
   padding: 100px 0px;
 }
+
 // .MuiPaper-root-9 {
 //   background-color: transparent !important;
 // }
 
 //stepper
-.stepper{
+.stepper {
   flex-direction: column;
   height: 70vh;
 }
@@ -200,7 +223,7 @@ a:hover {
   top: 30px;
 }
 
-.circle-active-step{
+.circle-active-step {
   background-color: $ac-white;
   height: 90px;
   width: 90px;
@@ -211,7 +234,8 @@ a:hover {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.circle-active-step-finish{
+
+.circle-active-step-finish {
   background-color: $ac-dark;
   height: 90px;
   width: 90px;
@@ -222,7 +246,8 @@ a:hover {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.circle-step{
+
+.circle-step {
   background-color: $ac-primary;
   height: 90px;
   width: 90px;
@@ -234,11 +259,13 @@ a:hover {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.circle-step:hover{
+
+.circle-step:hover {
   background-color: $ac-white;
   border: 4px solid $ac-white;
 }
-.btn-step-2{
+
+.btn-step-2 {
   background-color: #5ECAEE !important;
   color: #262626;
   border: 2px solid #262626;
@@ -249,7 +276,8 @@ a:hover {
   margin: 0px;
   width: 120px;
 }
-.btn-step{
+
+.btn-step {
   border-radius: 100px;
   width: 150px;
   margin: 0;
@@ -260,12 +288,14 @@ a:hover {
   font-weight: 700;
   font-size: 14px;
 }
+
 @media (max-width: 576px) {
-  .col-xs-btn-step-2{
+  .col-xs-btn-step-2 {
     width: 50%;
     display: inline-block;
   }
-  .btn-step{
+
+  .btn-step {
     border-radius: 100px;
     width: 45%;
     margin: 0;
@@ -277,19 +307,22 @@ a:hover {
     font-size: 12px;
   }
 }
+
 .link-step-3 {
   color: $ac-dark;
   text-decoration: underline;
   transition: ease-in 0.6s;
 }
 
-.link-step-3-invalid { 
+.link-step-3-invalid {
   color: $ac-danger;
   text-decoration: underline;
   transition: ease-in 0.6s;
-};
+}
 
-.link-step-3-invalid { 
+;
+
+.link-step-3-invalid {
   color: $ac-danger;
   text-decoration: underline;
   opacity: 0.7;
@@ -304,11 +337,12 @@ a:hover {
 }
 
 @media (max-width: 576px) {
-  .stepper{
+  .stepper {
     flex-direction: row;
     height: 15vh;
     margin-top: 25px;
   }
+
   .line-stepper {
     width: 40vh;
     height: 5px;
@@ -317,30 +351,35 @@ a:hover {
     position: absolute;
     left: 57px;
     top: 70px;
-}
+  }
 }
 
 //section-comment
-.section-comment{
+.section-comment {
   background-color: $ac-dark;
   padding: 100px 0px;
 }
-.text-comment{
+
+.text-comment {
   color: $ac-primary;
 }
-.section-blog{
+
+.section-blog {
   background-color: $ac-primary;
   padding: 100px 0px;
 }
-.section-comment-form{
+
+.section-comment-form {
   padding-left: 90px;
 }
+
 @media (max-width: 576px) {
-  .section-comment-form{
+  .section-comment-form {
     padding-left: 15px;
   }
 }
-.section-comment-btn-blue{
+
+.section-comment-btn-blue {
   border-radius: 100px;
   width: 150px;
   margin: 0;
@@ -351,7 +390,8 @@ a:hover {
   font-weight: 700;
   font-size: 14px;
 }
-.section-comment-btn-dark{
+
+.section-comment-btn-dark {
   border-radius: 100px;
   width: 150px;
   margin: 0;
@@ -361,17 +401,20 @@ a:hover {
   color: $ac-primary;
   font-weight: 700;
   font-size: 14px;
-  
+
 }
-.section-comment-btn-dark:hover{
+
+.section-comment-btn-dark:hover {
   color: $ac-primary;
 }
+
 //Section Blog
-.section-blog-card{
+.section-blog-card {
   background-color: $ac-dark;
   color: $ac-white !important;
 }
-.section-blog-btn-blue{
+
+.section-blog-btn-blue {
   border-radius: 100px;
   width: 150px;
   margin: 0;
@@ -381,59 +424,69 @@ a:hover {
   font-weight: 700;
   font-size: 12px;
 }
-.title-blog{
+
+.title-blog {
   color: $ac-dark !important;
   font-size: 3.5rem;
   font-weight: 400;
 }
-.title-subscribe-blog{
+
+.title-subscribe-blog {
   color: $ac-dark;
 }
 
 //About Us view
-.about-bg-half{
+.about-bg-half {
   height: 90vh !important;
 }
+
 @media (max-width: 576px) {
-  .about-bg-half{
+  .about-bg-half {
     height: 100vh !important;
   }
-  .media{
+
+  .media {
     flex-direction: column;
   }
+
   .media .media-left img {
     box-shadow: none !important;
     margin-bottom: 55px;
   }
 }
-.section-about-us{
+
+.section-about-us {
   background-color: $ac-dark;
   padding: 100px 0px;
   color: $ac-primary;
 }
-.section-about-description{
+
+.section-about-description {
   background-color: $ac-primary;
   padding: 100px 0px;
   color: $ac-dark;
 }
 
 //FAQ
-.about-bg-half-two{
+.about-bg-half-two {
   height: 50vh !important;
 }
-.section-faq{
+
+.section-faq {
   min-height: 45vh;
   background-color: $ac-primary;
   padding: 80px 0px;
 }
-.btn-collapse{
+
+.btn-collapse {
   background-color: $ac-dark !important;
   color: $ac-primary !important;
   font-size: 22px;
   text-transform: initial;
   border-radius: 10px;
 }
-.card-collapse{
+
+.card-collapse {
   background-color: $ac-dark !important;
   text-align: justify;
   font-weight: 600;
@@ -449,14 +502,14 @@ a:hover {
   z-index: 0;
   position: relative;
   display: inline-block;
-  color: rgba( 0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.87);
   font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
   font-size: 16px;
   line-height: 1.5;
 }
 
 /* Input */
-.pure-material-checkbox > input {
+.pure-material-checkbox>input {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -479,20 +532,21 @@ a:hover {
 }
 
 /* Span */
-.pure-material-checkbox > span {
+.pure-material-checkbox>span {
   display: inline-block;
   width: 100%;
   cursor: pointer;
 }
 
 /* Box */
-.pure-material-checkbox > span::before {
+.pure-material-checkbox>span::before {
   content: "";
   display: inline-block;
   box-sizing: border-box;
   margin: 3px 11px 3px 1px;
-  border: solid 2px; /* Safari */
-  border-color: rgba( 0, 0, 0, 0.6);
+  border: solid 2px;
+  /* Safari */
+  border-color: rgba(0, 0, 0, 0.6);
   border-radius: 2px;
   width: 18px;
   height: 18px;
@@ -501,7 +555,7 @@ a:hover {
 }
 
 /* Checkmark */
-.pure-material-checkbox > span::after {
+.pure-material-checkbox>span::after {
   content: "";
   display: block;
   position: absolute;
@@ -516,91 +570,91 @@ a:hover {
 }
 
 /* Checked, Indeterminate */
-.pure-material-checkbox > input:checked,
-.pure-material-checkbox > input:indeterminate {
-  background-color:$ac-primary
+.pure-material-checkbox>input:checked,
+.pure-material-checkbox>input:indeterminate {
+  background-color: $ac-primary
 }
 
-.pure-material-checkbox > input:checked + span::before,
-.pure-material-checkbox > input:indeterminate + span::before {
-  border-color:$ac-primary;
-  background-color:$ac-primary;
+.pure-material-checkbox>input:checked+span::before,
+.pure-material-checkbox>input:indeterminate+span::before {
+  border-color: $ac-primary;
+  background-color: $ac-primary;
 }
 
-.pure-material-checkbox > input:checked + span::after,
-.pure-material-checkbox > input:indeterminate + span::after {
-  border-color:$ac-dark;
+.pure-material-checkbox>input:checked+span::after,
+.pure-material-checkbox>input:indeterminate+span::after {
+  border-color: $ac-dark;
 }
 
-.pure-material-checkbox > input:indeterminate + span::after {
+.pure-material-checkbox>input:indeterminate+span::after {
   border-left: none;
   transform: translate(4px, 3px);
 }
 
 /* Hover, Focus */
-.pure-material-checkbox:hover > input {
+.pure-material-checkbox:hover>input {
   opacity: 0.04;
 }
 
-.pure-material-checkbox > input:focus {
+.pure-material-checkbox>input:focus {
   opacity: 0.12;
 }
 
-.pure-material-checkbox:hover > input:focus {
+.pure-material-checkbox:hover>input:focus {
   opacity: 0.16;
 }
 
 /* Active */
-.pure-material-checkbox > input:active {
+.pure-material-checkbox>input:active {
   opacity: 1;
   transform: scale(0);
   transition: transform 0s, opacity 0s;
 }
 
-.pure-material-checkbox > input:active + span::before {
+.pure-material-checkbox>input:active+span::before {
   border-color: $ac-primary;
 }
 
-.pure-material-checkbox > input:checked:active + span::before {
+.pure-material-checkbox>input:checked:active+span::before {
   border-color: transparent;
-  background-color: rgba( 0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Disabled */
-.pure-material-checkbox > input:disabled {
+.pure-material-checkbox>input:disabled {
   opacity: 0;
 }
 
-.pure-material-checkbox > input:disabled + span {
-  color: rgba( 0, 0, 0, 0.38);
+.pure-material-checkbox>input:disabled+span {
+  color: rgba(0, 0, 0, 0.38);
   cursor: initial;
 }
 
-.pure-material-checkbox > input:disabled + span::before {
+.pure-material-checkbox>input:disabled+span::before {
   border-color: currentColor;
 }
 
-.pure-material-checkbox > input:checked:disabled + span::before,
-.pure-material-checkbox > input:indeterminate:disabled + span::before {
+.pure-material-checkbox>input:checked:disabled+span::before,
+.pure-material-checkbox>input:indeterminate:disabled+span::before {
   border-color: transparent;
   background-color: currentColor;
 }
 
 //stepper-plan
 .step {
-  
+
   padding: 10px;
-  
+
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  
+
   background-color: cream;
 }
 
 .v-stepper {
   position: relative;
-/*   visibility: visible; */
+  /*   visibility: visible; */
 }
 
 
@@ -609,7 +663,8 @@ a:hover {
   background-color: white;
   border: 3px solid $ac-primary;
   border-radius: 100%;
-  width: 90px;    /* +6 for border */
+  width: 90px;
+  /* +6 for border */
   height: 90px;
   display: inline-block;
   padding: 25px;
@@ -619,13 +674,13 @@ a:hover {
 }
 
 .step .line {
-    top: 60px;
+  top: 60px;
   left: 43px;
-/*   height: 120px; */
+  /*   height: 120px; */
   height: 100%;
-    
-    position: absolute;
-    border-left: 5px solid gray;
+
+  position: absolute;
+  border-left: 5px solid gray;
 }
 
 .step.completed .circle {
@@ -639,17 +694,17 @@ a:hover {
 }
 
 .step.active .circle {
-visibility: visible;
-  border-color: rgb(6,150,215);
+  visibility: visible;
+  border-color: rgb(6, 150, 215);
 }
 
 .step.empty .circle {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .step.empty .line {
-/*     visibility: hidden; */
-/*   height: 150%; */
+  /*     visibility: hidden; */
+  /*   height: 150%; */
   top: 0;
   height: 150%;
 }
@@ -657,7 +712,8 @@ visibility: visible;
 
 .step:last-child .line {
   border-left: 3px solid white;
-  z-index: -1; /* behind the circle to completely hide */
+  z-index: -1;
+  /* behind the circle to completely hide */
 }
 
 .content {
@@ -683,23 +739,52 @@ visibility: visible;
   background-color: $ac-dark;
 }
 
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 
 .fade-in {
-  opacity:0;  /* make things invisible upon start */
-  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
+  opacity: 0;
+  /* make things invisible upon start */
+  -webkit-animation: fadeIn ease-in 1;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
 
-  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
+  -webkit-animation-fill-mode: forwards;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 
-  -webkit-animation-duration:0.30s;
-  -moz-animation-duration:0.30s;
-  animation-duration:0.30s;
+  -webkit-animation-duration: 0.30s;
+  -moz-animation-duration: 0.30s;
+  animation-duration: 0.30s;
 }
 
 .fade-in.one {
@@ -713,7 +798,7 @@ visibility: visible;
   color: $ac-white;
 }
 
-.white-text { 
+.white-text {
   color: $ac-white;
 }
 
@@ -723,6 +808,7 @@ visibility: visible;
   left: 0px;
   color: #ff3547;
 }
+
 .blue-text {
   color: #5ECAEE !important;
 }
@@ -735,7 +821,9 @@ visibility: visible;
   background-color: $ac-dark;
 }
 
-.react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
   color: #33b5e5 !important;
 }
 
@@ -749,7 +837,9 @@ visibility: visible;
   position: relative;
 }
 
-.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
   margin-top: 0;
   color: #33b5e5 !important;
   font-weight: lighter !important;
