@@ -20,6 +20,8 @@ const Navbar = () => {
     setToggle(prevState => prevState !== collapseID ? collapseID : "");
   };
 
+  const navigateSocialMedia = url => window.location.href = url;
+
   return(
     <React.Fragment>
     <MDBNavbar
@@ -61,10 +63,19 @@ const Navbar = () => {
               <Link className="link-nav" to="/">CONTACT US</Link>
             </MDBNavItem>
             <MDBNavItem>
-              <img className={'social'}  src={Facebook} alt="logo" />
+              <img 
+                className={'social pointer'} 
+                onClick={() => navigateSocialMedia('https://www.facebook.com/accountabble/')}  
+                src={Facebook} alt="logo" 
+                />
             </MDBNavItem>
             <MDBNavItem>
-              <img className={'ml-3 social'} src={Instagram} alt="logo" />
+              <img 
+                className={'ml-3 social pointer'} 
+                onClick={() => navigateSocialMedia('https://www.instagram.com/accountabble/')}
+                src={Instagram} 
+                alt="logo" 
+                />
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>

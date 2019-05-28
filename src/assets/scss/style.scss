@@ -779,6 +779,7 @@ visibility: visible;
 .progress-bar {
   background-color: $ac-dark;
 }
+
 .progress {
   display: flex;
   height: .5rem;
@@ -800,4 +801,8 @@ visibility: visible;
   left: 35.5px;
   width: 253px;
   height: 253px;
+}
+
+.pointer:hover {
+  cursor: pointer;
 }
