@@ -896,3 +896,12 @@ a:hover {
 .pointer:hover {
   cursor: pointer;
 }
+
+.image-quote {
+  height: 150px;
+  width: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 100px;
+}

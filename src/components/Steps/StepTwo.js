@@ -61,7 +61,7 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
   const frequencies = [3, 4, 5];
   return (
     <div className="animated fadeIn">
-    <StepTitle message={"Goals"} />
+    <StepTitle message={"Goal"} />
       <div>
         <h6 className="title mt-2 mb-3">Category</h6>
         <MDBRow>

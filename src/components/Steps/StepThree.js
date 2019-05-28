@@ -104,6 +104,7 @@ const StepThree = ({ onClick, onChange, value }) => {
         </MDBBtn>
         <MDBBtn 
           className="section-comment-btn-dark" 
+          disabled={!terms.agreeTerms}
           onClick={() => onClick('next')}
           >
           Finish

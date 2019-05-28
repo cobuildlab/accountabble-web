@@ -22,6 +22,7 @@ import stepperStore, { ON_CHANGE_STEP, stepsInformation } from '../../stores/ste
 import blogStore, { GET_BLOGS, ERROR_BLOGS } from '../blogs/blog-store';
 import { getBlogsAction } from '../blogs/blog-actions';
 import BlogSpinner from './components/BlogSpinner';
+import MediaQuote from '../../components/MediaQuote';
 
 class LandingView extends View {
   constructor(props) {
@@ -30,7 +31,8 @@ class LandingView extends View {
       currentStepInformation: {
         title: stepsInformation[0].title,
         description: stepsInformation[0].description,
-        stepText: stepsInformation[0].stepText
+        stepText: stepsInformation[0].stepText,
+        image: stepsInformation[0].image
       },
       blogs: {},
       blogItems: [],
@@ -79,7 +81,12 @@ class LandingView extends View {
 
 
   render() {
-    const { currentStepInformation: { title, description, stepText }, loading, errorView, blogItems } = this.state;
+    const { 
+      currentStepInformation: { title, description, stepText, image }, 
+      loading, 
+      errorView, 
+      blogItems 
+    } = this.state;
     return (
       <RouteChangeContainer>
         <Navbar/>
@@ -111,9 +118,9 @@ class LandingView extends View {
                     <p className="animated fadeIn text-form">
                       {description}
                     </p>
-                    <p className="animated fadeIn text-form">
-                      {stepText}
-                    </p>
+                    <div className={"animated fadeIn"}>
+                      <MediaQuote innextText={stepText} image={image} />
+                    </div>
                   </MDBCol>
                   <MDBCol md="6">
                     <RegisterForm history={this.props.history}/>

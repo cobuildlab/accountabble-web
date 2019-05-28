@@ -1,8 +1,9 @@
 import Flux from 'flux-state';
+import ImageStepOne from '../assets/img/person.png';
 
 /**
  * @property {string} ON_CHANGE_STEP callbacks when a stepper on landing changes.
- * @property {[ title: string, description: string ]} stepsInformation the information of each step.
+ * @property {[ title: string, description: string, stepText: string ]} stepsInformation the information of each step.
  */
 export const ON_CHANGE_STEP = 'ON_CHANGE_STEP';
 
@@ -12,7 +13,8 @@ export const stepsInformation = [
     title: 'Accountabble Mission',
     description: `We at ACCOUNTABBLE  believe that humans have the capacity to easily develop change and become superheroes. 
     We believe humans have a deep seated potential locked inside the way we live our lives and that we can get access to it if we look for it.`,
-    stepText: 'Accountabble probe that I can reach any goal that I set.'
+    stepText: 'Accountabble probe that I can reach any goal that I set.',
+    image: ImageStepOne
   },
   {
     title: 'Your Jorney',
