@@ -9,7 +9,7 @@ import IsoIcon from '../../assets/img/bg/accountabble-r.png';
 import People1 from '../../assets/img/bg/people1.jpg';
 import People2 from '../../assets/img/bg/people2.jpg';
 import PeopleH from '../../assets/img/bg/people-h.png'
-import Quotes from '../../assets/img/bg/quotes.png';
+import Quotes from '../../assets/img/bg/quotes.png';  
 import '../../assets/scss/style.scss';
 import RouteChangeContainer from '../../components/RouteChangeContainer';
 
