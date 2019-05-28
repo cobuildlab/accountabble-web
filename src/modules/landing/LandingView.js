@@ -29,7 +29,8 @@ class LandingView extends View {
     this.state = {
       currentStepInformation: {
         title: stepsInformation[0].title,
-        description: stepsInformation[0].description
+        description: stepsInformation[0].description,
+        stepText: stepsInformation[0].stepText
       },
       blogs: {},
       blogItems: [],
@@ -77,7 +78,7 @@ class LandingView extends View {
 
 
   render() {
-    const { currentStepInformation: { title, description }, loading, errorView, blogItems } = this.state;
+    const { currentStepInformation: { title, description, stepText }, loading, errorView, blogItems } = this.state;
     return (
       <RouteChangeContainer>
         <Navbar/>
@@ -108,6 +109,9 @@ class LandingView extends View {
                     <br/>
                     <p className="animated fadeIn text-form">
                       {description}
+                    </p>
+                    <p className="animated fadeIn text-form">
+                      {stepText}
                     </p>
                   </MDBCol>
                   <MDBCol md="6">
