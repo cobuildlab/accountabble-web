@@ -17,7 +17,7 @@ const CardBlogLarge = ({ blogTtile, content, author, published }) => {
   return (
     <React.Fragment>
       <MDBCard className="section-blog-card mb-4">
-      <MDBCardImage className="img-fluid" src={getImageOrDefault()} waves />
+      <MDBCardImage className="img-fluid" src={getImageOrDefault()} waves height='300px'/>
         <MDBCardBody>
           <MDBCardTitle>{blogTtile}</MDBCardTitle>
           <MDBCardText>
