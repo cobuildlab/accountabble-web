@@ -14,7 +14,7 @@ export const registerAction = async (userData) => {
   }
   
   try { 
-    await database.collection('users').doc(email).set(userData);
+    await database.collection('users').doc(email).add(userData);
   } catch (err) {
     return Flux.dispatchEvent(REGISTER_ERROR, err);
   }
