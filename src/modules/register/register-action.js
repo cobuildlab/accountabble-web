@@ -6,15 +6,15 @@ export const registerAction = async (userData) => {
   const email = userData.basicInformation.email;
   const database = firebase.firestore();
   const userColletion = database.collection('users');
-  const userRef =  userColletion.doc(email);
+  const userRef = await userColletion.doc(email).get();
   
-  if(userRef){
+  if(userRef.exists){
     const e = 'the user is already registered';
     return Flux.dispatchEvent(REGISTER_ERROR,e);
   }
   
   try { 
-    await database.collection('users').add(userData);
+    await database.collection('users').doc(email).set(userData);
   } catch (err) {
     return Flux.dispatchEvent(REGISTER_ERROR, err);
   }
