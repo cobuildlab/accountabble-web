@@ -7,6 +7,7 @@ import FaqView from './modules/faq/FaqView';
 import Plan from './modules/plan/Plan';
 import TermsView from './modules/terms/TermsView';
 import SucessView from './modules/register/SucessView';
+import ContactUsView from './modules/contact-us/ContactUsView';
 
 const routes = [
   { component: LandingView, path: '/' },
@@ -15,6 +16,7 @@ const routes = [
   { component: Plan, path: '/plan' },
   { component: FaqView, path: '/faq' },
   { component: AboutUsView, path: '/about-us' },
+  { component: ContactUsView, path: '/contact-us'}
   /** { component: BlogDetailView, path: '/blog-posts/:id } */
 ];
 
