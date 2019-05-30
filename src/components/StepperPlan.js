@@ -1,13 +1,11 @@
 import React from "react";
-import { MDBRow, MDBCol } from 'mdbreact'
-
+import { MDBRow, MDBCol } from "mdbreact";
 
 //image
-import IconUser from '../assets/img/user.png'
-import IconCoaching from '../assets/img/Coaching-black.png'
-import IconContent from '..//assets/img/Content-black.png'
-import '../assets/scss/style.scss'
-
+import IconUser from "../assets/img/user.png";
+import IconCoaching from "../assets/img/Coaching-black.png";
+import IconContent from "..//assets/img/Content-black.png";
+import "../assets/scss/style.scss";
 
 const StepperPlan = () => {
   return (
@@ -17,49 +15,94 @@ const StepperPlan = () => {
           <div class="step completed">
             <div class="v-stepper">
               <div class="circle">
-              <img src={IconUser} alt="User" className="img-fluid"/>
+                <img src={IconUser} alt="User" className="img-fluid" />
               </div>
-              <div class="line"></div>
+              <div class="line" />
             </div>
 
             <div class="content">
               <h1 className="text-white title">Plan</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque semper, risus vitae tincidunt volutpat, quam dolor
+                dictum tortor, lacinia blandit arcu sem et neque. Pellentesque
+                hendrerit vitae massa eu tincidunt. Cras viverra est a est
+                ornare dignissim. Suspendisse lobortis consectetur metus, sed
+                viverra nisl porttitor ac. Proin a iaculis diam.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque semper, risus vitae tincidunt volutpat, quam dolor
+                dictum tortor, lacinia blandit arcu sem et neque. Pellentesque
+                hendrerit vitae massa eu tincidunt. Cras viverra est a est
+                ornare dignissim. Suspendisse lobortis consectetur metus, sed
+                viverra nisl porttitor ac. Proin a iaculis diam.
+              </p>
             </div>
           </div>
 
           <div class="step completed">
             <div class="v-stepper">
               <div class="circle">
-              <img src={IconCoaching} alt="User" className="img-fluid"/>
+                <img src={IconCoaching} alt="User" className="img-fluid" />
               </div>
-              <div class="line"></div>
+              <div class="line" />
             </div>
 
             <div class="content">
               <h1 className="text-white title">Activities</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque semper, risus vitae tincidunt volutpat, quam dolor
+                dictum tortor, lacinia blandit arcu sem et neque. Pellentesque
+                hendrerit vitae massa eu tincidunt. Cras viverra est a est
+                ornare dignissim. Suspendisse lobortis consectetur metus, sed
+                viverra nisl porttitor ac. Proin a iaculis diam.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque semper, risus vitae tincidunt volutpat, quam dolor
+                dictum tortor, lacinia blandit arcu sem et neque. Pellentesque
+                hendrerit vitae massa eu tincidunt. Cras viverra est a est
+                ornare dignissim. Suspendisse lobortis consectetur metus, sed
+                viverra nisl porttitor ac. Proin a iaculis diam.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque semper, risus vitae tincidunt volutpat, quam dolor
+                dictum tortor, lacinia blandit arcu sem et neque.
+              </p>
             </div>
           </div>
 
           <div class="step completed">
             <div class="v-stepper">
               <div class="circle">
-              <img src={IconContent} alt="User" className="img-fluid"/>
+                <img src={IconContent} alt="User" className="img-fluid" />
               </div>
-              <div class="line"></div>
+              <div class="line" />
             </div>
 
             <div class="content">
               <h1 className="text-white title">Content</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque semper, risus vitae tincidunt volutpat, quam dolor
+                dictum tortor, lacinia blandit arcu sem et neque. Pellentesque
+                hendrerit vitae massa eu tincidunt. Cras viverra est a est
+                ornare dignissim. Suspendisse lobortis consectetur metus, sed
+                viverra nisl porttitor ac. Proin a iaculis diam.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque semper, risus vitae tincidunt volutpat, quam dolor
+                dictum tortor, lacinia blandit arcu sem et neque. Pellentesque
+                hendrerit vitae massa eu tincidunt. Cras viverra est a est
+                ornare dignissim. Suspendisse lobortis consectetur metus, sed
+                viverra nisl porttitor ac. Proin a iaculis diam.
+              </p>
             </div>
           </div>
-  
         </MDBCol>
         {/* <MDBCol md="12">
           <div className="line-stepper"/>
@@ -87,6 +130,6 @@ const StepperPlan = () => {
       </MDBRow>
     </React.Fragment>
   );
-}
+};
 
 export default StepperPlan;
