@@ -1,8 +1,8 @@
-/**
- * @description
- * All information about firebaseConfig project in accountable.
- * @author CobuildLab
- */
+export const bloggerConfig = {
+  blogId: "5430150048929701311",
+  apiKey: "AIzaSyABYSAf_E-Bwhk5vLZQgzxNyyUPM7BkZb8"
+};
+
 export const firebaseConfig = {
   apiKey: "AIzaSyDF1P45qcCd5XUME5sWmnzTRKQdPce6mcQ",
   authDomain: "accountabble.firebaseapp.com",
@@ -11,3 +11,5 @@ export const firebaseConfig = {
   storageBucket: "accountabble.appspot.com",
   messagingSenderId: "167941783479"
 };
+
+export const STRIPE_API_KEY = `${process.env.STRIPE_API_KEY}`;

@@ -4,9 +4,13 @@ import {
   REGISTER_ERROR,
   REGISTER_EVENT,
   REGISTER_EMAIL_ERROR
-} from "./register-store";
+} from "../../stores/register-store";
 
-export const registerAction = async userData => {
+/**
+ * @param {object} userData
+ * @param {string} stripeToken
+ */
+export const registerAction = async (userData, stripeToken) => {
   const email = userData.basicInformation.email;
   const database = firebase.firestore();
   try {

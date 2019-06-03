@@ -1,4 +1,4 @@
-import { bloggerConfig } from "../config/blogger-config";
+import { bloggerConfig } from "../config";
 
 export const getBlogsRequest = () => {
   const { blogId, apiKey } = bloggerConfig;
