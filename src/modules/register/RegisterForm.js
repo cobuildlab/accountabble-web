@@ -4,8 +4,10 @@ import StepperInformation from "../../components/StepperInformation";
 import registerStore, {
   REGISTER_EVENT,
   REGISTER_ERROR
-} from "./register-store";
+} from "../../stores/register-store";
 import { registerAction } from "./register-action";
+import { StripeProvider } from "react-stripe-elements";
+import { STRIPE_API_KEY } from "../../config";
 
 class RegisterForm extends View {
   constructor(props) {
@@ -78,41 +80,39 @@ class RegisterForm extends View {
     });
   };
 
-  handleSubmit = () => {
-    const {
-      basicInformation,
-      coaching: { category, frequency, weeks },
-      terms: { newsletterStatus }
-    } = this.state;
-    this.setState(
+  handleSubmit = async () => {
+    const { basicInformation, coaching, terms } = this.state;
+    const { token } = await this.props.createToken({
+      name: basicInformation.name
+    });
+    registerAction(
       {
-        isLoading: true
+        basicInformation,
+        coaching: {
+          category: coaching.category,
+          frequency: coaching.frequency,
+          weeks: parseInt(terms.weeks)
+        },
+        newsletterStatus: terms.newsletterStatus
       },
-      () => {
-        registerAction({
-          basicInformation,
-          coaching: {
-            category,
-            frequency,
-            weeks: parseInt(weeks)
-          },
-          newsletterStatus
-        });
-      }
+      token
     );
+    this.setState({
+      isLoading: true
+    });
   };
 
   render() {
     const { basicInformation, coaching, terms, isLoading } = this.state;
     return (
-      <React.Fragment>
+      <StripeProvider apiKey={STRIPE_API_KEY}>
         <StepperInformation
           values={[basicInformation, coaching, terms]}
           onChange={this.handleStepperChange}
           onSubmit={this.handleSubmit}
           loadingStepper={isLoading}
         />
-      </React.Fragment>
+      </StripeProvider>
     );
   }
 }

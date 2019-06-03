@@ -6,13 +6,11 @@ import IconCoaching from "../assets/img/Coaching-black.png";
 import IconCoachingB from "../assets/img/Coaching-b.png";
 import IconCheck from "../assets/img/check-black.png";
 import IconCheckB from "../assets/img/check-b.png";
-import IconCreditCard from "../assets/img/credit-card.png";
-import IconCreditCardB from "../assets/img/credit-card-B.png";
 import StepOne from "./Steps/StepOne";
 import StepTwo from "./Steps/StepTwo";
 import StepThree from "./Steps/StepThree";
 import "../assets/scss/style.scss";
-import StepFour from "./Steps/StepFour";
+// import StepFour from "./Steps/StepFour";
 import StepContainer from "./Steps/StepContainer";
 import { changeStepAction } from "./stepper-actions";
 import { stepsInformation } from "../stores/stepper-store";
@@ -20,7 +18,7 @@ import { Progress } from "reactstrap";
 
 const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
   const maxSteps = 3;
-  const [step, setStep] = React.useState(1);
+  const [step, setStep] = React.useState(3);
   /**
    * @typedef {[ callback: function ]} stepsMap
    * @description Contains all icons, if we're in a current step, the icon will be displayed.

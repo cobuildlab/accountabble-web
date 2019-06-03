@@ -2,7 +2,6 @@ import React from "react";
 import { MDBRow, MDBCol, MDBView, MDBContainer } from "mdbreact";
 
 import BgHeader from "../../assets/img/bg/background-home-web.png";
-import CardBlogSmall from "../../components/CardBlogSmall";
 import CardBlogLarge from "../../components/CardBlogLarge";
 import SectionComment from "../../components/SectionComment";
 import PlanPreview from "../../components/PlanPreview";
