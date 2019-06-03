@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TitlePrimary = ({ text }) => (
-  <h1 className="title primary-text">
+  <h1 className="title primary-text ">
     {text}
   </h1>
 );

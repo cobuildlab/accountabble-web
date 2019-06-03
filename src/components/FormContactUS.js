@@ -2,7 +2,7 @@ import React from "react";
 import { MDBInput, MDBBtn } from "mdbreact";
 import '../assets/scss/style.scss';
 import View from 'react-flux-state';
-import indexStore, { CONTACT_US_CALLBACK, CONTACT_US_ERROR } from "../stores/index-store";
+
 
 
 class FormContactUS extends View {
@@ -26,21 +26,17 @@ class FormContactUS extends View {
     }
   };
 
-  componentDidMount() {
-    this.subscribe(indexStore, CONTACT_US_CALLBACK, (response) => {
-
-    });
-
-    this.subscribe(indexStore, CONTACT_US_ERROR, (err) => {
-
-    });
-  }
-
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
+
+  onSubmit = (e) => {
+    const { comment, email, name } = this.state;
+    e.preventDefault();
+    this.props.onSubmit({ comment, email, name });
+  }
 
   render() {
     const { name, email, comment, classNames } = this.state;
