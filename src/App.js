@@ -23,12 +23,12 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          {routes.map(route => (
+          {routes.map((route, i) => (
             <Route
               exact
               path={route.path}
               component={route.component}
-              key={route.path}
+              key={i}
             />
           ))}
         </Switch>
