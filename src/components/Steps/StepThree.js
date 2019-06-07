@@ -27,18 +27,6 @@ const StepThree = ({ onClick, onChange, value }) => {
     agreeTerms: value.agreeTerms
   });
 
-  function onChangeValue(name, value) {
-    onChange({ ...state, [name]: value });
-  }
-
-  function onChangeNumber(name, value) {
-    const numberValues = value.split("");
-    const chars = numberValues.filter(
-      char => char.charCodeAt() >= 48 && char.charCodeAt() <= 57
-    );
-    onChange({ ...state, [name]: chars.join("") });
-  }
-
   const onSetTerms = ({ target: { name } }) => {
     const term = terms[name];
     const newTerms = { ...terms, [name]: !term };

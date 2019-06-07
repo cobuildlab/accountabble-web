@@ -5,10 +5,7 @@ import registerStore, {
   REGISTER_EVENT,
   REGISTER_ERROR
 } from "../../stores/register-store";
-import paymentStore, {
-  GET_TOKEN_ACTION,
-  GET_TOKEN_ERROR
-} from "../../stores/payment-store";
+import paymentStore, { GET_TOKEN_ACTION } from "../../stores/payment-store";
 // import { registerAction } from "./register-action";
 import { StripeProvider } from "react-stripe-elements";
 import { STRIPE_API_KEY } from "../../config";
@@ -90,7 +87,6 @@ class RegisterForm extends View {
    * @param {string} token
    */
   handleSubmit = async token => {
-    const { basicInformation, coaching, terms } = this.state;
     /**
      * @todo ADD ALL INFORMATION TO THE DATABASE
      */

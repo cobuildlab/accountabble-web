@@ -10,8 +10,8 @@ import PropTypes from "prop-types";
 import "../assets/scss/style.scss";
 import {
   parseStringIntoDOM,
-  getSourceAttribute,
-  getPreviewText
+  getSourceAttribute
+  // getPreviewText
 } from "../utils/parser";
 import BlogImage from "./BlogImage";
 
