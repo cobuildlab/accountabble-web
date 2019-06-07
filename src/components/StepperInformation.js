@@ -18,7 +18,7 @@ import { Progress } from "reactstrap";
 
 const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
   const maxSteps = 3;
-  const [step, setStep] = React.useState(3);
+  const [step, setStep] = React.useState(1);
   /**
    * @typedef {[ callback: function ]} stepsMap
    * @description Contains all icons, if we're in a current step, the icon will be displayed.

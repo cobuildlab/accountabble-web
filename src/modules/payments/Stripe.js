@@ -1,27 +1,20 @@
 import React from "react";
 import { Elements, StripeProvider } from "react-stripe-elements";
-import { STRIPE_API_KEY } from "../../config";
-import View from "react-flux-state";
 import PaymentForm from "./PaymentForm";
 
-class Stripe extends View {
-  state = {
-    paymentStatus: false
-  };
+import { STRIPE_API_KEY } from "../../config";
 
-  onSubmit = e => {
-    e.preventDefault();
-  };
-
-  render() {
-    return (
-      <StripeProvider apiKey={STRIPE_API_KEY}>
+const Stripe = ({ children }) => {
+  return (
+    <StripeProvider apiKey={STRIPE_API_KEY}>
+      <React.Fragment>
         <Elements>
-          <PaymentForm onSubmit={this.onSubmit} />
+          {/** Dispatching the eventName */}
+          <PaymentForm wrappedButton={children} />
         </Elements>
-      </StripeProvider>
-    );
-  }
-}
+      </React.Fragment>
+    </StripeProvider>
+  );
+};
 
-export default Stripe;
+export default React.memo(Stripe);

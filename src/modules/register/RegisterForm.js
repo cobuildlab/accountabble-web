@@ -5,9 +5,14 @@ import registerStore, {
   REGISTER_EVENT,
   REGISTER_ERROR
 } from "../../stores/register-store";
-import { registerAction } from "./register-action";
+import paymentStore, {
+  GET_TOKEN_ACTION,
+  GET_TOKEN_ERROR
+} from "../../stores/payment-store";
+// import { registerAction } from "./register-action";
 import { StripeProvider } from "react-stripe-elements";
 import { STRIPE_API_KEY } from "../../config";
+import { paymentAction } from "../payments/stripe-payment-action";
 
 class RegisterForm extends View {
   constructor(props) {
@@ -34,19 +39,12 @@ class RegisterForm extends View {
         newsletterStatus: false,
         agreeTerms: false
       },
-      creditCard: {
-        owner: "",
-        cvv: "",
-        cardNumber: "",
-        expirationDate: {
-          month: "",
-          year: ""
-        }
-      }
+      token: null
     };
   }
 
   componentDidMount() {
+    console.log(STRIPE_API_KEY);
     const { history } = this.props;
     this.subscribe(registerStore, REGISTER_EVENT, () => {
       const {
@@ -69,37 +67,34 @@ class RegisterForm extends View {
       });
     });
 
+    this.subscribe(paymentStore, GET_TOKEN_ACTION, token => {
+      this.handleSubmit(token);
+    });
+
     this.subscribe(registerStore, REGISTER_ERROR, err => {
       console.log(err);
     });
   }
 
+  /**
+   * @param {string} stepperName
+   * @paran {object} sta
+   */
   handleStepperChange = (stepperName, state) => {
     this.setState({
       [stepperName]: state
     });
   };
 
-  handleSubmit = async () => {
+  /**
+   * @param {string} token
+   */
+  handleSubmit = async token => {
     const { basicInformation, coaching, terms } = this.state;
-    const { token } = await this.props.createToken({
-      name: basicInformation.name
-    });
-    registerAction(
-      {
-        basicInformation,
-        coaching: {
-          category: coaching.category,
-          frequency: coaching.frequency,
-          weeks: parseInt(terms.weeks)
-        },
-        newsletterStatus: terms.newsletterStatus
-      },
-      token
-    );
-    this.setState({
-      isLoading: true
-    });
+    /**
+     * @todo ADD ALL INFORMATION TO THE DATABASE
+     */
+    paymentAction(token);
   };
 
   render() {

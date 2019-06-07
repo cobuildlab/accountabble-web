@@ -11,7 +11,7 @@ import Stripe from "../../modules/payments/Stripe";
 /**
  * @css
  */
-import "react-datepicker/dist/react-datepicker.css";
+import "../../modules/payments/scss/payment.scss";
 
 /**
  * @assets
@@ -52,7 +52,15 @@ const StepThree = ({ onClick, onChange, value }) => {
       <div className="row">
         <p className="ml-3">Would you like to complete the purchase?</p>
         <MDBCol md="8">
-          <Stripe />
+          <Stripe onSubmit={data => console.log(data)}>
+            <MDBBtn
+              className="section-comment-btn-dark payment-button-right"
+              disabled={!terms.agreeTerms}
+              type="submit"
+            >
+              Finish
+            </MDBBtn>
+          </Stripe>
         </MDBCol>
         <MDBCol md="12">
           <div className="mt-4">
@@ -90,17 +98,10 @@ const StepThree = ({ onClick, onChange, value }) => {
       </div>
       <div className="text-right mt-2">
         <MDBBtn
-          className="section-comment-btn-dark mr-3"
+          className="section-comment-btn-dark mr-3 payment-button-left"
           onClick={() => onClick("previous")}
         >
           Previous
-        </MDBBtn>
-        <MDBBtn
-          className="section-comment-btn-dark"
-          disabled={!terms.agreeTerms}
-          onClick={() => onClick("next")}
-        >
-          Finish
         </MDBBtn>
       </div>
     </div>

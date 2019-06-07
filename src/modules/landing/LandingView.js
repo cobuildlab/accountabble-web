@@ -162,7 +162,7 @@ class LandingView extends View {
                           .map((blog, index) => {
                             if (index === 1)
                               return (
-                                <MDBCol md={"6"}>
+                                <MDBCol md={"6"} key={index}>
                                   <CardBlogLarge
                                     blogTtile={blog.title}
                                     content={blog.content}
@@ -172,7 +172,7 @@ class LandingView extends View {
                                 </MDBCol>
                               );
                             return (
-                              <MDBCol md={"3"}>
+                              <MDBCol md={"3"} key={index}>
                                 <CardBlogLarge
                                   blogTtile={blog.title}
                                   content={blog.content}
