@@ -1,5 +1,5 @@
 import React from "react";
-import '../assets/scss/style.scss';
+import "../assets/scss/style.scss";
 import { MDBInput, MDBBtn } from "mdbreact";
 
 const FormComment = () => {
@@ -13,6 +13,6 @@ const FormComment = () => {
       </div>
     </React.Fragment>
   );
-}
+};
 
 export default FormComment;

@@ -1,6 +1,6 @@
 import React from "react";
-import '../assets/scss/style.scss'
-import { MDBContainer, MDBRow, MDBCol } from 'mdbreact'
+import "../assets/scss/style.scss";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import FormContactUS from "./FormContactUS";
 
 const SectionComment = () => {
@@ -10,9 +10,11 @@ const SectionComment = () => {
         <MDBRow>
           <MDBCol md="6">
             <h1 className="text-white title">Contact US</h1>
-            <hr/>
+            <hr />
             <p className="text-comment">
-              Your growth is our #1 priority. We are here to provide more information, answer any question you may have and create an effective solution for your advancement.
+              Your growth is our #1 priority. We are here to provide more
+              information, answer any question you may have and create an
+              effective solution for your advancement.
             </p>
           </MDBCol>
           <MDBCol md="6" className="section-comment-form">
@@ -22,6 +24,6 @@ const SectionComment = () => {
       </MDBContainer>
     </React.Fragment>
   );
-}
+};
 
 export default SectionComment;

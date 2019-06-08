@@ -1,41 +1,40 @@
 import React from "react";
 import { MDBInput, MDBBtn } from "mdbreact";
-import '../assets/scss/style.scss';
-import View from 'react-flux-state';
-import indexStore, { CONTACT_US_CALLBACK, CONTACT_US_ERROR } from "../stores/index-store";
+import "../assets/scss/style.scss";
+import View from "react-flux-state";
+import indexStore, {
+  CONTACT_US_CALLBACK,
+  CONTACT_US_ERROR
+} from "../stores/index-store";
 
 class FormContactUS extends View {
   state = {
-    name: '',
-    email: '',
-    comment: '',
+    name: "",
+    email: "",
+    comment: "",
     classNames: {
       name: {
         error: null,
-        input: 'input-bg-dark'
+        input: "input-bg-dark"
       },
       email: {
         error: null,
-        input: 'input-bg-dark'
+        input: "input-bg-dark"
       },
       comment: {
         error: null,
-        input: 'input-bg-dark'
+        input: "input-bg-dark"
       }
     }
   };
 
   componentDidMount() {
-    this.subscribe(indexStore, CONTACT_US_CALLBACK, (response) => {
+    this.subscribe(indexStore, CONTACT_US_CALLBACK, response => {});
 
-    });
-
-    this.subscribe(indexStore, CONTACT_US_ERROR, (err) => {
-
-    });
+    this.subscribe(indexStore, CONTACT_US_ERROR, err => {});
   }
 
-  onChange = (e) => {
+  onChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -46,33 +45,33 @@ class FormContactUS extends View {
     return (
       <React.Fragment>
         <MDBInput
-          type="text" 
+          type="text"
           className={classNames.name.input}
-          name="name" 
-          label="Name" 
+          name="name"
+          label="Name"
           onChange={this.onChange}
           value={name}
         />
-        <MDBInput 
+        <MDBInput
           type="email"
           className={classNames.email.input}
           label="Email"
           onChange={this.onChange}
           name="email"
-          value={email} 
+          value={email}
         />
         <MDBInput
-          type="text" 
+          type="text"
           className={classNames.comment.input}
           label="Comment"
           name="comment"
-          onChange={this.onChange} 
+          onChange={this.onChange}
           value={comment}
-          />
+        />
         <div className="text-right">
           <MDBBtn className="section-comment-btn-blue">Submit</MDBBtn>
         </div>
-      </React.Fragment> 
+      </React.Fragment>
     );
   }
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const InputInfomration = ({ message, style }) => (
   <small className="message-information" style={style}>

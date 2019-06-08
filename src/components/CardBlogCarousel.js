@@ -1,7 +1,13 @@
 import React from "react";
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from "mdbreact";
-import CardBlogSmall from './CardBlogSmall';
-import '../assets/scss/style.scss';
+import {
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBView,
+  MDBContainer
+} from "mdbreact";
+import CardBlogSmall from "./CardBlogSmall";
+import "../assets/scss/style.scss";
 
 const CardBlogCarousel = () => {
   return (
@@ -34,6 +40,6 @@ const CardBlogCarousel = () => {
       </MDBContainer>
     </React.Fragment>
   );
-}
+};
 
 export default CardBlogCarousel;
