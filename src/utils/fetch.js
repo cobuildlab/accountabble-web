@@ -22,3 +22,19 @@ export const getBlogPostsRequest = () => {
     }
   );
 };
+
+/**
+ * @param {string} endpoint
+ * @param {{}} bodyParams
+ */
+export const postRequest = (endpoint, bodyParams, headers) => {
+  return fetch(endpoint, {
+    method: "POST",
+    headers: headers
+      ? headers
+      : {
+          "content-type": "application/json"
+        },
+    body: JSON.stringify(bodyParams)
+  });
+};
