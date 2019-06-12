@@ -22,5 +22,7 @@ export const createTokenAction = async (eventName, token) => {
 };
 
 export const sendTokenAction = ({ ...token }) => {
-  Flux.dispatchEvent(GET_TOKEN_ACTION, token);
+  setTimeout(() => {
+    Flux.dispatchEvent(GET_TOKEN_ACTION, token);
+  });
 };

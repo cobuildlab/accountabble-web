@@ -29,6 +29,7 @@ export const getBlogPostsRequest = () => {
  */
 export const postRequest = (endpoint, bodyParams, headers) => {
   return fetch(endpoint, {
+    mode: "no-cors",
     method: "POST",
     headers: headers
       ? headers

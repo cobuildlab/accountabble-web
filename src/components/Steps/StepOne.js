@@ -17,7 +17,7 @@ const StepOne = ({ onClick, onChange, value }) => {
    * And send it to the parent component when @function onClick is called.
    */
   const onChangeBasicInformation = (value, name) => {
-    debounce(() => onChange({ ...state, [name]: value }), 500);
+    onChange({ ...state, [name]: value });
     setState(prevState => ({ ...prevState, [name]: value }));
     if (name === "name") {
       const inputExpression = !(validateName(value) || isEmpty(value));

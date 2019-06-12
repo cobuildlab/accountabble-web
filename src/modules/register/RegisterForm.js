@@ -10,6 +10,7 @@ import paymentStore, { GET_TOKEN_ACTION } from "../../stores/payment-store";
 import { StripeProvider } from "react-stripe-elements";
 import { STRIPE_API_KEY } from "../../config";
 import { paymentAction } from "../payments/stripe-payment-action";
+import { registerAction } from "./register-action";
 
 class RegisterForm extends View {
   constructor(props) {
@@ -87,10 +88,11 @@ class RegisterForm extends View {
    * @param {string} token
    */
   handleSubmit = async token => {
+    const { basicInformation, coaching, terms } = this.state;
     /**
      * @todo ADD ALL INFORMATION TO THE DATABASE
      */
-    paymentAction(token);
+    registerAction({ basicInformation, coaching, terms });
   };
 
   render() {

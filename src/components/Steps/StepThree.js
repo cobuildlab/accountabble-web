@@ -40,7 +40,7 @@ const StepThree = ({ onClick, onChange, value }) => {
       <div className="row">
         <p className="ml-3">Would you like to complete the purchase?</p>
         <MDBCol md="8">
-          <Stripe onSubmit={data => console.log(data)}>
+          <Stripe>
             <MDBBtn
               className="section-comment-btn-dark payment-button-right"
               disabled={!terms.agreeTerms}

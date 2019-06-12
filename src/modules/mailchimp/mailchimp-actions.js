@@ -1,26 +1,14 @@
-import * as http from "../../utils/fetch";
+import firebase from "firebase";
 
 export const addSubscriberToNewsletter = async ({ email }) => {
-  const MAILCHIMP_API_MEMBERS_ENDPOINT = process.env.MAILCHIMP_API_AUDIENCE;
-
-  const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
-
-  const headers = new Headers();
-
-  headers.append("Content-Type", "application/json");
-
-  headers.append("Authorization", `Basic ${MAILCHIMP_API_KEY}`);
-
+  const mailchimpRequest = firebase
+    .functions()
+    .httpsCallable("mailChimpService");
+  let data;
   try {
-    await http.postRequest(
-      `${MAILCHIMP_API_MEMBERS_ENDPOINT}`,
-      {
-        email_adress: email,
-        status: "subscribed"
-      },
-      headers
-    );
+    data = await mailchimpRequest({ email_address: email });
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
+  console.log(data);
 };
