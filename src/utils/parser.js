@@ -1,4 +1,4 @@
-import DOM from 'cheerio';
+import DOM from "cheerio";
 
 /**
  * @param {HTMLElement} nodeType
@@ -6,13 +6,13 @@ import DOM from 'cheerio';
  * @description
  * Parses a string to a htmlElement
  */
-export const parseStringIntoDOM = (rawHTML) => {
+export const parseStringIntoDOM = rawHTML => {
   return DOM.load(rawHTML);
 };
 
 export const getSourceAttribute = (nodeType, rawHTML) => {
   const src = DOM(nodeType, rawHTML);
-  if(src[0] !== undefined) {
+  if (src[0] !== undefined) {
     return src[0].attribs.href;
   }
   return null;
