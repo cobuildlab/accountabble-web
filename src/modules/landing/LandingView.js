@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBView, MDBContainer } from "mdbreact";
+import {MDBRow, MDBCol, MDBView, MDBContainer} from "mdbreact";
 
 import BgHeader from "../../assets/img/bg/background-home-web.png";
 import CardBlogLarge from "../../components/CardBlogLarge";
@@ -16,8 +16,8 @@ import stepperStore, {
   ON_CHANGE_STEP,
   stepsInformation
 } from "../../stores/stepper-store";
-import blogStore, { GET_BLOGS, ERROR_BLOGS } from "../blogs/blog-store";
-import { getBlogsAction } from "../blogs/blog-actions";
+import blogStore, {GET_BLOGS, ERROR_BLOGS} from "../blogs/blog-store";
+import {getBlogsAction} from "../blogs/blog-actions";
 import BlogSpinner from "./components/BlogSpinner";
 import MediaQuote from "../../components/MediaQuote";
 
@@ -46,13 +46,14 @@ class LandingView extends View {
           currentStepInformation: {
             title: currentStepInformation.title,
             description: currentStepInformation.description,
-            stepText: currentStepInformation.stepText
+            stepText: currentStepInformation.stepText,
+            image: currentStepInformation.image
           }
         });
     });
 
     this.subscribe(blogStore, GET_BLOGS, blogs => {
-      const { items } = blogs;
+      const {items} = blogs;
       const postsByDate = [...items].sort((a, b) => {
         const dateA = new Date(a.published);
         const dateB = new Date(b.published);
@@ -78,15 +79,15 @@ class LandingView extends View {
 
   render() {
     const {
-      currentStepInformation: { title, description, stepText, image },
+      currentStepInformation: {title, description, stepText, image},
       loading,
       errorView,
       blogItems
     } = this.state;
     return (
       <RouteChangeContainer>
-        <Navbar />
-        <MDBView src={BgHeader} fixed />
+        <Navbar/>
+        <MDBView src={BgHeader} fixed/>
         <main>
           <div className="secction-plan">
             <MDBContainer>
@@ -95,10 +96,10 @@ class LandingView extends View {
                   <h1 className="text-center text-white title-plan">Plan</h1>
                 </MDBCol>
                 <div className="d-none d-sm-block">
-                  <PlanPreview />
+                  <PlanPreview/>
                 </div>
                 <div className="d-block d-sm-none">
-                  <PlanPreviesCarousel />
+                  <PlanPreviesCarousel/>
                 </div>
               </MDBRow>
             </MDBContainer>
@@ -108,27 +109,27 @@ class LandingView extends View {
               <MDBRow>
                 <MDBCol md="6">
                   <h1 className="text-white title animated fadeIn">{title}</h1>
-                  <br />
+                  <br/>
                   <p className="animated fadeIn text-form">{description}</p>
                   <div className={"animated fadeIn"}>
-                    <MediaQuote innextText={stepText} image={image} />
+                    <MediaQuote innextText={stepText} image={image}/>
                   </div>
                 </MDBCol>
                 <MDBCol md="6">
-                  <RegisterForm history={this.props.history} />
+                  <RegisterForm history={this.props.history}/>
                 </MDBCol>
               </MDBRow>
             </MDBContainer>
           </div>
           <div className="section-comment">
-            <SectionComment />
+            <SectionComment/>
           </div>
           <div id="blog" className="section-blog">
             <MDBContainer>
               <h1 className="title-blog text-white text-center mb-5">Blog</h1>
               <div className="d-none d-sm-block">
                 {loading ? (
-                  <BlogSpinner status={loading} />
+                  <BlogSpinner status={loading}/>
                 ) : !errorView ? (
                   <MDBRow className="PB-5">
                     {blogItems.length === 1 && (
@@ -204,11 +205,11 @@ class LandingView extends View {
                   </MDBRow> */}
               </div>
               <div className="d-block d-sm-none">
-                <CardBlogCarousel />
+                <CardBlogCarousel/>
               </div>
             </MDBContainer>
           </div>
-          <Footer />
+          <Footer/>
         </main>
       </RouteChangeContainer>
     );

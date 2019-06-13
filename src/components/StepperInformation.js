@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBRow, MDBCol } from "mdbreact";
+import {MDBRow, MDBCol} from "mdbreact";
 import IconUser from "../assets/img/user.png";
 import IconUserB from "../assets/img/user-b.png";
 import IconCoaching from "../assets/img/Coaching-black.png";
@@ -12,25 +12,25 @@ import StepThree from "./Steps/StepThree";
 import "../assets/scss/style.scss";
 // import StepFour from "./Steps/StepFour";
 import StepContainer from "./Steps/StepContainer";
-import { changeStepAction } from "./stepper-actions";
-import { stepsInformation } from "../stores/stepper-store";
-import { Progress } from "reactstrap";
+import {changeStepAction} from "./stepper-actions";
+import {stepsInformation} from "../stores/stepper-store";
+import {Progress} from "reactstrap";
+import RegisterSpinner from "../modules/register/components/RegisterSpinner";
 
-const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
+const stepsList = [
+  {callback: booleanProperty => (booleanProperty ? IconUserB : IconUser)},
+  {
+    callback: booleanProperty =>
+      booleanProperty ? IconCoachingB : IconCoaching
+  },
+  {callback: booleanProperty => (booleanProperty ? IconCheckB : IconCheck)}
+];
+
+const getCurrentProgress = (currentStep, maxSteps) => Math.ceil(((currentStep - 1) / maxSteps) * 150);
+
+const StepperInformation = ({onChange, onSubmit, values, loadingStepper}) => {
   const maxSteps = 3;
   const [step, setStep] = React.useState(1);
-  /**
-   * @typedef {[ callback: function ]} stepsMap
-   * @description Contains all icons, if we're in a current step, the icon will be displayed.
-   */
-  const stepsMap = [
-    { callback: booleanProperty => (booleanProperty ? IconUserB : IconUser) },
-    {
-      callback: booleanProperty =>
-        booleanProperty ? IconCoachingB : IconCoaching
-    },
-    { callback: booleanProperty => (booleanProperty ? IconCheckB : IconCheck) }
-  ];
 
   /**
    *
@@ -40,39 +40,51 @@ const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
    * calculateStep('next') output: state + 1..
    * calculateStep('previous') output: state - 1..
    */
-  function calculateStep(stateFromStep) {
+  function calculateStep(stateFromStep, token) {
+    console.log(`DEBUG:`, stateFromStep, step, maxSteps, token);
     switch (stateFromStep) {
       case "next": {
-        changeStepAction(
-          stepsInformation.find((_, index) => index + 1 === step + 1)
-        );
-        return step < maxSteps ? setStep(state => state + 1) : onSubmit();
+        // Notify for step change
+        changeStepAction(stepsInformation[step]);
+        return setStep(state => state + 1);
       }
       case "previous": {
-        changeStepAction(
-          stepsInformation.find((_, index) => index + 1 === step - 1)
-        );
+        changeStepAction(stepsInformation[step - 2]);
         return setStep(state => state - 1);
+      }
+      case "finish": {
+        onSubmit(token);
+        return;
       }
       default:
         return;
     }
   }
 
-  function getStepperByIndex(steppers) {
-    const stepper = steppers.findIndex((_, index) => index + 1 === step);
-    return steppers[stepper];
-  }
+  const steps = [
+    <StepOne
+      value={values[0]}
+      onClick={calculateStep}
+      onChange={state => onChange("basicInformation", state)}
+    />,
+    <StepTwo
+      value={values[1]}
+      onClick={calculateStep}
+      onChange={state => onChange("coaching", state)}
+    />,
+    <StepThree
+      value={values[2]}
+      onClick={calculateStep}
+      onChange={state => onChange("terms", state)}
+    />
+  ];
 
-  function getCurrentProgress(currentStep, maxSteps) {
-    return Math.ceil(((currentStep - 1) / maxSteps) * 150);
-  }
   return (
     <React.Fragment>
       <MDBRow>
         <MDBCol md="2">
           <StepContainer>
-            {stepsMap.map((property, index) => (
+            {stepsList.map((property, index) => (
               <div
                 className={
                   index + 1 === step ? "circle-active-step" : "circle-step"
@@ -83,7 +95,7 @@ const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
                   src={property.callback(index + 1 === step)}
                   className={`img-fluid ${
                     property.className ? property.className : ""
-                  }`}
+                    }`}
                   alt="icon"
                 />
               </div>
@@ -101,23 +113,8 @@ const StepperInformation = ({ onChange, onSubmit, values, loadingStepper }) => {
             value={getCurrentProgress(step, maxSteps)}
             className={"bg-custom-dark"}
           />
-          {getStepperByIndex([
-            <StepOne
-              value={getStepperByIndex(values)}
-              onClick={calculateStep}
-              onChange={state => onChange("basicInformation", state)}
-            />,
-            <StepTwo
-              value={getStepperByIndex(values)}
-              onClick={calculateStep}
-              onChange={state => onChange("coaching", state)}
-            />,
-            <StepThree
-              value={getStepperByIndex(values)}
-              onClick={calculateStep}
-              onChange={state => onChange("terms", state)}
-            />
-          ])}
+          {steps[step - 1]}
+          {(loadingStepper) && <RegisterSpinner status={true}/>}
         </MDBCol>
       </MDBRow>
     </React.Fragment>

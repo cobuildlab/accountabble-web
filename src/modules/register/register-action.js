@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 import Flux from "flux-state";
 import {
   REGISTER_ERROR,
@@ -10,18 +10,22 @@ import {
  * @param {object} userData
  * @param {string} stripeToken
  */
-export const registerAction = async (userData, stripeToken) => {
-  const email = userData.basicInformation.email;
-  const database = firebase.firestore();
-  try {
-    await database
-      .collection("users")
-      .doc(email)
-      .set(userData, { merge: true });
-  } catch (err) {
-    return Flux.dispatchEvent(REGISTER_ERROR, err);
-  }
-  return Flux.dispatchEvent(REGISTER_EVENT, null);
+export const registerAction = async (userData) => {
+  const {basicInformation: {email}, token} = userData;
+  const functions = firebase.functions();
+  const f = functions.httpsCallable('createPaymentRequest');
+  f({email, token}).then(console.log);
+
+  // const database = firebase.firestore();
+  // try {
+  //   await database
+  //     .collection("users")
+  //     .doc(email)
+  //     .set(userData, {merge: true});
+  // } catch (err) {
+  //   return Flux.dispatchEvent(REGISTER_ERROR, err);
+  // }
+  // return Flux.dispatchEvent(REGISTER_EVENT, null);
 };
 
 export const checkEmailExistenceAction = async email => {

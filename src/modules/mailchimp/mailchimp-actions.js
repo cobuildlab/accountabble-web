@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 export const addSubscriberToNewsletter = async ({ email }) => {
   const mailchimpRequest = firebase

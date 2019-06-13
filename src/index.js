@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import firebase from "firebase";
+import "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/functions";
+import "firebase/storage";
+import firebase from "firebase/app";
 
 /**
  * @modules
  */
-import { BrowserRouter } from "react-router-dom";
-import { firebaseConfig } from "./config";
+import {BrowserRouter} from "react-router-dom";
+import {firebaseConfig} from "./config";
 
 /**
  * @css
@@ -27,7 +32,7 @@ firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <App/>
   </BrowserRouter>,
   document.getElementById("root")
 );

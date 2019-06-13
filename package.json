@@ -20,6 +20,7 @@
     "react-scripts": "2.1.8",
     "react-spinners": "^0.5.4",
     "react-stripe-elements": "^3.0.0",
+    "react-toastify": "^5.2.1",
     "react-transition-group": "^4.0.1",
     "reactstrap": "^8.0.0"
   },

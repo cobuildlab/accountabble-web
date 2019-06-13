@@ -1,5 +1,5 @@
 import Flux from "flux-state";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import { GET_TOKEN_ACTION } from "../../stores/payment-store";
 /**
  * @param {string} token
