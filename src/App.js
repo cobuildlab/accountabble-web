@@ -16,8 +16,8 @@ const routes = [
   {component: TermsView, path: "/terms-and-conditions"},
   {component: Plan, path: "/plan"},
   {component: FaqView, path: "/faq"},
-  {component: AboutUsView, path: "/about-us"}
-  /** { component: BlogDetailView, path: '/blog-posts/:id } */
+  {component: AboutUsView, path: "/about-us"},
+  { component: ContactUsView, path: '/contact-us'}
 ];
 
 
