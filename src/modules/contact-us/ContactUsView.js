@@ -28,7 +28,7 @@ class ContactUsView extends View{
 
   onContactUsSubmit = ({ comment, email, name }) => {
 
-    validateContactForm( {email , name , comment} )  
+    contactusAction ( {email , name , comment} )  
 
   };
 
