@@ -29,6 +29,7 @@ export const matchSpaces = (expression) => {
  * @returns {boolean}
  */
 export const isEmpty = (expression) => {
+  // console.log(expression)
   return expression.length === 0;
 };
 

@@ -5,6 +5,7 @@ import View from 'react-flux-state';
 
 
 
+
 class FormContactUS extends View {
   state = {
     name: '',
@@ -26,6 +27,7 @@ class FormContactUS extends View {
     }
   };
 
+
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -33,9 +35,10 @@ class FormContactUS extends View {
   };
 
   onSubmit = (e) => {
-    const { comment, email, name } = this.state;
     e.preventDefault();
+    const { comment, email, name } = this.state;
     this.props.onSubmit({ comment, email, name });
+    // console.log(comment , email , name)
   }
 
   render() {
@@ -67,7 +70,7 @@ class FormContactUS extends View {
           value={comment}
           />
         <div className="text-right">
-          <MDBBtn className="section-comment-btn-blue">Submit</MDBBtn>
+          <MDBBtn onClick ={this.onSubmit} className="section-comment-btn-blue">Submit</MDBBtn>
         </div>
       </React.Fragment> 
     );
