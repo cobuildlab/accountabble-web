@@ -8,21 +8,21 @@ import View from 'react-flux-state';
 
 class FormContactUS extends View {
   state = {
-    name: '',
-    email: '',
-    comment: '',
+    name: "",
+    email: "",
+    comment: "",
     classNames: {
       name: {
         error: null,
-        input: 'input-bg-dark'
+        input: "input-bg-dark"
       },
       email: {
         error: null,
-        input: 'input-bg-dark'
+        input: "input-bg-dark"
       },
       comment: {
         error: null,
-        input: 'input-bg-dark'
+        input: "input-bg-dark"
       }
     }
   };
@@ -46,33 +46,33 @@ class FormContactUS extends View {
     return (
       <React.Fragment>
         <MDBInput
-          type="text" 
+          type="text"
           className={classNames.name.input}
-          name="name" 
-          label="Name" 
+          name="name"
+          label="Name"
           onChange={this.onChange}
           value={name}
         />
-        <MDBInput 
+        <MDBInput
           type="email"
           className={classNames.email.input}
           label="Email"
           onChange={this.onChange}
           name="email"
-          value={email} 
+          value={email}
         />
         <MDBInput
-          type="text" 
+          type="text"
           className={classNames.comment.input}
           label="Comment"
           name="comment"
-          onChange={this.onChange} 
+          onChange={this.onChange}
           value={comment}
-          />
+        />
         <div className="text-right">
           <MDBBtn onClick ={this.onSubmit} className="section-comment-btn-blue">Submit</MDBBtn>
         </div>
-      </React.Fragment> 
+      </React.Fragment>
     );
   }
 }

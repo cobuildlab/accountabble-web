@@ -1,10 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const TitlePrimary = ({ text }) => (
-  <h1 className="title primary-text ">
-    {text}
-  </h1>
+  <h1 className="title primary-text">{text}</h1>
 );
 
 TitlePrimary.propTypes = {

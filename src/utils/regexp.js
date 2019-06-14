@@ -5,7 +5,7 @@
  * validateEmail('Anderson') output: false
  * validateEmail('andersonav37@gmail.com') output: true
  */
-export const validateEmail = (email) => {
+export const validateEmail = email => {
   const emailExpression = new RegExp(/\S+@\S+\.\S+/);
   return !emailExpression.test(email);
 };
@@ -18,7 +18,7 @@ export const validateEmail = (email) => {
  * matchSpaces('test') output: false
  * @returns {boolean}
  */
-export const matchSpaces = (expression) => {
+export const matchSpaces = expression => {
   const fullSpacesExpression = new RegExp(/^\s+$/);
   return fullSpacesExpression.test(expression);
 };
@@ -28,8 +28,12 @@ export const matchSpaces = (expression) => {
  * @param {string} expression
  * @returns {boolean}
  */
+<<<<<<< HEAD
 export const isEmpty = (expression) => {
   // console.log(expression)
+=======
+export const isEmpty = expression => {
+>>>>>>> e6f69034d6b193b05297179b08c17b3dcb970506
   return expression.length === 0;
 };
 
@@ -53,19 +57,21 @@ export const messageIsRequiredWith = (message, minLength, maxLength) => {
  * @function validateName validates name based on argument.
  * @param {string} name
  */
-export const validateName = (name) => { 
+export const validateName = name => {
   const nameExpression = new RegExp(/^[a-z ,.'-]+$/i);
   return nameExpression.test(name);
 };
 
-export const validatePhone = (phone) => {
-  const phoneExpression = new RegExp(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/);
+export const validatePhone = phone => {
+  const phoneExpression = new RegExp(
+    /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
+  );
   return phoneExpression.test(phone);
 };
 
-export const validateURL = (url) => {
+export const validateURL = url => {
   const URLExpression = new RegExp(
-    /[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_+.~#?&//=]*)?/gi,
+    /[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_+.~#?&//=]*)?/gi
   );
   return URLExpression.test(url);
 };
