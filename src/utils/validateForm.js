@@ -9,7 +9,7 @@ import { validateEmail , matchSpaces , isEmpty } from './regexp'
  * @param  {} comment string}
  * @return return an expcion depending on the condition
  */
-export const validateForm = ( { name , email , comment } ) => {
+export const validateContactForm = ( { name , email , comment } ) => {
 
     if(isEmpty( name ) || isEmpty( email ) ||  isEmpty( comment ) ){
         const E = 'please fill in the fields'
