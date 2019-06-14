@@ -5,6 +5,7 @@ import CardComponent from '../../components/CardComponent';
 import FormContactUs from '../../components/FormContactUS'; 
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 import contactUsStore,{ CONTACT_SENDED , CONTACT_ERROR } from './contactus-store';
+import { contactusAction } from './contactus-action'
 
 
 
@@ -15,7 +16,7 @@ class ContactUsView extends View{
   componentDidMount(){
 
     this.subscribe(contactUsStore, CONTACT_SENDED,()=>{
-      console.log(' something...... ');
+      console.log('ok...... ');
     });
 
     this.subscribe(contactUsStore,CONTACT_ERROR,(err)=>{
@@ -26,6 +27,8 @@ class ContactUsView extends View{
   
 
   onContactUsSubmit = ({ comment, email, name }) => {
+
+    contactusAction( {email , name , comment} )  
 
   };
 
