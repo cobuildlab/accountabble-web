@@ -31,7 +31,6 @@ class RegisterForm extends View {
         weeks: "1"
       },
       terms: {
-        newsletterStatus: false,
         agreeTerms: false
       },
       token: null
@@ -39,26 +38,27 @@ class RegisterForm extends View {
   }
 
   componentDidMount() {
-    // const {history} = this.props;
-    this.subscribe(registerStore, REGISTER_EVENT, () => {
-      // const {
-      //   basicInformation: {email, name},
-      //   coaching: {category, frequency, weeks},
-      //   terms
-      // } = this.state;
-      // history.push("/success", {
-      //   authorized: true,
-      //   message: {
-      //     email,
-      //     name,
-      //     category,
-      //     frequency,
-      //     weeks,
-      //     terms: terms.newsletterStatus
-      //       ? "Authorized to received newsletter"
-      //       : "Declined newsletter"
-      //   }
-      // });
+    const {history} = this.props;
+    this.subscribe(registerStore, REGISTER_EVENT, (code) => {
+      console.log(`REGISTER_EVENT`, code);
+      const {
+        basicInformation: {email, name},
+        coaching: {category, frequency, weeks},
+        terms
+      } = this.state;
+      history.push("/success", {
+        authorized: true,
+        message: {
+          email,
+          name,
+          category,
+          frequency,
+          weeks,
+          terms: terms.newsletterStatus
+            ? "Authorized to received newsletter"
+            : "Declined newsletter"
+        }
+      });
     });
 
     this.subscribe(paymentStore, GET_TOKEN_ACTION, token => {
@@ -66,7 +66,8 @@ class RegisterForm extends View {
     });
 
     this.subscribe(registerStore, REGISTER_ERROR, err => {
-      console.log(err);
+      toast.error(err.message);
+      this.setState({isLoading: false});
     });
   }
 
@@ -84,12 +85,14 @@ class RegisterForm extends View {
    * @param {string} token
    */
   handleSubmit = async token => {
-    console.log(`handleSUBMIT`, token);
-    if (token.error)
-      return toast.error(token.error);
-    const {basicInformation, coaching, terms} = this.state;
-    registerAction({basicInformation, coaching, terms, token});
+    const {basicInformation, coaching: {category, frequency, weeks}} = this.state;
+    const coaching = {category, frequency, weeks};
+    this.setState({isLoading: true}, () => {
+      registerAction({basicInformation, coaching, token});
+    });
   };
+
+  onError = (e) => toast.error(e.message);
 
   render() {
     const {basicInformation, coaching, terms, isLoading} = this.state;
@@ -98,7 +101,8 @@ class RegisterForm extends View {
         values={[basicInformation, coaching, terms]}
         onChange={this.handleStepperChange}
         onSubmit={this.handleSubmit}
-        loadingStepper={isLoading}
+        onError={this.onError}
+        isLoading={isLoading}
       />
     );
   }

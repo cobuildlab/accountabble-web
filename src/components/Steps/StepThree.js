@@ -23,11 +23,10 @@ import {STRIPE_API_KEY} from "../../config";
 import {InjectedPaymentForm} from "../../modules/payments/InjectedForm";
 import RegisterSpinner from "../../modules/register/components/RegisterSpinner";
 
-const StepThree = ({onClick, onChange, value}) => {
+const StepThree = ({onClick, onChange, onError, value, isLoading}) => {
   let myRef = {};
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(isLoading);
   const [terms, setTerms] = React.useState({
-    newsletterStatus: value.newsletterStatus,
     agreeTerms: value.agreeTerms
   });
 
@@ -39,9 +38,17 @@ const StepThree = ({onClick, onChange, value}) => {
   };
 
   const submitToken = () => {
-    console.log('myRef', myRef);
     myRef.submitToken();
     setLoading(true);
+  };
+
+  const onToken = (token) => {
+    if (token.error) {
+      onError(new Error(token.error));
+      setLoading(false);
+      return;
+    }
+    onClick('finish', token);
   };
 
   return (
@@ -51,12 +58,24 @@ const StepThree = ({onClick, onChange, value}) => {
           <StepTitle message={"Credit Card"}/>
           <div className="row">
             <p className="ml-3">Would you like to complete the purchase?</p>
+            <br/>
             <MDBCol md="8">
+              <br/>
               <div className="checkout">
-                <InjectedPaymentForm _ref={myRef} onToken={(token) => onClick('finish', token)}/>
+                <InjectedPaymentForm _ref={myRef} onToken={onToken}/>
+              </div>
+              <br/>
+            </MDBCol>
+            <MDBCol md="12">
+              <br/>
+              <div className="d-flex justify-content-start mt-3">
+                <img src={AmexImg} alt="card" className="mr-3"/>
+                <img src={VisaImg} alt="card" className="mr-3"/>
+                <img src={MasterCard} alt="card"/>
               </div>
             </MDBCol>
             <MDBCol md="12">
+              <br/>
               <div className="mt-4">
                 <label className="pure-material-checkbox">
                   <input
@@ -71,22 +90,6 @@ const StepThree = ({onClick, onChange, value}) => {
                 </Link>
               </span>
                 </label>
-                <label className="pure-material-checkbox">
-                  <input
-                    type="checkbox"
-                    name="newsletterStatus"
-                    onChange={onSetTerms}
-                    checked={terms.newsletterStatus}
-                  />
-                  <span>I want to receive newsletter</span>
-                </label>
-              </div>
-            </MDBCol>
-            <MDBCol md="12">
-              <div className="d-flex justify-content-start mt-3">
-                <img src={AmexImg} alt="card" className="mr-3"/>
-                <img src={VisaImg} alt="card" className="mr-3"/>
-                <img src={MasterCard} alt="card"/>
               </div>
             </MDBCol>
           </div>

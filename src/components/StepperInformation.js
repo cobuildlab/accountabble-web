@@ -28,7 +28,7 @@ const stepsList = [
 
 const getCurrentProgress = (currentStep, maxSteps) => Math.ceil(((currentStep - 1) / maxSteps) * 150);
 
-const StepperInformation = ({onChange, onSubmit, values, loadingStepper}) => {
+const StepperInformation = ({onChange, onSubmit, onError, values, isLoading}) => {
   const maxSteps = 3;
   const [step, setStep] = React.useState(1);
 
@@ -36,12 +36,12 @@ const StepperInformation = ({onChange, onSubmit, values, loadingStepper}) => {
    *
    * @param {string} stateFromStep
    * Check the argument on the function, and jump a step to show the current step.
+   * @param token
    * @example
    * calculateStep('next') output: state + 1..
    * calculateStep('previous') output: state - 1..
    */
   function calculateStep(stateFromStep, token) {
-    console.log(`DEBUG:`, stateFromStep, step, maxSteps, token);
     switch (stateFromStep) {
       case "next": {
         // Notify for step change
@@ -75,6 +75,8 @@ const StepperInformation = ({onChange, onSubmit, values, loadingStepper}) => {
     <StepThree
       value={values[2]}
       onClick={calculateStep}
+      onError={onError}
+      isLoading={isLoading}
       onChange={state => onChange("terms", state)}
     />
   ];
@@ -114,7 +116,6 @@ const StepperInformation = ({onChange, onSubmit, values, loadingStepper}) => {
             className={"bg-custom-dark"}
           />
           {steps[step - 1]}
-          {(loadingStepper) && <RegisterSpinner status={true}/>}
         </MDBCol>
       </MDBRow>
     </React.Fragment>

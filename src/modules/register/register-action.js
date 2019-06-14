@@ -7,37 +7,23 @@ import {
 } from "../../stores/register-store";
 
 /**
- * @param {object} userData
- * @param {string} stripeToken
+ *
+ * @param basicInformation
+ * @param coaching
+ * @param token
+ * @returns {Promise<firebase.functions.HttpsCallableResult>}
  */
-export const registerAction = async (userData) => {
-  const {basicInformation: {email}, token} = userData;
+export const registerAction = async ({basicInformation, coaching, token}) => {
   const functions = firebase.functions();
-  const f = functions.httpsCallable('createPaymentRequest');
-  f({email, token}).then(console.log);
-
-  // const database = firebase.firestore();
-  // try {
-  //   await database
-  //     .collection("users")
-  //     .doc(email)
-  //     .set(userData, {merge: true});
-  // } catch (err) {
-  //   return Flux.dispatchEvent(REGISTER_ERROR, err);
-  // }
-  // return Flux.dispatchEvent(REGISTER_EVENT, null);
+  const createPaymentRequest = functions.httpsCallable('createPaymentRequest');
+  let code = null;
+  try {
+    code = await createPaymentRequest({basicInformation, coaching, token});
+  } catch (e) {
+    Flux.dispatchEvent(REGISTER_ERROR, e);
+    throw e;
+  }
+  Flux.dispatchEvent(REGISTER_EVENT, code);
+  return code;
 };
 
-export const checkEmailExistenceAction = async email => {
-  // console.log(email);
-  const database = firebase.firestore();
-  const userColletion = database.collection("users");
-  const userRef = await userColletion.doc(email).get();
-  const exist = userRef.exists;
-  if (exist === true)
-    return Flux.dispatchEvent(
-      REGISTER_EMAIL_ERROR,
-      new Error("Email already taken")
-    );
-  return;
-};
