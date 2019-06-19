@@ -3,9 +3,11 @@ import View from 'react-flux-state';
 import Layout from '../../components/Layout';
 import CardComponent from '../../components/CardComponent';
 import FormContactUs from '../../components/FormContactUS'; 
-import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import { MDBContainer, MDBRow , MDBCol } from 'mdbreact';
 import contactUsStore,{ CONTACT_SENDED , CONTACT_ERROR } from './contactus-store';
 import { contactusAction } from './contactus-action'
+import { sendGridAction } from '../sendgrid/sendgrid-action'
+import { gmailAction } from '../gmail/gmail-action'
 
 
 
@@ -17,6 +19,8 @@ class ContactUsView extends View{
 
     this.subscribe(contactUsStore, CONTACT_SENDED,()=>{
       console.log('ok...... ');
+      
+
     });
 
     this.subscribe(contactUsStore,CONTACT_ERROR,(err)=>{
@@ -26,9 +30,17 @@ class ContactUsView extends View{
   };
   
 
-  onContactUsSubmit = ({ comment, email, name }) => {
+  onContactUsSubmit = ({ comment , email , name }) => {
 
-    contactusAction ( {email , name , comment} )  
+    contactusAction ({ email , name , comment } ) 
+
+    const data = {
+      name:name,
+      email: email,
+      comment : comment
+    }
+    // sendGridAction({data}) 
+    gmailAction({ data } )
 
   };
 
