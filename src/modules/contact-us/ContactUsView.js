@@ -6,7 +6,6 @@ import FormContactUs from '../../components/FormContactUS';
 import { MDBContainer, MDBRow , MDBCol } from 'mdbreact';
 import contactUsStore,{ CONTACT_SENDED , CONTACT_ERROR } from './contactus-store';
 import { contactusAction } from './contactus-action'
-import { sendGridAction } from '../sendgrid/sendgrid-action'
 import { gmailAction } from '../gmail/gmail-action'
 
 
@@ -39,7 +38,7 @@ class ContactUsView extends View{
       email: email,
       comment : comment
     }
-    // sendGridAction({data}) 
+
     gmailAction({ data } )
 
   };

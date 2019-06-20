@@ -1,6 +1,8 @@
 import firebase from 'firebase/app'
 
-
+/**
+ * @param  {objet} {data}
+ */
 export const gmailAction = async ({ data }) => {
     
     let gmail
