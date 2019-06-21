@@ -12,4 +12,6 @@ export const firebaseConfig = {
   messagingSenderId: "167941783479"
 };
 
+
+
 export const STRIPE_API_KEY = process.env.REACT_APP_STRIPE_API_KEY;

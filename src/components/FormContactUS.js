@@ -38,7 +38,7 @@ class FormContactUS extends View {
     e.preventDefault();
     const { comment, email, name } = this.state;
     this.props.onSubmit({ comment, email, name });
-    // console.log(comment , email , name)
+  
   }
 
   render() {
