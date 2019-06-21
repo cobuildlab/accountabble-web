@@ -5,8 +5,7 @@ import CardComponent from '../../components/CardComponent';
 import FormContactUs from '../../components/FormContactUS'; 
 import { MDBContainer, MDBRow , MDBCol } from 'mdbreact';
 import contactUsStore,{ CONTACT_SENDED , CONTACT_ERROR } from './contactus-store';
-// import { contactusAction } from './contactus-action'
-import { gmailAction } from '../gmail/gmail-action'
+import { contactusAction } from './contactus-action'
 import RegisterSpinner from '../register/components/RegisterSpinner'
 import '../../assets/scss/style.scss'
 import { toast } from 'react-toastify'
@@ -47,11 +46,10 @@ class ContactUsView extends View{
       comment : comment
     }
     this.setState({loading:true},()=>{
-      gmailAction({ data }) 
+      contactusAction({ data })
 
     })
     
-
   };
 
   render(){
