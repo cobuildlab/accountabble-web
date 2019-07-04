@@ -52,6 +52,7 @@ const StepThree = ({onClick, onChange, onError, value, isLoading}) => {
   };
 
   return (
+
     <StripeProvider apiKey={STRIPE_API_KEY}>
       <Elements>
         <div className="animated fadeIn">
