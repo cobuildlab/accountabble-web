@@ -52,10 +52,10 @@ const AboutUSView = () => {
                   </MDBMedia>
                   <MDBMedia body>
                     <h1 className="title text-white mb-4" heading={true.toString()}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Our Motto
                     </h1>
-                    <p>Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam. Sed imperdiet libero magna, eget vulputate lacus iaculis et. Curabitur et nunc risus. </p>
-                    <p>Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt. Cras viverra est a est ornare dignissim. Suspendisse lobortis consectetur metus, sed viverra nisl porttitor ac. Proin a iaculis diam. Sed imperdiet libero magna, eget vulputate lacus iaculis et. Curabitur et nunc risus. </p>
+                    <p>Become Your Best Self </p>
+                    <p>Every human has an innate ability to transform the world. You are the drop of a ripple effect that can create innovation or mayhem. No matter where you find yourself right now, you can simply start walking the road of becoming your best self. </p>
                   </MDBMedia>
                 </MDBMedia>
               </MDBCol>
@@ -70,13 +70,19 @@ const AboutUSView = () => {
               </MDBCol>
               <MDBCol md="6" xs="6">
                 <img src={Quotes} alt="description" className="img-fluid mb-3"/>
-                <h4 className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper, risus vitae tincidunt volutpat, quam dolor dictum tortor, lacinia blandit arcu sem et neque. Pellentesque hendrerit vitae massa eu tincidunt.</h4>
+                <h4 className="mb-4">“Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.” ― Rumi.</h4>
               </MDBCol>
             </MDBRow>
             <MDBRow>
               <MDBCol md="6" className="text-right">
                 <img src={PeopleH} alt="description" className="img-fluid mb-4"/>
-                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+                <h1>
+                  It matters not how strait the gate, 
+                  How charged with punishments the scroll, 
+                  I am the master of my fate, 
+                  I am the captain of my soul. 
+                  -  WILLIAM ERNEST HENLEY
+                </h1>
               </MDBCol>
               <MDBCol md="6">
                 <img src={People2} alt="" className="img-fluid z-depth-2"/>
