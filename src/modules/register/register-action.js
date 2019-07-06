@@ -16,27 +16,19 @@ import {
  */
 export const registerAction = async ({basicInformation, coaching, token}) => {
   const functions = firebase.functions();
-  const createPaymentRequest = functions.httpsCallable('createPaymentRequest');
-  let code = null;
+  const createPaymentRequest = functions.httpsCallable('mainFunction');
+  const data = {
+    basicInformation:basicInformation,
+    coaching:coaching,
+    token:token
+  }
+  let code 
   try {
-    code = await createPaymentRequest({basicInformation, coaching, token});
+    code = await createPaymentRequest({data});
   } catch (e) {
     Flux.dispatchEvent(REGISTER_ERROR, e);
     throw e;
   }
-
-
-  // google drive
-  const googleDrive = functions.httpsCallable('googleDrive')
-  let folder
-  try {
-    // handler data 
-    folder = await googleDrive()
-  } catch (e) {
-    Flux.dispatchEvent(REGISTER_GOOGLE_DRIVE_ERROR,e)
-    throw e
-  }
-
 
   Flux.dispatchEvent(REGISTER_EVENT, code);
   return code;

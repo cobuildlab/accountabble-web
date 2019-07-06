@@ -17,7 +17,7 @@ export const contactusAction = async ({ data })=>{
 
 
     // call cloud functions
-    const sendEmailWhithGmail = firebase.functions().httpsCallable("sendEmailWhithGmail")
+    const sendEmailWhithGmail = firebase.functions().httpsCallable("sendEmail")
     let gmail
     try {
         gmail = await sendEmailWhithGmail({ data })     
