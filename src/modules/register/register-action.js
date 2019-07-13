@@ -17,14 +17,11 @@ import {
 export const registerAction = async ({basicInformation, coaching, token}) => {
   const functions = firebase.functions();
   const createPaymentRequest = functions.httpsCallable('mainFunction');
-  const data = {
-    basicInformation:basicInformation,
-    coaching:coaching,
-    token:token
-  }
+ 
+  
   let code 
   try {
-    code = await createPaymentRequest({data});
+    code = await createPaymentRequest({basicInformation , coaching , token});
   } catch (e) {
     Flux.dispatchEvent(REGISTER_ERROR, e);
     throw e;
