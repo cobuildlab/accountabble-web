@@ -60,7 +60,7 @@ const Navbar = () => {
               </MDBNavItem>
               <div className="divider-vertical-link d-none d-sm-block" />
               <MDBNavItem>
-                <Link className="link-nav" to="/">
+                <Link className="link-nav" to="/contact-us">
                   CONTACT US
                 </Link>
               </MDBNavItem>

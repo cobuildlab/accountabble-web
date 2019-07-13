@@ -16,7 +16,8 @@ class RegisterForm extends View {
       isLoading: false,
       basicInformation: {
         email: "",
-        name: ""
+        name: "",
+        active:true
       },
       coaching: {
         category: "Mediation",
