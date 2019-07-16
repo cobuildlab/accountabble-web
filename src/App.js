@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
 import LandingView from "./modules/landing/LandingView";
 import AboutUsView from "./modules/about-us/AboutUSView";
 import FaqView from "./modules/faq/FaqView";
@@ -36,6 +36,7 @@ class App extends Component {
                 key={i}
               />
             ))}
+            <Redirect to="/"/>
           </Switch>
         </BrowserRouter>
         <ToastContainer/>
