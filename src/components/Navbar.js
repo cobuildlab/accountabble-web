@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Link as LinkScroll } from 'react-scroll';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -21,7 +22,6 @@ const Navbar = () => {
   };
 
   const navigateSocialMedia = url => (window.location.href = url);
-
   return (
     <React.Fragment>
       <MDBNavbar
@@ -42,9 +42,9 @@ const Navbar = () => {
           <MDBCollapse id="navbarCollapse" isOpen={toggle} navbar>
             <MDBNavbarNav right>
               <MDBNavItem active>
-                <Link className="link-nav" to="/#blog">
-                  BLOG
-                </Link>
+                    <a className="link-nav" href="/#blog" >
+                        BLOG
+                    </a>
               </MDBNavItem>
               <div className="divider-vertical-link d-none d-sm-block" />
               <MDBNavItem>

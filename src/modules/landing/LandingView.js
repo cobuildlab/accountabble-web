@@ -1,6 +1,7 @@
 import React from "react";
 import {MDBRow, MDBCol, MDBView, MDBContainer} from "mdbreact";
-import { Link } from "react-router-dom";
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 import BgHeader from "../../assets/img/bg/background-home-web.png";
 import CardBlogLarge from "../../components/CardBlogLarge";
@@ -43,6 +44,7 @@ class LandingView extends View {
       isOpen:false
     };
     this.openModal = this.openModal.bind(this)
+    // this.scrollToTop = this.scrollToTop.bind(this)
   
   }
 
@@ -57,6 +59,9 @@ class LandingView extends View {
             image: currentStepInformation.image
           }
         });
+
+        const { match, location, history } = this.props
+       
     });
 
     this.subscribe(blogStore, GET_BLOGS, blogs => {
@@ -84,6 +89,8 @@ class LandingView extends View {
     getBlogsAction();
   }
 
+
+
   openModal () {
     this.setState({isOpen: true})
   }
@@ -95,22 +102,22 @@ class LandingView extends View {
       errorView,
       blogItems
     } = this.state;
+
+    // const { match, location, history } = this.props
     return (
       <RouteChangeContainer>
         <Navbar/>
             <MDBView src={BgHeader} fixed/>
-      
               <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='7Pb3HQYtDo8' onClose={() => this.setState({isOpen: false})} />
-              <button className='button-video ' onClick={this.openModal}>LEARN MORE</button>
+              <button className='button-video' onClick={this.openModal}>LEARN MORE</button>
                 <div className='text-video'>
                   Watch our 
                 </div> 
-                <div>
-                  <Link className='play-circle' to="/#form ">
+                <div className='play-circle' >
+                  <Link smooth={true} to="form">
                     Start
                   </Link>
                 </div>
-                
         <main>
           <div className="secction-plan">
             <MDBContainer>
@@ -149,7 +156,7 @@ class LandingView extends View {
           </div>
           <div id="blog" className="section-blog">
             <MDBContainer>
-              <h1  className="title-blog text-white text-center mb-5">Blog</h1>
+              <h1 id='blog' className="title-blog text-white text-center mb-5">Blog</h1>
               <div  className="d-none d-sm-block">
                 {loading ? (
                   <BlogSpinner status={loading}/>
