@@ -42,7 +42,7 @@ const Navbar = () => {
           <MDBCollapse id="navbarCollapse" isOpen={toggle} navbar>
             <MDBNavbarNav right>
               <MDBNavItem active>
-                <Link className="link-nav" to="/">
+                <Link className="link-nav" to="/#blog">
                   BLOG
                 </Link>
               </MDBNavItem>

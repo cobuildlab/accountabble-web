@@ -1,5 +1,6 @@
 import React from "react";
 import {MDBRow, MDBCol, MDBView, MDBContainer} from "mdbreact";
+import { Link } from "react-router-dom";
 
 import BgHeader from "../../assets/img/bg/background-home-web.png";
 import CardBlogLarge from "../../components/CardBlogLarge";
@@ -100,12 +101,14 @@ class LandingView extends View {
             <MDBView src={BgHeader} fixed/>
       
               <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='7Pb3HQYtDo8' onClose={() => this.setState({isOpen: false})} />
-              <button className='button-video ' onClick={this.openModal}>Start</button>
-                <div className=' text-video'>
+              <button className='button-video ' onClick={this.openModal}>LEARN MORE</button>
+                <div className='text-video'>
                   Watch our 
                 </div> 
-                <div className='play-circle'>
-                  play
+                <div>
+                  <Link className='play-circle' to="/#form ">
+                    Start
+                  </Link>
                 </div>
                 
         <main>
@@ -124,7 +127,7 @@ class LandingView extends View {
               </MDBRow>
             </MDBContainer>
           </div>
-          <div className="section-information">
+          <div id="form"  className="section-information">
             <MDBContainer>
               <MDBRow>
                 <MDBCol md="6">
@@ -146,8 +149,8 @@ class LandingView extends View {
           </div>
           <div id="blog" className="section-blog">
             <MDBContainer>
-              <h1 className="title-blog text-white text-center mb-5">Blog</h1>
-              <div className="d-none d-sm-block">
+              <h1  className="title-blog text-white text-center mb-5">Blog</h1>
+              <div  className="d-none d-sm-block">
                 {loading ? (
                   <BlogSpinner status={loading}/>
                 ) : !errorView ? (
