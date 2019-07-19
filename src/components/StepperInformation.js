@@ -73,6 +73,7 @@ const StepperInformation = ({onChange, onSubmit, onError, values, isLoading}) =>
       onChange={state => onChange("coaching", state)}
     />,
     <StepThree
+      personalInformation={values[0]}
       value={values[2]}
       onClick={calculateStep}
       onError={onError}
