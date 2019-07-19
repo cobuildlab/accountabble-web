@@ -726,7 +726,7 @@ a:hover {
 
 .active-category {
   background-color: #262626 !important;
-  color: #fff;
+  color: #fff !important; 
 }
 
 .view {
@@ -912,14 +912,13 @@ a:hover {
 
 
 // react-video-style
-
 .button-video{
   position: absolute;
-  left: 200px;
+  left: 190px;
   bottom: 150px;
   border: 1px solid #5ECAEE;
   border-radius: 3em;
-  padding: 0.2em 3em;
+  padding: 0.1em 1em;
   background-color: $ac-primary;
   color: $ac-dark;
   font-weight: bold;
