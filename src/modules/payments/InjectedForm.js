@@ -2,9 +2,19 @@ import {CardElement, injectStripe} from "react-stripe-elements";
 import React from "react";
 
 class PaymentForm extends React.Component {
-  submitToken = () => {
-    console.log('DEBUG: submitToken');
-    this.props.stripe.createToken({name: "name"}).then(token => {
+  submitToken = ({name}) => {
+    // this.props.stripe.createSource({
+    //   type: 'card',
+    //   usage: 'reusable',
+    //   currency: 'usd',
+    //   owner: {
+    //     name
+    //   },
+    // }).then(source => {
+    //   console.log('DEBUG: source:', source);
+    //   this.props.onToken(source, email);
+    // });
+    this.props.stripe.createToken({name}).then(token => {
       this.props.onToken(token)
     });
   };
