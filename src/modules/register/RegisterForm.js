@@ -89,7 +89,11 @@ class RegisterForm extends View {
     const {basicInformation, coaching: {category, frequency, weeks},active} = this.state;
     const coaching = {category, frequency, weeks};
     this.setState({isLoading: true}, () => {
+<<<<<<< HEAD
       registerAction({basicInformation, coaching, token , active});
+=======
+      registerAction({basicInformation, coaching, token, active});
+>>>>>>> master
     });
   };
 
