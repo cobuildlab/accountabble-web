@@ -907,5 +907,46 @@ a:hover {
 }
 
 .center-spinner{
-  transform: translateY(51px) ; 
+  transform: translateY(51px); 
 }
+
+
+// react-video-style
+
+.button-video{
+  position: absolute;
+  left: 200px;
+  bottom: 150px;
+  border: 1px solid #5ECAEE;
+  border-radius: 3em;
+  padding: 0.2em 3em;
+  background-color: $ac-primary;
+  color: $ac-dark;
+  font-weight: bold;
+  font-size: 1.2em;
+  
+}
+
+.text-video{
+    color: white;
+    position: absolute;
+    left: 380px;
+    bottom: 150px;
+    font-weight: bold;
+    font-size: 1.1em;
+    
+  }
+
+  .play-circle{
+    position: absolute;
+    background-color: $ac-primary;
+    color: $ac-dark;
+    padding: 0.9em 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    left: 500px;
+    bottom: 150px;
+
+  }

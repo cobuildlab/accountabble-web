@@ -14,14 +14,14 @@ import {
  * @param token
  * @returns {Promise<firebase.functions.HttpsCallableResult>}
  */
-export const registerAction = async ({basicInformation, coaching, token}) => {
+export const registerAction = async ({basicInformation, coaching, token ,active}) => {
   const functions = firebase.functions();
   const createPaymentRequest = functions.httpsCallable('mainFunction');
  
   
   let code 
   try {
-    code = await createPaymentRequest({basicInformation , coaching , token});
+    code = await createPaymentRequest({basicInformation , coaching , token ,active });
   } catch (e) {
     Flux.dispatchEvent(REGISTER_ERROR, e);
     throw e;

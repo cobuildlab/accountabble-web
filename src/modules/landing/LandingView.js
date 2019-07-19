@@ -20,6 +20,9 @@ import blogStore, {GET_BLOGS, ERROR_BLOGS} from "../blogs/blog-store";
 import {getBlogsAction} from "../blogs/blog-actions";
 import BlogSpinner from "./components/BlogSpinner";
 import MediaQuote from "../../components/MediaQuote";
+import 'react-modal-video/scss/modal-video.scss';
+import ModalVideo from 'react-modal-video'
+import '../../assets/scss/style.scss'
 
 class LandingView extends View {
   constructor(props) {
@@ -35,8 +38,11 @@ class LandingView extends View {
       blogItems: [],
       loading: true,
       updatedView: false,
-      errorView: false
+      errorView: false,
+      isOpen:false
     };
+    this.openModal = this.openModal.bind(this)
+  
   }
 
   componentDidMount() {
@@ -77,6 +83,10 @@ class LandingView extends View {
     getBlogsAction();
   }
 
+  openModal () {
+    this.setState({isOpen: true})
+  }
+
   render() {
     const {
       currentStepInformation: {title, description, stepText, image},
@@ -87,7 +97,17 @@ class LandingView extends View {
     return (
       <RouteChangeContainer>
         <Navbar/>
-        <MDBView src={BgHeader} fixed/>
+            <MDBView src={BgHeader} fixed/>
+      
+              <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='7Pb3HQYtDo8' onClose={() => this.setState({isOpen: false})} />
+              <button className='button-video ' onClick={this.openModal}>Start</button>
+                <div className=' text-video'>
+                  Watch our 
+                </div> 
+                <div className='play-circle'>
+                  play
+                </div>
+                
         <main>
           <div className="secction-plan">
             <MDBContainer>
