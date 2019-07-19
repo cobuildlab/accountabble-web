@@ -17,8 +17,8 @@ class RegisterForm extends View {
       basicInformation: {
         email: "",
         name: "",
-        active:true
       },
+      active:true,
       coaching: {
         category: "Mediation",
         frequency: 3,
@@ -86,10 +86,10 @@ class RegisterForm extends View {
    * @param {string} token
    */
   handleSubmit = async token => {
-    const {basicInformation, coaching: {category, frequency, weeks}} = this.state;
+    const {basicInformation, coaching: {category, frequency, weeks},active} = this.state;
     const coaching = {category, frequency, weeks};
     this.setState({isLoading: true}, () => {
-      registerAction({basicInformation, coaching, token});
+      registerAction({basicInformation, coaching, token,active});
     });
   };
 

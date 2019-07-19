@@ -9,6 +9,7 @@ import { contactusAction } from './contactus-action'
 import RegisterSpinner from '../register/components/RegisterSpinner'
 import '../../assets/scss/style.scss'
 import { toast } from 'react-toastify'
+import firebase from 'firebase'
 
 
 
@@ -17,7 +18,7 @@ class ContactUsView extends View{
 
   state = { loading: false}
 
-  componentDidMount(){
+   componentDidMount(){
 
     this.subscribe(contactUsStore, CONTACT_SENDED,()=>{
       toast.success('Message successfully sent')
@@ -28,7 +29,8 @@ class ContactUsView extends View{
       
       
     });
-    
+
+
     this.subscribe(contactUsStore,CONTACT_ERROR,(err)=>{
       this.setState({loading:false },()=>{
         toast.error(err.message)
