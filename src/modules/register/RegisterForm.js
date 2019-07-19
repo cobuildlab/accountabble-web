@@ -26,8 +26,8 @@ class RegisterForm extends View {
           {name: "Sleep Better", selected: true},
           {name: "Mediate Regularly", selected: false},
           {name: "Exercise Regularly", selected: false},
-          {name: "Eat Healthier", selected: false},
-          {name: "Read/Write More", selected: false}
+          // {name: "Eat Healthier", selected: false},
+          // {name: "Read/Write More", selected: false}
         ],
         weeks: "1"
       },
@@ -89,7 +89,7 @@ class RegisterForm extends View {
     const {basicInformation, coaching: {category, frequency, weeks},active} = this.state;
     const coaching = {category, frequency, weeks};
     this.setState({isLoading: true}, () => {
-      registerAction({basicInformation, coaching, token , active});
+      registerAction({basicInformation, coaching, token, active});
     });
   };
 

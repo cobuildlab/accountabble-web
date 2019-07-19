@@ -3,8 +3,6 @@ import Flux from "flux-state";
 import {
   REGISTER_ERROR,
   REGISTER_EVENT,
-  REGISTER_EMAIL_ERROR,
-  REGISTER_GOOGLE_DRIVE_ERROR
 } from "../../stores/register-store";
 
 /**
@@ -17,9 +15,9 @@ import {
 export const registerAction = async ({basicInformation, coaching, token ,active}) => {
   const functions = firebase.functions();
   const createPaymentRequest = functions.httpsCallable('mainFunction');
- 
-  
-  let code 
+
+
+  let code;
   try {
     code = await createPaymentRequest({basicInformation , coaching , token ,active });
   } catch (e) {
