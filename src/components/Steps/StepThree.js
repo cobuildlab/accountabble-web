@@ -58,7 +58,7 @@ const StepThree = ({onClick, onChange, onError, value, isLoading, personalInform
         <div className="animated fadeIn">
           <StepTitle message={"Credit Card"}/>
           <div className="row">
-            <p className="ml-3">Would you like to complete the purchase?</p>
+            {/* <p className="ml-3">Would you like to complete the purchase?</p> */}
             <br/>
             <MDBCol md="8">
               <br/>

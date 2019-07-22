@@ -1,6 +1,6 @@
 import React from "react";
 import {MDBRow, MDBCol, MDBView, MDBContainer} from "mdbreact";
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link, animateScroll as scroll} from 'react-scroll'
 
 
 import BgHeader from "../../assets/img/bg/background-home-web.png";
@@ -108,22 +108,35 @@ class LandingView extends View {
       <RouteChangeContainer>
         <Navbar/>
             <MDBView src={BgHeader} fixed/>
-              <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='7Pb3HQYtDo8' onClose={() => this.setState({isOpen: false})} />
+              {/* <ModalVideo  channel='youtube' isOpen={this.state.isOpen} videoId='7Pb3HQYtDo8' onClose={() => this.setState({isOpen: false})} />
               <button className='button-video' onClick={this.openModal}>LEARN MORE</button>
                 <div className='text-video'>
                   Watch our 
                 </div> 
                 <div className='play-circle' >
-                  <Link smooth={true} to="form">
-                    Start
+              </div> */}
+                <div className='button-video'>
+                <iframe className ="video-inframe" src="https://www.youtube.com/embed/7Pb3HQYtDo8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 className='text-video text-video1'>
+                  BECOME A BETTER 
+                </h3>
+                <h3 className='text-video text-video2'>
+                  VERSION OF YOURSELF
+                </h3>
+                <div className='text-video start'>
+                  <Link  smooth={true} to="form">
+                    Start Now
                   </Link>
                 </div>
+
+
         <main>
           <div className="secction-plan">
             <MDBContainer>
               <MDBRow className="py-5">
                 <MDBCol md="12">
-                  <h1 className="text-center text-white title-plan">Plan</h1>
+                  <h1 className="text-center text-white title-plan">ACCOUNTABBLE PATH</h1>
                 </MDBCol>
                 <div className="d-none d-sm-block">
                   <PlanPreview/>
