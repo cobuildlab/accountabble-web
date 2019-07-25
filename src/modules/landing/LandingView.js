@@ -59,8 +59,6 @@ class LandingView extends View {
             image: currentStepInformation.image
           }
         });
-
-        const { match, location, history } = this.props
        
     });
 

@@ -23,7 +23,6 @@ export const stepsInformation = [
   {
     title: 'Actualization',
     description: "As you share your actions with ACCOUNTABBLE by sharing pictures or videos through our platform, one of our coaches will check up on you by looking at those files.",
-    stepText: 'The First Step to become your better Self.'
   },
 ];
 

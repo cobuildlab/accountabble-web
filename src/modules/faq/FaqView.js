@@ -37,7 +37,7 @@ const FaqView = props => {
         <div className="section-faq">
           <MDBContainer>
             <MDBRow>
-              <MDBCol md="12" className="mb-4 white-text text-center">
+              <MDBCol md="12" className="mb-4 white-text  fqa-font text-center">
                 <FrequentQuestion
                   question={"What is ACCOUNTABBLE?"}
                   answer={
@@ -45,7 +45,7 @@ const FaqView = props => {
                   }
                 />
               </MDBCol>
-              <MDBCol md="12" className="mb-4 white-text text-center">
+              <MDBCol md="12" className="mb-4 white-text fqa-font text-center">
                 <FrequentQuestion
                   question={"What do I have to do?"}
                   answer={
@@ -53,7 +53,7 @@ const FaqView = props => {
                   }
                 />
               </MDBCol>
-              <MDBCol md="12" className="mb-4 white-text text-center">
+              <MDBCol md="12" className="mb-4 white-text fqa-font text-center">
                 <FrequentQuestion
                   question={"How does it work?"}
                   answer={
@@ -61,7 +61,7 @@ const FaqView = props => {
                   }
                 />
               </MDBCol>
-              <MDBCol md="12" className="mb-4 white-text text-center">
+              <MDBCol md="12" className="mb-4 white-text fqa-font text-center">
                 <FrequentQuestion
                   question={"How much is it?"}
                   answer={
@@ -69,7 +69,7 @@ const FaqView = props => {
                   }
                 />
               </MDBCol>
-              <MDBCol md="12" className="mb-4 white-text text-center">
+              <MDBCol md="12" className="mb-4 white-text fqa-font text-center">
                 <FrequentQuestion
                   question={"How do I cancel my membership?"}
                   answer={
@@ -77,7 +77,7 @@ const FaqView = props => {
                   }
                 />
               </MDBCol>
-              <MDBCol md="12" className="mb-4 white-text text-center">
+              <MDBCol md="12" className="mb-4 white-text fqa-font text-center">
                 <FrequentQuestion
                   question={"How does the punishment work?"}
                   answer={
@@ -85,7 +85,7 @@ const FaqView = props => {
                   }
                 />
               </MDBCol>
-              <MDBCol md="12" className="mb-4 white-text text-center">
+              <MDBCol md="12" className="mb-4 white-text fqa-font text-center">
                 <FrequentQuestion
                   question={"What if I can’t reasonably do what I set out?"}
                   answer={

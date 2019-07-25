@@ -8,8 +8,8 @@ import contactUsStore,{ CONTACT_SENDED , CONTACT_ERROR } from './contactus-store
 import { contactusAction } from './contactus-action'
 import RegisterSpinner from '../register/components/RegisterSpinner'
 import '../../assets/scss/style.scss'
-import { toast } from 'react-toastify'
-import firebase from 'firebase'
+import { toast } from 'react-toastify';
+
 
 
 
@@ -33,12 +33,15 @@ class ContactUsView extends View{
 
     this.subscribe(contactUsStore,CONTACT_ERROR,(err)=>{
       this.setState({loading:false },()=>{
+
         toast.error(err.message)
+  
       })
     });
     
   };
   
+ 
   
   onContactUsSubmit = ({ comment , email , name }) => {
     

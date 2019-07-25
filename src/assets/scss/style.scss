@@ -913,7 +913,7 @@ a:hover {
 
 // video-style
 .video-inframe{
-  width: 700px;
+  width: 650px;
   height: 400px;
 
 }
@@ -949,6 +949,10 @@ a:hover {
   }
 
 
+  // change style fqa Cesar
+  .fqa-font{
+    font-family: sans-serif;
+  }
 
 
 
@@ -966,3 +970,17 @@ a:hover {
 
   // }
 
+
+  .change-text{
+    font-size: 15px;
+  }
+
+
+  // overwriting the react-toasty classes
+
+  .Toastify__toast--error ,.Toastify__toast--success {
+    background: #9c9c9c !important;
+    border: 1px solid #333;
+    border-radius: 4px;
+  }
+  

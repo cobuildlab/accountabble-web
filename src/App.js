@@ -9,6 +9,7 @@ import SuccessView from "./modules/register/SucessView";
 import ContactUsView from "./modules/contact-us/ContactUsView";
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './assets/scss/style.scss'
 
 
 const routes = [
@@ -39,7 +40,7 @@ class App extends Component {
             <Redirect to="/"/>
           </Switch>
         </BrowserRouter>
-        <ToastContainer/>
+        <ToastContainer />
       </>
     );
   }
