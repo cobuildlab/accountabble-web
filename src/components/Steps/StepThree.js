@@ -111,7 +111,7 @@ const StepThree = ({onClick, onChange, onError, value, isLoading, personalInform
               disabled={!terms.agreeTerms}
               onClick={submitToken}
             >
-              Finish
+              Start Journey
             </MDBBtn>
           </div>
         </div>

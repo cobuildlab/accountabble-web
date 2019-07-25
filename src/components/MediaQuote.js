@@ -9,7 +9,10 @@ const MediaQuote = ({ innextText, image }) => {
       />
       <div className="media-body ml-3 mt-5">
         <h6 style={{ fontSize: 22 }}>
-          <q>{innextText}</q>
+          {
+            (innextText === undefined)?<>{innextText}</> :<q>{innextText}</q>
+          }
+          
         </h6>
       </div>
     </div>

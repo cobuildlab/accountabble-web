@@ -4,6 +4,7 @@ import '../../assets/scss/style.scss';
 import { MDBBtn, MDBRow, MDBCol, MDBFormInline } from "mdbreact";
 import InputInfomration from "../InputInformation";
 import StepTitle from "./StepTitle";
+import SelectForm from "../select"
 
 const StepTwo = ({ onClick, onChange = function() {}, value }) => {
   const [frequency, setFrequency] = React.useState(value.frequency);
@@ -63,7 +64,7 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
     <div className="animated fadeIn">
     <StepTitle message={"Goal"} />
       <div>
-        <h6 className="title mt-2 mb-3">Category</h6>
+        {/* <h6 className="title mt-2 mb-3">Category</h6> */}
         <MDBRow>
           {categories.map((category, index) => (
             <MDBCol md="4" className="col-xs-btn-step-2" key={index}>
@@ -75,10 +76,16 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
             </MDBCol>
           ))}
         </MDBRow>
-
         <MDBRow>
         </MDBRow>
-
+        <h6 className='change-text'>We are currently in beta. We will be adding more goals and different behaviors as well as letting users add multiple goals under the same contract. Hold tight</h6>
+        <br/>
+        <div>
+        <h6 className='title'>Bet</h6>
+        <SelectForm/>
+        <br/>
+        <h6>I will pay this amount if i do not keep my word</h6>
+        </div>
         <h6 className="title mt-4 mb-3">Sets frequency a week</h6>
         <MDBRow className="mt-4">
           {frequencies.map((freq, index) => (

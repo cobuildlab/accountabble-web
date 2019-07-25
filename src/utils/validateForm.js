@@ -11,17 +11,25 @@ import { validateEmail , matchSpaces , isEmpty } from './regexp'
  */
 export const validateContactForm = ( { name , email , comment } ) => {
 
-    if(isEmpty( name ) || isEmpty( email ) ||  isEmpty( comment ) ){
-        const E = 'please fill in the fields'
+    if(isEmpty( name )){
+        const E = 'Please enter a name'
+        throw new Error(E)
+    }
+    if(isEmpty( email )){
+        const E = 'Please enter an email'
+        throw new Error(E)
+    }
+    if(isEmpty( comment )) {
+        const E = 'Please enter your comment'
         throw new Error(E)
     }
        
     if(matchSpaces( name ) || matchSpaces( email )){
-        const E = 'the name and email must not have space'
+        const E = 'The name and email must not have space'
         throw new Error(E)
     }
    if (validateEmail( email )){
-        const E = 'invalid email'
+        const E = 'Invalid email'
         throw new Error(E)
    }
 
