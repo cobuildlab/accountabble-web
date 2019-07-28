@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 import {
   MDBNavbar,
@@ -8,47 +8,40 @@ import {
   MDBNavItem,
   MDBNavbarToggler,
   MDBCollapse,
-  MDBContainer
-} from "mdbreact";
-import Logo from "../assets/img/accountabble-c.png";
-import Facebook from "../assets/img/facebook-logo.png";
-import Instagram from "../assets/img/instagram.png";
+  MDBContainer,
+} from 'mdbreact';
+import Logo from '../assets/img/accountabble-c.png';
+import Facebook from '../assets/img/facebook-logo.png';
+import Instagram from '../assets/img/instagram.png';
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState("");
+  const [toggle, setToggle] = useState('');
 
-  const toggleNavbar = collapseID => {
-    setToggle(prevState => (prevState !== collapseID ? collapseID : ""));
+  const toggleNavbar = (collapseID) => {
+    setToggle((prevState) => (prevState !== collapseID ? collapseID : ''));
   };
 
-  const navigateSocialMedia = url => (window.location.href = url);
+  const navigateSocialMedia = (url) => (window.location.href = url);
   return (
     <React.Fragment>
-      <MDBNavbar
-        color="black"
-        dark
-        expand="md"
-        fixed="top"
-        scrolling
-        transparent
-      >
+      <MDBNavbar color="black" dark expand="md" fixed="top" scrolling transparent>
         <MDBContainer>
           <MDBNavbarBrand>
             <Link to="/">
               <img src={Logo} alt="Logo" width={200} />
             </Link>
           </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={() => toggleNavbar("navbarCollapse")} />
+          <MDBNavbarToggler onClick={() => toggleNavbar('navbarCollapse')} />
           <MDBCollapse id="navbarCollapse" isOpen={toggle} navbar>
             <MDBNavbarNav right>
               <MDBNavItem active>
-                    <a className="link-nav" href="/#blog" >
-                        BLOG
-                    </a>
+                <a className="link-nav" href="/#blog">
+                  BLOG
+                </a>
               </MDBNavItem>
               <div className="divider-vertical-link d-none d-sm-block" />
               <MDBNavItem>
-                <Link className="link-nav" to="/faq">
+                <Link className="link-nav" to="/faq/#root">
                   FAQ
                 </Link>
               </MDBNavItem>
@@ -66,24 +59,16 @@ const Navbar = () => {
               </MDBNavItem>
               <MDBNavItem>
                 <img
-                  className={"social pointer"}
-                  onClick={() =>
-                    navigateSocialMedia(
-                      "https://www.facebook.com/accountabble/"
-                    )
-                  }
+                  className={'social pointer'}
+                  onClick={() => navigateSocialMedia('https://www.facebook.com/accountabble/')}
                   src={Facebook}
                   alt="logo"
                 />
               </MDBNavItem>
               <MDBNavItem>
                 <img
-                  className={"ml-3 social pointer"}
-                  onClick={() =>
-                    navigateSocialMedia(
-                      "https://www.instagram.com/accountabble/"
-                    )
-                  }
+                  className={'ml-3 social pointer'}
+                  onClick={() => navigateSocialMedia('https://www.instagram.com/accountabble/')}
                   src={Instagram}
                   alt="logo"
                 />

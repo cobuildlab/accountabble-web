@@ -30,7 +30,7 @@ const getCurrentProgress = (currentStep, maxSteps) =>
 
 const StepperInformation = ({ onChange, onSubmit, onError, data, isLoading }) => {
   const maxSteps = 3;
-  const [step, setStep] = React.useState(2);
+  const [step, setStep] = React.useState(1);
 
   /**
    *

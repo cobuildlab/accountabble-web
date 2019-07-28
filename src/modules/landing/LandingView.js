@@ -51,8 +51,6 @@ class LandingView extends View {
             image: currentStepInformation.image,
           },
         });
-
-      const { match, location, history } = this.props;
     });
 
     this.subscribe(blogStore, GET_BLOGS, (blogs) => {
@@ -70,13 +68,12 @@ class LandingView extends View {
       });
     });
 
-    this.subscribe(blogStore, ERROR_BLOGS, (err) => {
+    this.subscribe(blogStore, ERROR_BLOGS, () => {
       this.setState({
         errorView: true,
         loading: false,
       });
     });
-
     getBlogsAction();
   }
 
@@ -91,8 +88,6 @@ class LandingView extends View {
       errorView,
       blogItems,
     } = this.state;
-
-    // const { match, location, history } = this.props
     return (
       <RouteChangeContainer>
         <Navbar />
