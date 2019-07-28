@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <React.Fragment>
       <MDBNavbar
-        color="white"
+        color="black"
         dark
         expand="md"
         fixed="top"

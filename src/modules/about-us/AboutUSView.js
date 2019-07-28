@@ -9,7 +9,7 @@ import IsoIcon from '../../assets/img/bg/accountabble-r.png';
 import People1 from '../../assets/img/bg/people1.jpg';
 import People2 from '../../assets/img/bg/people2.jpg';
 import PeopleH from '../../assets/img/bg/people-h.png'
-import Quotes from '../../assets/img/bg/quotes.png';  
+import Quotes from '../../assets/img/bg/quotes.png';
 import '../../assets/scss/style.scss';
 import RouteChangeContainer from '../../components/RouteChangeContainer';
 
@@ -24,11 +24,11 @@ const AboutUSView = () => {
             <MDBRow>
               <MDBCol md="12" className="mb-4 white-text text-center">
                 <h1 className="display-2 mb-0 pt-md-5 pt-5 primary-text font-weight-bold text-uppercase d-none d-sm-block">
-                  <span> ABOUT </span> 
+                  <span> ABOUT </span>
                   <span className="white-text font-weight-light"> US </span>
                 </h1>
                 <h1 className="display-4 mb-0 pt-md-5 pt-5 mt-5 primary-text font-weight-bold text-uppercase d-block d-sm-none">
-                  <span>ABOUT</span> 
+                  <span>ABOUT</span>
                   <span className="white-text font-weight-light"> US </span>
                 </h1>
                 <h2 className="pt-md-5 pt-sm-2 pt-5 pb-md-5 pb-sm-3 pb-5 white-text text-left">
@@ -77,10 +77,10 @@ const AboutUSView = () => {
               <MDBCol md="6" className="text-right">
                 <img src={PeopleH} alt="description" className="img-fluid mb-4"/>
                 <h1>
-                  It matters not how strait the gate, 
-                  How charged with punishments the scroll, 
-                  I am the master of my fate, 
-                  I am the captain of my soul. 
+                  It matters not how strait the gate,
+                  How charged with punishments the scroll,
+                  I am the master of my fate,
+                  I am the captain of my soul.
                   -  WILLIAM ERNEST HENLEY
                 </h1>
               </MDBCol>
