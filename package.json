@@ -20,6 +20,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-scroll": "^1.7.12",
+    "react-select": "^3.0.4",
     "react-spinners": "^0.5.4",
     "react-stripe-elements": "^3.0.0",
     "react-toastify": "^5.2.1",
@@ -40,5 +41,23 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.0.0",
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2"
+  }
 }
