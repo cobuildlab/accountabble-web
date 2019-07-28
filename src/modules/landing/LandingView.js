@@ -1,6 +1,7 @@
 import React from "react";
 import {MDBRow, MDBCol, MDBView, MDBContainer} from "mdbreact";
-import { Link } from "react-router-dom";
+import { Link, animateScroll as scroll} from 'react-scroll'
+
 
 import BgHeader from "../../assets/img/bg/background-home-web.png";
 import CardBlogLarge from "../../components/CardBlogLarge";
@@ -43,6 +44,7 @@ class LandingView extends View {
       isOpen:false
     };
     this.openModal = this.openModal.bind(this)
+    // this.scrollToTop = this.scrollToTop.bind(this)
   
   }
 
@@ -57,6 +59,9 @@ class LandingView extends View {
             image: currentStepInformation.image
           }
         });
+
+        const { match, location, history } = this.props
+       
     });
 
     this.subscribe(blogStore, GET_BLOGS, blogs => {
@@ -84,6 +89,8 @@ class LandingView extends View {
     getBlogsAction();
   }
 
+
+
   openModal () {
     this.setState({isOpen: true})
   }
@@ -95,28 +102,41 @@ class LandingView extends View {
       errorView,
       blogItems
     } = this.state;
+
+    // const { match, location, history } = this.props
     return (
       <RouteChangeContainer>
         <Navbar/>
             <MDBView src={BgHeader} fixed/>
-      
-              <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='7Pb3HQYtDo8' onClose={() => this.setState({isOpen: false})} />
-              <button className='button-video ' onClick={this.openModal}>LEARN MORE</button>
+              {/* <ModalVideo  channel='youtube' isOpen={this.state.isOpen} videoId='7Pb3HQYtDo8' onClose={() => this.setState({isOpen: false})} />
+              <button className='button-video' onClick={this.openModal}>LEARN MORE</button>
                 <div className='text-video'>
                   Watch our 
                 </div> 
-                <div>
-                  <Link className='play-circle' to="/#form ">
-                    Start
+                <div className='play-circle' >
+              </div> */}
+                <div className='button-video'>
+                <iframe className ="video-inframe" src="https://www.youtube.com/embed/7Pb3HQYtDo8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 className='text-video text-video1'>
+                  BECOME A BETTER 
+                </h3>
+                <h3 className='text-video text-video2'>
+                  VERSION OF YOURSELF
+                </h3>
+                <div className='text-video start'>
+                  <Link  smooth={true} to="form">
+                    Start Now
                   </Link>
                 </div>
-                
+
+
         <main>
           <div className="secction-plan">
             <MDBContainer>
               <MDBRow className="py-5">
                 <MDBCol md="12">
-                  <h1 className="text-center text-white title-plan">Plan</h1>
+                  <h1 className="text-center text-white title-plan">ACCOUNTABBLE PATH</h1>
                 </MDBCol>
                 <div className="d-none d-sm-block">
                   <PlanPreview/>
@@ -149,7 +169,7 @@ class LandingView extends View {
           </div>
           <div id="blog" className="section-blog">
             <MDBContainer>
-              <h1  className="title-blog text-white text-center mb-5">Blog</h1>
+              <h1 id='blog' className="title-blog text-white text-center mb-5">Blog</h1>
               <div  className="d-none d-sm-block">
                 {loading ? (
                   <BlogSpinner status={loading}/>

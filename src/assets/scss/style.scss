@@ -911,16 +911,17 @@ a:hover {
 }
 
 
-// react-video-style
+// video-style
+.video-inframe{
+  width: 700px;
+  height: 400px;
+
+}
 .button-video{
-  position: absolute;
-  left: 190px;
-  bottom: 150px;
-  border: 1px solid #5ECAEE;
-  border-radius: 3em;
+  position: absolute; 
+  left: 90px;
+  bottom: 30px; 
   padding: 0.1em 1em;
-  background-color: $ac-primary;
-  color: $ac-dark;
   font-weight: bold;
   font-size: 1.2em;
   
@@ -929,23 +930,39 @@ a:hover {
 .text-video{
     color: white;
     position: absolute;
-    left: 380px;
-    bottom: 150px;
-    font-weight: bold;
-    font-size: 1.1em;
-    
+    // font-size: 1.1em;  
+  
+  }
+  .text-video1{
+    right: 400px;
+    bottom: 200px;
   }
 
-  .play-circle{
-    position: absolute;
-    background-color: $ac-primary;
-    color: $ac-dark;
-    padding: 0.9em 0;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    left: 500px;
-    bottom: 150px;
-
+  .text-video2{
+    right: 230px;
+    bottom: 170px;
   }
+
+  .start{
+    right: 360px;
+    bottom: 100px;
+  }
+
+
+
+
+
+  // .play-circle{
+  //   position: absolute;
+  //   background-color: $ac-primary;
+  //   color: $ac-dark;
+  //   padding: 0.9em 0;
+  //   border-radius: 50%;
+  //   width: 50px;
+  //   height: 50px;
+  //   text-align: center;
+  //   left: 500px;
+  //   bottom: 150px;
+
+  // }
+
