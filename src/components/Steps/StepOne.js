@@ -5,8 +5,8 @@ import InputInfomration from "../InputInformation";
 import "../../assets/scss/style.scss";
 import StepTitle from "./StepTitle";
 
-const StepOne = ({onClick, onChange, value}) => {
-  const [state, setState] = React.useState(value);
+const StepOne = ({onClick, onChange, data}) => {
+  const [state, setState] = React.useState(data);
   const [errors, setErrors] = React.useState({name: false, email: false});
 
   /**
@@ -65,6 +65,13 @@ const StepOne = ({onClick, onChange, value}) => {
         value={state.email}
         onChange={({target: {value}}) =>
           onChangeBasicInformation(value, "email")
+        }
+      />
+      <MDBInput
+        label="Phone"
+        value={state.phone}
+        onChange={({target: {value}}) =>
+          onChangeBasicInformation(value, "phone")
         }
       />
       {errors.email && <InputInfomration message={"Email should be valid"}/>}

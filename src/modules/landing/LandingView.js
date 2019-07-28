@@ -1,8 +1,6 @@
 import React from "react";
 import {MDBRow, MDBCol, MDBView, MDBContainer} from "mdbreact";
-import { Link, animateScroll as scroll} from 'react-scroll'
-
-
+import {Link, animateScroll as scroll} from 'react-scroll';
 import BgHeader from "../../assets/img/bg/background-home-web.png";
 import CardBlogLarge from "../../components/CardBlogLarge";
 import SectionComment from "../../components/SectionComment";
@@ -23,7 +21,6 @@ import {getBlogsAction} from "../blogs/blog-actions";
 import BlogSpinner from "./components/BlogSpinner";
 import MediaQuote from "../../components/MediaQuote";
 import 'react-modal-video/scss/modal-video.scss';
-import ModalVideo from 'react-modal-video'
 import '../../assets/scss/style.scss'
 
 class LandingView extends View {
@@ -41,11 +38,11 @@ class LandingView extends View {
       loading: true,
       updatedView: false,
       errorView: false,
-      isOpen:false
+      isOpen: false
     };
     this.openModal = this.openModal.bind(this)
     // this.scrollToTop = this.scrollToTop.bind(this)
-  
+
   }
 
   componentDidMount() {
@@ -60,8 +57,8 @@ class LandingView extends View {
           }
         });
 
-        const { match, location, history } = this.props
-       
+      const {match, location, history} = this.props
+
     });
 
     this.subscribe(blogStore, GET_BLOGS, blogs => {
@@ -90,8 +87,7 @@ class LandingView extends View {
   }
 
 
-
-  openModal () {
+  openModal() {
     this.setState({isOpen: true})
   }
 
@@ -107,30 +103,29 @@ class LandingView extends View {
     return (
       <RouteChangeContainer>
         <Navbar/>
-            <MDBView src={BgHeader} fixed/>
-              {/* <ModalVideo  channel='youtube' isOpen={this.state.isOpen} videoId='7Pb3HQYtDo8' onClose={() => this.setState({isOpen: false})} />
-              <button className='button-video' onClick={this.openModal}>LEARN MORE</button>
-                <div className='text-video'>
-                  Watch our 
-                </div> 
-                <div className='play-circle' >
-              </div> */}
-                <div className='button-video'>
-                <iframe className ="video-inframe" src="https://www.youtube.com/embed/7Pb3HQYtDo8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h3 className='text-video text-video1'>
-                  BECOME A BETTER 
-                </h3>
-                <h3 className='text-video text-video2'>
-                  VERSION OF YOURSELF
-                </h3>
-                <div className='text-video start'>
-                  <Link  smooth={true} to="form">
-                    Start Now
-                  </Link>
-                </div>
-
-
+        <MDBView src={BgHeader} fixed>
+          <div className={'d-flex p-2 flex-row align-items-end bg-100'}>
+            <div className="p-4 flex-fill bg-item">
+              <iframe title={'video'} className={'video-iframe'} src="https://www.youtube.com/embed/7Pb3HQYtDo8"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen/>
+            </div>
+            <div className="p-2 flex-fill d-flex align-items-center flex-column bg-item justify-content-center">
+              <h3 className='text-white title'>
+                BECOME A BETTER
+              </h3>
+              <h3 className='text-white title'>
+                VERSION OF YOURSELF
+              </h3>
+              <div className='button-start'>
+                <Link smooth={true} to="form">
+                  Start Now
+                </Link>
+              </div>
+            </div>
+          </div>
+        </MDBView>
         <main>
           <div className="secction-plan">
             <MDBContainer>
@@ -147,7 +142,7 @@ class LandingView extends View {
               </MDBRow>
             </MDBContainer>
           </div>
-          <div id="form"  className="section-information">
+          <div id="form" className="section-information">
             <MDBContainer>
               <MDBRow>
                 <MDBCol md="6">
@@ -155,7 +150,7 @@ class LandingView extends View {
                   <br/>
                   <p className="animated fadeIn text-form">{description}</p>
                   <div className={"animated fadeIn"}>
-                    <MediaQuote innextText={stepText} image={image}/>
+                    {/*<MediaQuote innextText={stepText} image={image}/>*/}
                   </div>
                 </MDBCol>
                 <MDBCol md="6">
@@ -170,7 +165,7 @@ class LandingView extends View {
           <div id="blog" className="section-blog">
             <MDBContainer>
               <h1 id='blog' className="title-blog text-white text-center mb-5">Blog</h1>
-              <div  className="d-none d-sm-block">
+              <div className="d-none d-sm-block">
                 {loading ? (
                   <BlogSpinner status={loading}/>
                 ) : !errorView ? (

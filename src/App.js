@@ -39,7 +39,10 @@ class App extends Component {
             <Redirect to="/"/>
           </Switch>
         </BrowserRouter>
-        <ToastContainer/>
+        <ToastContainer
+          className='toast-container'
+          toastClassName="dark-toast"
+        />
       </>
     );
   }

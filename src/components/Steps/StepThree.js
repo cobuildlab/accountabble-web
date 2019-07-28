@@ -23,11 +23,11 @@ import {STRIPE_API_KEY} from "../../config";
 import {InjectedPaymentForm} from "../../modules/payments/InjectedForm";
 import RegisterSpinner from "../../modules/register/components/RegisterSpinner";
 
-const StepThree = ({onClick, onChange, onError, value, isLoading, personalInformation}) => {
+const StepThree = ({onClick, onChange, onError, data, isLoading, personalInformation}) => {
   let myRef = {};
   const [loading, setLoading] = React.useState(isLoading);
   const [terms, setTerms] = React.useState({
-    agreeTerms: value.agreeTerms
+    agreeTerms: data.agreeTerms
   });
 
   const onSetTerms = ({target: {name}}) => {

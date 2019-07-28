@@ -22,7 +22,7 @@ const FrequentQuestion = ({ question, answer }) => {
       <MDBCollapse id={"collapse"} isOpen={collapse}>
         <MDBCard className="card-collapse">
           <MDBCardBody
-            className={`animated blue-text zoomIn ${collapse === "" &&
+            className={`animated blue-text zoomIn san-serif ${collapse === "" &&
               "zoomOut"}`}
           >
             {answer}

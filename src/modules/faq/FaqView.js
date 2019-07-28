@@ -23,7 +23,7 @@ const FaqView = props => {
             <MDBRow>
               <MDBCol md="12" className="mb-4 white-text text-center">
                 <h1 className="display-3 mb-0 pt-md-5 pt-5 font-weight-bold white-text">
-                  <span>Frequent</span>{" "}
+                  <span>Frequently Asked</span>{" "}
                   <span className="primary-text font-weight-light">
                     Questions
                   </span>

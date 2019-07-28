@@ -1,9 +1,7 @@
 import React from "react";
-import { MDBInput, MDBBtn } from "mdbreact";
+import {MDBInput, MDBBtn} from "mdbreact";
 import '../assets/scss/style.scss';
 import View from 'react-flux-state';
-
-
 
 
 class FormContactUS extends View {
@@ -11,6 +9,7 @@ class FormContactUS extends View {
     name: "",
     email: "",
     comment: "",
+    phone: "",
     classNames: {
       name: {
         error: null,
@@ -36,13 +35,12 @@ class FormContactUS extends View {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { comment, email, name } = this.state;
-    this.props.onSubmit({ comment, email, name });
-  
-  }
+    const {comment, email, name, phone} = this.state;
+    this.props.onSubmit({comment, email, name, phone});
+  };
 
   render() {
-    const { name, email, comment, classNames } = this.state;
+    const {name, email, comment, phone, classNames} = this.state;
     return (
       <React.Fragment>
         <MDBInput
@@ -63,6 +61,14 @@ class FormContactUS extends View {
         />
         <MDBInput
           type="text"
+          className={classNames.email.input}
+          label="Phone Number"
+          onChange={this.onChange}
+          name="phone"
+          value={phone}
+        />
+        <MDBInput
+          type="text"
           className={classNames.comment.input}
           label="Comment"
           name="comment"
@@ -70,7 +76,7 @@ class FormContactUS extends View {
           value={comment}
         />
         <div className="text-right">
-          <MDBBtn onClick ={this.onSubmit} className="section-comment-btn-blue">Submit</MDBBtn>
+          <MDBBtn onClick={this.onSubmit} className="section-comment-btn-blue">Submit</MDBBtn>
         </div>
       </React.Fragment>
     );

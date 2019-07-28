@@ -1,21 +1,24 @@
 import React from "react";
 import ButtonStep from './ButtonStep';
 import '../../assets/scss/style.scss';
-import { MDBBtn, MDBRow, MDBCol, MDBFormInline } from "mdbreact";
+import {MDBBtn, MDBRow, MDBCol, MDBFormInline} from "mdbreact";
 import InputInfomration from "../InputInformation";
 import StepTitle from "./StepTitle";
 
-const StepTwo = ({ onClick, onChange = function() {}, value }) => {
-  const [frequency, setFrequency] = React.useState(value.frequency);
-  const [categories, setCategory] = React.useState(value.categories);
-  const [weeks, setWeeks] = React.useState(value.weeks);
+const StepTwo = ({
+                   onClick, onChange = () => {
+  }, data
+                 }) => {
+  const [frequency, setFrequency] = React.useState(data.frequency);
+  const [categories, setCategory] = React.useState(data.categories);
+  const [weeks, setWeeks] = React.useState(data.weeks);
   const [validation, setValidation] = React.useState(false);
 
   /**
    * Changes the value of the input allows to enter only number values.
    * @param {event}
    */
-  const onChangeWeeks = ({ target: { value }}) => {
+  const onChangeWeeks = ({target: {value}}) => {
     const inputArray = value.split('');
     const chars = inputArray.filter(char => char.charCodeAt() >= 48 && char.charCodeAt() <= 57);
     setWeeks(chars.join(''));
@@ -34,42 +37,44 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
    */
   const onSelectCategory = (categoryIndex) => {
     const categorySelected = categories.map((category, index) => {
-      if(categoryIndex === index) return {...category, selected: true };
-      return {...category, selected: false };
+      if (categoryIndex === index) return {...category, selected: true};
+      return {...category, selected: false};
     });
-    onChange({ 
-      category: categorySelected.find((category) => category.selected).name, 
-      frequency: frequency, 
+    onChange({
+      category: categorySelected.find((category) => category.selected).name,
+      frequency: frequency,
       categories: categorySelected,
-      weeks });
+      weeks
+    });
     setCategory(categorySelected);
   };
 
   /**
    * Set the frequency of the Stepper.
-   * @param {number} frequency 
+   * @param {number} frequency
    */
   const onSetFrequency = (frequency) => {
-    onChange({ 
-      category: categories.find((category) => category.selected).name, 
-      frequency: frequency, 
-      categories: [...categories], 
-      weeks });
+    onChange({
+      category: categories.find((category) => category.selected).name,
+      frequency: frequency,
+      categories: [...categories],
+      weeks
+    });
     setFrequency(frequency);
   };
 
   const frequencies = [3, 4, 5];
   return (
     <div className="animated fadeIn">
-    <StepTitle message={"Goal"} />
+      <StepTitle message={"Goal"}/>
       <div>
         <h6 className="title mt-2 mb-3">Category</h6>
         <MDBRow>
           {categories.map((category, index) => (
             <MDBCol md="4" className="col-xs-btn-step-2" key={index}>
-              <ButtonStep 
-                text={category.name} 
-                active={category.selected} 
+              <ButtonStep
+                text={category.name}
+                active={category.selected}
                 onClick={() => onSelectCategory(index)}
               />
             </MDBCol>
@@ -83,11 +88,11 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
         <MDBRow className="mt-4">
           {frequencies.map((freq, index) => (
             <MDBCol md="4" className="col-xs-btn-step-2" key={index}>
-              <ButtonStep 
-                text={freq} 
-                onClick={() => onSetFrequency(freq)} 
+              <ButtonStep
+                text={freq}
+                onClick={() => onSetFrequency(freq)}
                 active={freq === frequency}
-                />
+              />
             </MDBCol>
           ))}
         </MDBRow>
@@ -97,15 +102,15 @@ const StepTwo = ({ onClick, onChange = function() {}, value }) => {
         Weeks
       </h6>
       <MDBFormInline className="md-form ">
-        <input 
+        <input
           className={`form-control ${validation ? 'input-bg-blue-step-invalid' : 'input-bg-blue-step'}`}
-          type="text" 
-          placeholder="Weeks" 
+          type="text"
+          placeholder="Weeks"
           aria-label="Weeks"
-          value={weeks} 
+          value={weeks}
           onChange={onChangeWeeks}
-          />
-        {validation && <InputInfomration message={"Weeks can't be zero"} style={{ top: 2 }}/>}
+        />
+        {validation && <InputInfomration message={"Weeks can't be zero"} style={{top: 2}}/>}
       </MDBFormInline>
       <div className="text-right">
         <MDBBtn className="btn-step mr-3" onClick={() => onClick('previous')}>

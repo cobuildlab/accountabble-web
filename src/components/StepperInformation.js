@@ -28,7 +28,7 @@ const stepsList = [
 
 const getCurrentProgress = (currentStep, maxSteps) => Math.ceil(((currentStep - 1) / maxSteps) * 150);
 
-const StepperInformation = ({onChange, onSubmit, onError, values, isLoading}) => {
+const StepperInformation = ({onChange, onSubmit, onError, data, isLoading}) => {
   const maxSteps = 3;
   const [step, setStep] = React.useState(1);
 
@@ -63,18 +63,18 @@ const StepperInformation = ({onChange, onSubmit, onError, values, isLoading}) =>
 
   const steps = [
     <StepOne
-      value={values[0]}
+      data={data[0]}
       onClick={calculateStep}
       onChange={state => onChange("basicInformation", state)}
     />,
     <StepTwo
-      value={values[1]}
+      data={data[1]}
       onClick={calculateStep}
       onChange={state => onChange("coaching", state)}
     />,
     <StepThree
-      personalInformation={values[0]}
-      value={values[2]}
+      personalInformation={data[0]}
+      data={data[2]}
       onClick={calculateStep}
       onError={onError}
       isLoading={isLoading}

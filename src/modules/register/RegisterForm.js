@@ -17,8 +17,9 @@ class RegisterForm extends View {
       basicInformation: {
         email: "",
         name: "",
+        phone: "",
       },
-      active:true,
+      active: true,
       coaching: {
         category: "Mediation",
         frequency: 3,
@@ -41,9 +42,8 @@ class RegisterForm extends View {
   componentDidMount() {
     const {history} = this.props;
     this.subscribe(registerStore, REGISTER_EVENT, (code) => {
-      console.log(`REGISTER_EVENT`, code);
       const {
-        basicInformation: {email, name},
+        basicInformation: {email, name, phone},
         coaching: {category, frequency, weeks},
         terms
       } = this.state;
@@ -52,6 +52,7 @@ class RegisterForm extends View {
         message: {
           email,
           name,
+          phone,
           category,
           frequency,
           weeks,
@@ -67,7 +68,7 @@ class RegisterForm extends View {
     });
 
     this.subscribe(registerStore, REGISTER_ERROR, err => {
-      toast.error(err.message);
+      toast.info(err.message);
       this.setState({isLoading: false});
     });
   }
@@ -86,10 +87,10 @@ class RegisterForm extends View {
    * @param {string} token
    */
   handleSubmit = async token => {
-    const {basicInformation, coaching: {category, frequency, weeks},active} = this.state;
+    const {basicInformation, coaching: {category, frequency, weeks}, active} = this.state;
     const coaching = {category, frequency, weeks};
     this.setState({isLoading: true}, () => {
-      registerAction({basicInformation, coaching, token , active});
+      registerAction({basicInformation, coaching, token, active});
     });
   };
 
@@ -99,7 +100,7 @@ class RegisterForm extends View {
     const {basicInformation, coaching, terms, isLoading} = this.state;
     return (
       <StepperInformation
-        values={[basicInformation, coaching, terms]}
+        data={[basicInformation, coaching, terms]}
         onChange={this.handleStepperChange}
         onSubmit={this.handleSubmit}
         onError={this.onError}

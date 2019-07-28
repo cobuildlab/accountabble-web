@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar';
 import SectionComment from '../../components/SectionComment';
 import FooterComponent from '../../components/FooterComponent';
 import { SectionAboutUS, SectionAboutUSDescription, SectionCommentComponent } from '../../components/Sections';
-import BgHeader from '../../assets/img/bg/background-AboutUS.png';
+import AboutUs from '../../assets/img/bg/aboutUs.png';
 import IsoIcon from '../../assets/img/bg/accountabble-r.png';
 import People1 from '../../assets/img/bg/people1.jpg';
 import People2 from '../../assets/img/bg/people2.jpg';
@@ -18,7 +18,7 @@ const AboutUSView = () => {
   return (
     <RouteChangeContainer>
       <Navbar/>
-      <MDBView className="about-bg-half" src={ BgHeader } fixed>
+      <MDBView className="about-bg-half" src={ AboutUs } fixed>
         <MDBMask className="d-flex justify-content-center align-items-center">
           <MDBContainer>
             <MDBRow>
