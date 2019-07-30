@@ -104,8 +104,8 @@ class LandingView extends View {
               />
             </div>
             <div className="p-2 flex-fill d-flex align-items-center flex-column bg-item justify-content-center">
-              <h3 className="text-white title">BECOME A BETTER</h3>
-              <h3 className="text-white title">VERSION OF YOURSELF</h3>
+              <h3 className="text-white title">Become Your Best Self</h3>
+              {/* <h3 className="text-white title">VERSION OF YOURSELF</h3> */}
               <div className="button-start">
                 <Link smooth={true} to="form">
                   Start Now
