@@ -947,7 +947,7 @@ a:hover {
   align-self: flex-start;
   align-content: flex-end;
   align-items: end;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 20px;
 }
@@ -958,12 +958,14 @@ a:hover {
   }
   .content-video {
     justify-content: center;
+    transform: translateY(150px);
   }
 }
 
 @media (max-width: 991px) {
   .content-video {
     justify-content: center;
+    transform: translateY(150px);
   }
 }
 
