@@ -1,4 +1,4 @@
-@import "colors";
+@import 'colors';
 
 // Your custom styles
 a:hover {
@@ -167,7 +167,7 @@ a:hover {
   margin: 0;
   height: 40px;
   padding: 10px 40px;
-  background-color: #5ECAEE !important;
+  background-color: #5ecaee !important;
   color: #262626;
   font-weight: 700;
   font-size: 14px;
@@ -179,7 +179,7 @@ a:hover {
   margin: 0;
   height: 40px;
   padding: 10px 40px;
-  background-color: #5ECAEE !important;
+  background-color: #5ecaee !important;
   color: #262626;
   font-weight: 700;
   font-size: 14px;
@@ -195,7 +195,6 @@ a:hover {
 .carousel-indicators {
   position: relative !important;
 }
-
 
 // Section Basic Information
 .section-information {
@@ -266,7 +265,7 @@ a:hover {
 }
 
 .btn-step-2 {
-  background-color: #5ECAEE !important;
+  background-color: #5ecaee !important;
   color: #262626;
   border: 2px solid #262626;
   font-size: 10px;
@@ -319,8 +318,6 @@ a:hover {
   text-decoration: underline;
   transition: ease-in 0.6s;
 }
-
-;
 
 .link-step-3-invalid {
   color: $ac-danger;
@@ -383,7 +380,7 @@ a:hover {
   border-radius: 100px;
   width: 150px;
   margin: 0;
-  height: 40px;
+  height: 34px;
   padding: 5px;
   background-color: $ac-primary !important;
   color: $ac-dark;
@@ -401,7 +398,6 @@ a:hover {
   color: $ac-primary;
   font-weight: 700;
   font-size: 14px;
-
 }
 
 .section-comment-btn-dark:hover {
@@ -494,7 +490,6 @@ a:hover {
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
   padding: 15px 5px;
-
 }
 
 //Checkbox
@@ -503,7 +498,14 @@ a:hover {
   position: relative;
   display: inline-block;
   color: rgba(0, 0, 0, 0.87);
-  font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+  font-family: var(
+    --pure-material-font,
+    'Roboto',
+    'Segoe UI',
+    BlinkMacSystemFont,
+    system-ui,
+    -apple-system
+  );
   font-size: 16px;
   line-height: 1.5;
 }
@@ -540,7 +542,7 @@ a:hover {
 
 /* Box */
 .pure-material-checkbox > span::before {
-  content: "";
+  content: '';
   display: inline-block;
   box-sizing: border-box;
   margin: 3px 11px 3px 1px;
@@ -556,7 +558,7 @@ a:hover {
 
 /* Checkmark */
 .pure-material-checkbox > span::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 3px;
@@ -572,7 +574,7 @@ a:hover {
 /* Checked, Indeterminate */
 .pure-material-checkbox > input:checked,
 .pure-material-checkbox > input:indeterminate {
-  background-color: $ac-primary
+  background-color: $ac-primary;
 }
 
 .pure-material-checkbox > input:checked + span::before,
@@ -642,7 +644,6 @@ a:hover {
 
 //stepper-plan
 .step {
-
   padding: 10px;
 
   display: flex;
@@ -657,7 +658,6 @@ a:hover {
   /*   visibility: visible; */
 }
 
-
 /* regular step */
 .step .circle {
   background-color: white;
@@ -670,7 +670,7 @@ a:hover {
   padding: 25px;
   box-shadow: 0 7px 19px 0 rgba(0, 0, 0, 0.16), 0 7px 20px 0 rgba(0, 0, 0, 0.12);
   z-index: 999;
-  position: relative
+  position: relative;
 }
 
 .step .line {
@@ -708,7 +708,6 @@ a:hover {
   top: 0;
   height: 150%;
 }
-
 
 .step:last-child .line {
   border-left: 3px solid white;
@@ -782,15 +781,15 @@ a:hover {
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 
-  -webkit-animation-duration: 0.30s;
-  -moz-animation-duration: 0.30s;
-  animation-duration: 0.30s;
+  -webkit-animation-duration: 0.3s;
+  -moz-animation-duration: 0.3s;
+  animation-duration: 0.3s;
 }
 
 .fade-in.one {
-  -webkit-animation-delay: 0.30s;
-  -moz-animation-delay: 0.30s;
-  animation-delay: 0.30s;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .card-component {
@@ -810,7 +809,7 @@ a:hover {
 }
 
 .blue-text {
-  color: #5ECAEE !important;
+  color: #5ecaee !important;
 }
 
 .san-serif {
@@ -876,7 +875,7 @@ a:hover {
 
 .progress {
   display: flex;
-  height: .5rem;
+  height: 0.5rem;
   overflow: hidden;
   font-size: 0.75rem;
   background-color: #fff;
@@ -915,7 +914,7 @@ a:hover {
 }
 
 .button-start {
-  border: 1px solid #5ECAEE;
+  border: 1px solid #5ecaee;
   border-radius: 3em;
   padding: 0.1em 1em;
   background-color: $ac-primary;
@@ -923,7 +922,6 @@ a:hover {
   font-weight: bold;
   font-size: 1.2em;
 }
-
 
 .bg-100 {
   height: 100%;
@@ -933,10 +931,40 @@ a:hover {
   height: 450px;
 }
 
+.bg-btn-start {
+  height: 24vh;
+  margin: 20px;
+}
+
 // video-style
 .video-iframe {
-  width: 550px;
-  height: 350px;
+  width: 430px;
+  height: 240px;
+}
+.content-video {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-content: end;
+  align-items: end;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+@media (max-width: 575px) {
+  .video-iframe {
+    width: 100%;
+    height: 175px;
+  }
+  .content-video {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .content-video {
+    justify-content: center;
+  }
 }
 
 .button-video {
@@ -951,7 +979,6 @@ a:hover {
 .text-video {
   color: white;
   // font-size: 1.1em;
-
 }
 
 .text-video1 {
@@ -968,7 +995,6 @@ a:hover {
   right: 360px;
   bottom: 100px;
 }
-
 
 // .play-circle{
 //   position: absolute;
@@ -988,7 +1014,7 @@ a:hover {
   background-color: white;
 }
 
-.change-text{
+.change-text {
   font-size: 10px;
   margin-top: 10px;
 }
