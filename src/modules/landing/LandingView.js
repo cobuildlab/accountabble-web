@@ -89,111 +89,122 @@ class LandingView extends View {
       blogItems,
     } = this.state;
     return (
-      <RouteChangeContainer>
-        <Navbar />
-        <MDBView src={BgHeader} fixed>
-          <div className={'content-video bg-100'}>
-            <div>
-              <iframe
-                title={'video'}
-                className={'video-iframe'}
-                src="https://www.youtube.com/embed/7Pb3HQYtDo8"
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-            <div className="bg-btn-start text-center">
-              <h4 className="text-white title">Become Your Best Self</h4>
-              {/* <h3 className="text-white title">VERSION OF YOURSELF</h3> */}
+      <RouteChangeContainer className="overflow-hidden">
+        <div className="overflow-hidden">
+          <Navbar />
+          <MDBView src={BgHeader} fixed>
+            <div className={'content-video bg-100'}>
+              <div>
+                <iframe
+                  title={'video'}
+                  className={'video-iframe'}
+                  src="https://www.youtube.com/embed/7Pb3HQYtDo8"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="bg-btn-start text-center">
+                <h4 className="text-white title">Become Your Best Self</h4>
+                {/* <h3 className="text-white title">VERSION OF YOURSELF</h3> */}
 
-              <Link
-                className="btn btn-default Ripple-parent section-comment-btn-blue"
-                smooth={true}
-                to="form">
-                Start Now
-              </Link>
+                <Link
+                  className="btn btn-default Ripple-parent section-comment-btn-blue"
+                  smooth={true}
+                  to="form">
+                  Start Now
+                </Link>
+              </div>
             </div>
-          </div>
-        </MDBView>
-        <main>
-          <div className="secction-plan">
-            <MDBContainer>
-              <MDBRow className="py-5">
-                <MDBCol md="12">
-                  <h1 className="text-center text-white title-plan">ACCOUNTABBLE PATH</h1>
-                </MDBCol>
-                <div className="d-none d-sm-block">
-                  <PlanPreview />
-                </div>
-                <div className="d-block d-sm-none">
-                  <PlanPreviesCarousel />
-                </div>
-              </MDBRow>
-            </MDBContainer>
-          </div>
-          <div id="form" className="section-information">
-            <MDBContainer>
-              <MDBRow>
-                <MDBCol md="4">
-                  <h1 className="text-white title animated fadeIn">{title}</h1>
-                  <br />
-                  <p className="animated fadeIn text-form">{description}</p>
-                  <div className={'animated fadeIn'}>
-                    {/*<MediaQuote innextText={stepText} image={image}/>*/}
+          </MDBView>
+          <main>
+            <div className="secction-plan">
+              <MDBContainer>
+                <MDBRow className="py-5">
+                  <MDBCol md="12">
+                    <h1 className="text-center text-white title-plan">ACCOUNTABBLE PATH</h1>
+                  </MDBCol>
+                  <div className="d-none d-sm-block">
+                    <PlanPreview />
                   </div>
-                </MDBCol>
-                <MDBCol md="8">
-                  <RegisterForm history={this.props.history} />
-                </MDBCol>
-              </MDBRow>
-            </MDBContainer>
-          </div>
-          <div className="section-comment">
-            <SectionComment />
-          </div>
-          <div id="blog" className="section-blog">
-            <MDBContainer>
-              <h1 id="blog" className="title-blog text-white text-center mb-5">
-                Blog
-              </h1>
-              <div className="d-none d-sm-block">
-                {loading ? (
-                  <BlogSpinner status={loading} />
-                ) : !errorView ? (
-                  <MDBRow className="PB-5">
-                    {blogItems.length === 1 && (
-                      <React.Fragment>
-                        <MDBCol md={'6'}>
-                          <CardBlogLarge
-                            blogTtile={blogItems[0].title}
-                            content={blogItems[0].content}
-                          />
-                        </MDBCol>
-                      </React.Fragment>
-                    )}
-                    {blogItems.length === 2 && (
-                      <React.Fragment>
-                        {blogItems.map((blog, index) => (
-                          <MDBCol md={'6'} key={index}>
+                  <div className="d-block d-sm-none">
+                    <PlanPreviesCarousel />
+                  </div>
+                </MDBRow>
+              </MDBContainer>
+            </div>
+            <div id="form" className="section-information">
+              <MDBContainer>
+                <MDBRow>
+                  <MDBCol md="4">
+                    <h1 className="text-white title animated fadeIn">{title}</h1>
+                    <br />
+                    <p className="animated fadeIn text-form">{description}</p>
+                    <div className={'animated fadeIn'}>
+                      {/*<MediaQuote innextText={stepText} image={image}/>*/}
+                    </div>
+                  </MDBCol>
+                  <MDBCol md="8">
+                    <RegisterForm history={this.props.history} />
+                  </MDBCol>
+                </MDBRow>
+              </MDBContainer>
+            </div>
+            <div className="section-comment">
+              <SectionComment />
+            </div>
+            <div id="blog" className="section-blog">
+              <MDBContainer>
+                <h1 id="blog" className="title-blog text-white text-center mb-5">
+                  Blog
+                </h1>
+                <div className="d-none d-sm-block">
+                  {loading ? (
+                    <BlogSpinner status={loading} />
+                  ) : !errorView ? (
+                    <MDBRow className="PB-5">
+                      {blogItems.length === 1 && (
+                        <React.Fragment>
+                          <MDBCol md={'6'}>
                             <CardBlogLarge
-                              blogTtile={blog.title}
-                              content={blog.content}
-                              author={blog.author.displayName}
-                              published={blog.published}
+                              blogTtile={blogItems[0].title}
+                              content={blogItems[0].content}
                             />
                           </MDBCol>
-                        ))}
-                      </React.Fragment>
-                    )}
-                    {blogItems.length >= 3 && (
-                      <React.Fragment>
-                        {blogItems
-                          .filter((_, index) => index < 3)
-                          .map((blog, index) => {
-                            if (index === 1)
+                        </React.Fragment>
+                      )}
+                      {blogItems.length === 2 && (
+                        <React.Fragment>
+                          {blogItems.map((blog, index) => (
+                            <MDBCol md={'6'} key={index}>
+                              <CardBlogLarge
+                                blogTtile={blog.title}
+                                content={blog.content}
+                                author={blog.author.displayName}
+                                published={blog.published}
+                              />
+                            </MDBCol>
+                          ))}
+                        </React.Fragment>
+                      )}
+                      {blogItems.length >= 3 && (
+                        <React.Fragment>
+                          {blogItems
+                            .filter((_, index) => index < 3)
+                            .map((blog, index) => {
+                              if (index === 1)
+                                return (
+                                  <MDBCol md={'6'} key={index}>
+                                    <CardBlogLarge
+                                      blogTtile={blog.title}
+                                      content={blog.content}
+                                      author={blog.author.displayName}
+                                      published={blog.published}
+                                    />
+                                  </MDBCol>
+                                );
                               return (
-                                <MDBCol md={'6'} key={index}>
+                                <MDBCol md={'3'} key={index}>
                                   <CardBlogLarge
                                     blogTtile={blog.title}
                                     content={blog.content}
@@ -202,28 +213,18 @@ class LandingView extends View {
                                   />
                                 </MDBCol>
                               );
-                            return (
-                              <MDBCol md={'3'} key={index}>
-                                <CardBlogLarge
-                                  blogTtile={blog.title}
-                                  content={blog.content}
-                                  author={blog.author.displayName}
-                                  published={blog.published}
-                                />
-                              </MDBCol>
-                            );
-                          })}
-                      </React.Fragment>
-                    )}
-                  </MDBRow>
-                ) : (
-                  <div className="d-flex justify-content-center animated fadeIn">
-                    <h5 className="title-blog text-white text-center mb-5">
-                      Something went wrong..
-                    </h5>
-                  </div>
-                )}
-                {/* <MDBCol md="3">
+                            })}
+                        </React.Fragment>
+                      )}
+                    </MDBRow>
+                  ) : (
+                    <div className="d-flex justify-content-center animated fadeIn ">
+                      <h5 className="title-blog text-white text-center mb-5">
+                        Something went wrong..
+                      </h5>
+                    </div>
+                  )}
+                  {/* <MDBCol md="3">
                       <CardBlogSmall />
                     </MDBCol>
                     <MDBCol md="6">
@@ -233,14 +234,15 @@ class LandingView extends View {
                       <CardBlogSmall />
                     </MDBCol>
                   </MDBRow> */}
-              </div>
-              <div className="d-block d-sm-none">
-                <CardBlogCarousel />
-              </div>
-            </MDBContainer>
-          </div>
-          <Footer />
-        </main>
+                </div>
+                <div className="d-block d-sm-none">
+                  <CardBlogCarousel />
+                </div>
+              </MDBContainer>
+            </div>
+            <Footer />
+          </main>
+        </div>
       </RouteChangeContainer>
     );
   }
