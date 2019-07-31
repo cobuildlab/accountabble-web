@@ -138,7 +138,7 @@ const StepTwo = ({ onClick, onChange = () => {}, data }) => {
       {isSleepBetter && (
         <div className="d-flex p-2 flex-row align-items-start">
           <div className="p-4 flex-fill">
-            <h6 className="title mt-4 mb-3">Sleep until: / Wake up by:</h6>
+            <h6 className="title mt-4 mb-3">Sleep By: / Wake up by:</h6>
             <HourSelect onChange={onSetSleepByWakeUpBy} selected={data.sleepByWakeUpBy} />
           </div>
           <div className="p-4 flex-fill">
