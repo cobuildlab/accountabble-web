@@ -67,7 +67,7 @@ const FaqView = ({ location: { pathname } }) => {
                 <FrequentQuestion
                   question={'How much is it?'}
                   answer={
-                    'ACCOUNTABBLE membership costs 14.99 per week. You’ll be charged on a monthly basis.'
+                    'ACCOUNTABBLE membership costs $14.99 per week. You’ll be charged on a monthly basis.'
                   }
                 />
               </MDBCol>
