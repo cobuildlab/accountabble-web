@@ -943,9 +943,9 @@ a:hover {
 }
 .content-video {
   display: flex;
-  flex-direction: row;
-  align-self: center;
-  align-content: end;
+  flex-direction: wrap;
+  align-self: flex-start;
+  align-content: flex-end;
   align-items: end;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -1018,3 +1018,5 @@ a:hover {
   font-size: 10px;
   margin-top: 10px;
 }
+
+
