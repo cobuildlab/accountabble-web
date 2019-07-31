@@ -100,7 +100,7 @@ const StepTwo = ({ onClick, onChange = () => {}, data }) => {
   return (
     <div className="animated fadeIn">
       <StepTitle message={'Goal'} />
-      <h6 className="title mt-2 mb-3">Category</h6>
+      {/*<h6 className="title mt-2 mb-3">Category</h6>*/}
       <MDBRow>
         {data.categories.map((category, index) => (
           <MDBCol md="4" className="col-xs-btn-step-2" key={index}>
