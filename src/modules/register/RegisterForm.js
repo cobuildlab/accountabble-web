@@ -20,7 +20,7 @@ class RegisterForm extends View {
       coaching: {
         category: 'Sleep Better',
         frequency: 3,
-        bet: '0$',
+        bet: '25$',
         sleepByWakeUpBy: '1',
         amPm: 'AM',
         categories: [

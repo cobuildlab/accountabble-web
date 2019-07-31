@@ -116,13 +116,7 @@ const StepTwo = ({ onClick, onChange = () => {}, data }) => {
         We are currently in beta. We will be adding more goals and different behaviors as well as
         letting users add multiple goals under the same contract. Hold tight
       </h6>
-      <div>
-        <h6 className="title">Bet</h6>
-        <BetSelect onChange={onSetBet} selected={data.bet} />
-        <h6 className={'change-text'}>I will pay this amount if i do not keep my word</h6>
-      </div>
-
-      <h6 className="title mt-4 mb-3">Sets frequency a week</h6>
+      <h6 className="title mt-4 mb-3">Frequency</h6>
       <MDBRow className="mt-4">
         {frequencies.map((freq, index) => (
           <MDBCol md="3" className="col-xs-btn-step-2" key={index}>
@@ -134,11 +128,16 @@ const StepTwo = ({ onClick, onChange = () => {}, data }) => {
           </MDBCol>
         ))}
       </MDBRow>
+      <div>
+        <h6 className="title">Bet</h6>
+        <BetSelect onChange={onSetBet} selected={data.bet} />
+        <h6 className={'change-text'}>I will pay this amount if i do not keep my word</h6>
+      </div>
       {/* Sleep By, Wake up By*/}
       {isSleepBetter && (
         <div className="d-flex p-2 flex-row align-items-start">
           <div className="p-4 flex-fill">
-            <h6 className="title mt-4 mb-3">Sleep By: / Wake up by:</h6>
+            <h6 className="title mt-4 mb-3">Sleep By: / Wake Up by:</h6>
             <HourSelect onChange={onSetSleepByWakeUpBy} selected={data.sleepByWakeUpBy} />
           </div>
           <div className="p-4 flex-fill">
