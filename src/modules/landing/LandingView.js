@@ -92,8 +92,8 @@ class LandingView extends View {
       <RouteChangeContainer>
         <Navbar />
         <MDBView src={BgHeader} fixed>
-          <div className={'d-flex p-2 flex-row align-items-end bg-100'}>
-            <div className="p-4 flex-fill bg-item">
+          <div className={'content-video bg-100'}>
+            <div>
               <iframe
                 title={'video'}
                 className={'video-iframe'}
@@ -103,14 +103,16 @@ class LandingView extends View {
                 allowFullScreen
               />
             </div>
-            <div className="p-2 flex-fill d-flex align-items-center flex-column bg-item justify-content-center">
-              <h3 className="text-white title">Become Your Best Self</h3>
+            <div className="bg-btn-start text-center">
+              <h4 className="text-white title">Become Your Best Self</h4>
               {/* <h3 className="text-white title">VERSION OF YOURSELF</h3> */}
-              <div className="button-start">
-                <Link smooth={true} to="form">
-                  Start Now
-                </Link>
-              </div>
+
+              <Link
+                className="btn btn-default Ripple-parent section-comment-btn-blue"
+                smooth={true}
+                to="form">
+                Start Now
+              </Link>
             </div>
           </div>
         </MDBView>
