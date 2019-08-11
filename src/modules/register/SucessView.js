@@ -2,23 +2,20 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import TitlePrimary from '../../components/TitlePrimary';
 import CardComponent from '../../components/CardComponent';
-// import { addSubscriberToNewsletter } from "../mailchimp/mailchimp-actions";
 
 /**
  * Appears after a submit of register.
- * @path '/sucess'
+ * @path '/success'
  */
 const SuccessView = (props) => {
   const [info] = React.useState(props.location.state);
-  React.useEffect(() => {
-    if (info.authorized === undefined) window.location.href = '/';
-    // addSubscriberToNewsletter({ email: info.message.email });
-  }, []);
 
   return (
     <Layout transition={true}>
       <div className="flex-column">
         <TitlePrimary text="Thanks for register!" />
+        <p>Welcome to the community.</p>
+        <span>Check your e-mail please, and let the journey begin.</span>
         <CardComponent
           title="Register Information"
           description={
