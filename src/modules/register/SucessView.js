@@ -13,12 +13,12 @@ const SuccessView = (props) => {
   return (
     <Layout transition={true}>
       <div className="flex-column">
-        <TitlePrimary text="Thanks for register!" />
+        <TitlePrimary text="Thanks for registering!" />
         <p className={'white-text'}>Welcome to the community.</p>
         <span className={'white-text'}>Check your e-mail please, and let the journey begin.</span>
         {info.message && (
           <CardComponent
-            title="Register Information"
+            title="Contract Information"
             description={
               <div>
                 <div className="mt-3">
