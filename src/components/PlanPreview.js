@@ -46,7 +46,7 @@ const PlanPreview = () => {
             </p>
           </MDBCol>
           <MDBCol>
-            <h1 className="text-white text-center">Feedback (*)</h1>
+            <h1 className="text-white text-center">Feedback</h1>
             <p className="text-white text-center">
               You’ll receive a report card showing your progress so you can stay
               on track.
