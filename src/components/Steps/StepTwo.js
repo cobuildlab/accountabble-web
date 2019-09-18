@@ -113,8 +113,8 @@ const StepTwo = ({ onClick, onChange = () => {}, data }) => {
         ))}
       </MDBRow>
       <h6 className="change-text">
-        We are currently in beta. We will be adding more goals and different behaviors as well as
-        letting users add multiple goals under the same contract. Hold tight
+        We are currently in beta. Soon, we will include more goals and
+        let users add multiple behaviors under the same contract. Hold tight.
       </h6>
       <h6 className="title mt-4 mb-3">Frequency</h6>
       <MDBRow className="mt-4">
