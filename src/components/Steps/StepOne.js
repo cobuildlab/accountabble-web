@@ -41,7 +41,7 @@ const StepOne = ({ onClick, onChange, data }) => {
 
   const shouldStepIf = !errors.name && !errors.email && (state.name !== '' && state.email !== '');
   return (
-    <div className="animated fadeIn">
+    <div>
       <StepTitle message={'Basic Information'} />
       <MDBInput
         className={validInputExpressionName(validateName(state.name) || isEmpty(state.name))}
@@ -65,10 +65,8 @@ const StepOne = ({ onClick, onChange, data }) => {
         onChange={({ target: { value } }) => onChangeBasicInformation(value, 'phone')}
       />
       {errors.email && <InputInfomration message={'Email should be valid'} />}
-      <div className="text-right">
-        <MDBBtn
-          className="section-comment-btn-dark btn-form"
-          onClick={shouldStepIf ? onStepChange : null}>
+      <div className="d-flex justify-content-end">
+        <MDBBtn className="section-comment-btn-dark" onClick={shouldStepIf ? onStepChange : null}>
           Next
         </MDBBtn>
       </div>

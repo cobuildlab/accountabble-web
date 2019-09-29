@@ -104,10 +104,9 @@ class LandingView extends View {
                   allowFullScreen
                 />
               </div>
-              <div className="bg-btn-start text-center">
+              <div className=" text-center">
                 <h4 className="text-white title">Become Your Best Self</h4>
                 {/* <h3 className="text-white title">VERSION OF YOURSELF</h3> */}
-
                 <Link
                   className="btn btn-default Ripple-parent section-comment-btn-blue"
                   smooth={true}
@@ -134,7 +133,7 @@ class LandingView extends View {
               </MDBContainer>
             </div>
             <div id="form" className="section-information">
-              <MDBContainer>
+              <MDBContainer fluid>
                 <MDBRow>
                   <MDBCol md="4">
                     <h1 className="text-white title animated fadeIn">{title}</h1>
