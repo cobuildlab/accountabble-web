@@ -10,8 +10,9 @@ export const ON_CHANGE_STEP = 'ON_CHANGE_STEP';
 export const stepsInformation = [
   {
     title: 'Accountabble Mission',
-    description: `We at ACCOUNTABBLE  believe that people have the capacity to develop change and become self-actualized. 
-    We believe in the potential inside each of us that we can get access if we seek it.`,
+    description: `We at ACCOUNTABBLE believe people have the capacity to learn, change, and achieve what they truly want.
+
+    We believe in the the deep-seated potential we carry inside each of us.`,
     stepText: 'Accountabble probe that I can reach any goal that I set.',
     image: ImageStepOne
   },
