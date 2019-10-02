@@ -11,18 +11,18 @@ export const stepsInformation = [
   {
     title: 'Accountabble Mission',
     description: `We at ACCOUNTABBLE  believe that people have the capacity to develop change and become self-actualized. 
-    We believe in the deep seated potential inside each of us and that we can get access to it if we seek it.`,
+    We believe in the potential inside each of us that we can get access if we seek it.`,
     stepText: 'Accountabble probe that I can reach any goal that I set.',
     image: ImageStepOne
   },
   {
     title: 'Your Journey',
-    description: `The way to access your potential is by choosing goals that make you more productive and effective and sticking to them until they become part of who you are. Choose a goal you want to achieve or behavior you want acquire. Select how long you want to do this and set the amount you will pay if you don’t keep your word.`,
+    description: `The way to access your potential is by choosing goals that make you more productive and effective and sticking to them until they become part of who you are. Choose a goal you want to achieve or behavior you want acquire. Select how long you want to do this and set your commitment contract to keep your word.`,
     stepText: '95% of Goal Achievement.'
   },
   {
     title: 'Actualization',
-    description: "As you share your actions with ACCOUNTABBLE by sharing pictures or videos through our platform, one of our coaches will check up on you by looking at those files.",
+    description: "As you share your actions with ACCOUNTABBLE by sharing pictures or videos, one of our coaches will check up on you by looking at those files, and report to the platform on a weekly basis.",
     stepText: 'The First Step to become your better Self.'
   },
 ];
