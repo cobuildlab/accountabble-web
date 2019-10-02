@@ -28,28 +28,26 @@ const PlanPreview = () => {
       <MDBCol md="12" className="text-center p-0">
         <MDBRow>
           <MDBCol>
-            <h1 className="text-white text-center">Plan</h1>
+            <h1 className="text-white text-center">Set Your Goal</h1>
             <p className="text-white text-center">
-              Each behavior and goal has a strategic plan, focused on specific
-              tasks that will make you more productive and motivated to tackle
-              challenges and complete your week feeling like you’re ahead and on
-              top.
+              Choose a Goal or habit you want to reach and the amount you'll pay if you don't stay on track. 
+              As the data shows, the most reliable method for goal achievement is having a commitment contract.
             </p>
           </MDBCol>
           <MDBCol>
-            <h1 className="text-white text-center">Action</h1>
+            <h1 className="text-white text-center">Take Action</h1>
             <p className="text-white text-center">
-              The rules you’re given are comprehensive and based on minimal
-              effort and dosage. They trigger the exact flip in emotions that
-              you need to take actions. As the data shows, action leads to more
+              Start taking action to achieve your goal 
+              and taking photos or videos to show your progress.
+              Action leads to more
               action. Motivation begets motivation.
             </p>
           </MDBCol>
           <MDBCol>
             <h1 className="text-white text-center">Feedback</h1>
             <p className="text-white text-center">
-              You’ll receive a report card showing your progress so you can stay
-              on track.
+              Your coach will check on your files and you’ll receive a weekly report-card 
+              showing your progress.
             </p>
           </MDBCol>
         </MDBRow>
