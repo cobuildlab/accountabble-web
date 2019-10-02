@@ -67,7 +67,7 @@ const FaqView = ({ location: { pathname } }) => {
                 <FrequentQuestion
                   question={'How much is it?'}
                   answer={
-                    'ACCOUNTABBLE membership costs $14.99 per week. You’ll be charged on a monthly basis.'
+                    'ACCOUNTABBLE membership costs $14.99 per week, beginning at the end of your 2 weeks trial. You’ll be charged on a monthly basis.'
                   }
                 />
               </MDBCol>
@@ -75,13 +75,13 @@ const FaqView = ({ location: { pathname } }) => {
                 <FrequentQuestion
                   question={'How do I cancel my membership?'}
                   answer={
-                    'To cancel your membership simply write us a message on our contact us form. If you cancel a membership prior to the end of your contract you’ll recur a fee of half the amount of the total remaining balance. This is simply to ensure you’ll work on completing what you set out. Our mission is to help people become their best self.'
+                    'To cancel your membership simply write us a message on our contact us form. If you cancel a membership prior to the end of your contract you’ll recur a fee of half the amount of the total remaining balance. This is simply to ensure you’ll work on completing what you set out.'
                   }
                 />
               </MDBCol>
               <MDBCol md="12" className="mb-4 white-text text-center">
                 <FrequentQuestion
-                  question={'How does the punishment work?'}
+                  question={'How does the penalty work?'}
                   answer={
                     'Upon not completing what you chose to do, and not being able to provide a reasonable justification, you’ll receive an objective report and a charge will incur on the weekly amount you set for your contract.'
                   }
@@ -89,9 +89,9 @@ const FaqView = ({ location: { pathname } }) => {
               </MDBCol>
               <MDBCol md="12" className="mb-4 white-text text-center">
                 <FrequentQuestion
-                  question={'What if I can’t reasonably do what I set out?'}
+                  question={'What if I am not able to do what I set out?'}
                   answer={
-                    "Our reporting on your actions are based on solidarity and reason. The rule of thumb is to use one's best judgement. You can dispute the judgement to defer it up to 2 days after the report is sent. But be careful about being straightforward with our platform and yourself. You are playing with something much more important than money - your motivation and self esteem. By not paying what you set out when you fail, you will be learning to not be accountable, which defeats the whole point of using ACCOUNTABBLE."
+                    "Our reporting on your actions is based on solidarity and reason. The rule of thumb is to use one's best judgement. You can dispute the judgement to defer it up to 2 days after the report is sent. But be careful about being straightforward with our platform and yourself. You are playing with something much more important than money - your motivation and self-esteem. By not paying what you set out when you fail, you will be learning to not be accountable, which defeats the whole point of using ACCOUNTABBLE."
                   }
                 />
               </MDBCol>
