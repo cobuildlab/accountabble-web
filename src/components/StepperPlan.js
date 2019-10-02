@@ -21,7 +21,7 @@ const StepperPlan = () => {
             </div>
 
             <div class="content">
-              <h1 className="text-white title">SET YOUR GOAL</h1>
+              <h1 className="text-white title">Plan</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Pellentesque semper, risus vitae tincidunt volutpat, quam dolor
