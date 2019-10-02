@@ -12,13 +12,14 @@ export const stepsInformation = [
     title: 'Accountabble Mission',
     description: `We at ACCOUNTABBLE believe people have the capacity to learn, change, and achieve what they truly want.
 
-    We believe in the the deep-seated potential we carry inside each of us.`,
+    We believe in the the deep-seated potential we carry inside each of us.
+    And our mission is to help people become their best self`,
     stepText: 'Accountabble probe that I can reach any goal that I set.',
     image: ImageStepOne
   },
   {
     title: 'Your Journey',
-    description: `The way to access your potential is by choosing goals that make you more productive and effective and sticking to them until they become part of who you are. Choose a goal you want to achieve or behavior you want acquire. Select how long you want to do this and set your commitment contract to keep your word.`,
+    description: `The way to access your potential is by choosing exciting goals that make you more productive and effective and sticking to them until they become part of who you are. Choose a goal you want to achieve or behavior you want acquire. Select how long you want to do this and set your commitment contract to keep your word.`,
     stepText: '95% of Goal Achievement.'
   },
   {
