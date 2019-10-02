@@ -121,7 +121,7 @@ class LandingView extends View {
               <MDBContainer>
                 <MDBRow className="py-5">
                   <MDBCol md="12">
-                    <h1 className="text-center text-white title-plan">ACCOUNTABBLE PATH</h1>
+                    <h1 className="text-center text-white title-plan">ACCOUNTABBLE ROADMAP</h1>
                   </MDBCol>
                   <div className="d-none d-sm-block">
                     <PlanPreview />
