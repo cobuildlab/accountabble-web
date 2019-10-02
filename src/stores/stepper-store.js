@@ -13,7 +13,7 @@ export const stepsInformation = [
     description: `We at ACCOUNTABBLE believe people have the capacity to learn, change, and achieve what they truly want.
 
     We believe in the the deep-seated potential we carry inside each of us.
-    And our mission is to help people become their best self`,
+    And our mission is to help people reach that potential and become their best self.`,
     stepText: 'Accountabble probe that I can reach any goal that I set.',
     image: ImageStepOne
   },
