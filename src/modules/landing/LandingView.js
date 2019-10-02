@@ -111,7 +111,7 @@ class LandingView extends View {
                   className="btn btn-default Ripple-parent section-comment-btn-blue"
                   smooth={true}
                   to="form">
-                  Start Your 2-Week Trial Now
+                  Start Trial
                 </Link>
               </div>
             </div>
