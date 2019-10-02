@@ -10,14 +10,14 @@ export const ON_CHANGE_STEP = 'ON_CHANGE_STEP';
 export const stepsInformation = [
   {
     title: 'Accountabble Mission',
-    description: `We at ACCOUNTABBLE  believe that humans have the capacity to easily develop change and become superheroes. 
-    We believe humans have a deep seated potential locked inside the way we live our lives and that we can get access to it if we look for it.`,
+    description: `We at ACCOUNTABBLE  believe that people have the capacity to develop change and become self-actualized. 
+    We believe in the deep seated potential inside each of us and that we can get access to it if we seek it.`,
     stepText: 'Accountabble probe that I can reach any goal that I set.',
     image: ImageStepOne
   },
   {
     title: 'Your Journey',
-    description: `The way to access your potential is by choosing goals that make you more productive and effective and sticking to them until they become a habit. Choose a goal you want to achieve or behavior you want to start doing or stop doing. Select how long you want to do this and set the amount you will pay if you don’t keep your word.`,
+    description: `The way to access your potential is by choosing goals that make you more productive and effective and sticking to them until they become part of who you are. Choose a goal you want to achieve or behavior you want acquire. Select how long you want to do this and set the amount you will pay if you don’t keep your word.`,
     stepText: '95% of Goal Achievement.'
   },
   {
