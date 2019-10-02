@@ -44,7 +44,7 @@ const PlanPreview = () => {
             </p>
           </MDBCol>
           <MDBCol>
-            <h1 className="text-white text-center">Feedback</h1>
+            <h1 className="text-white text-center">Get Feedback</h1>
             <p className="text-white text-center">
               Your coach will check on your files and you’ll receive a weekly report-card 
               showing your progress.
