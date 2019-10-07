@@ -98,7 +98,7 @@ class LandingView extends View {
                 <iframe
                   title={'video'}
                   className={'video-iframe'}
-                  src="https://www.youtube.com/embed/7Pb3HQYtDo8"
+                  src="https://youtu.be/dY1MSzc0tZQ"
                   frameBorder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
