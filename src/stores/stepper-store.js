@@ -18,13 +18,13 @@ export const stepsInformation = [
     image: ImageStepOne
   },
   {
-    title: 'Your Journey',
+    title: 'Set Your Goal',
     description: `The way to access your potential is by choosing exciting goals that make you more productive and effective and sticking to them until they become part of who you are. Choose a goal you want to achieve or behavior you want acquire. Select how long you want to do this and set your commitment contract to keep your word.`,
     stepText: '95% of Goal Achievement.'
   },
   {
-    title: 'Actualization',
-    description: "As you share your actions with ACCOUNTABBLE by sharing pictures or videos, one of our coaches will check up on you by looking at those files, and report to the platform on a weekly basis.",
+    title: 'Commit To Your Actualization',
+    description: "To actualize is to make it real. Think of how far you can go if you simply follow what you promised yourself. With ACCOUNTABBLE, the self uncertainty gets left behind now.",
     stepText: 'The First Step to become your better Self.'
   },
 ];
