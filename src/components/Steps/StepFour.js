@@ -36,8 +36,8 @@ const StepFour = ({ onClick, onChange = function() {}, value, loadingForm }) => 
             </Link>
           </span>
         </label>
-        <h4 className="text-white title">2-Weeks Trial</h4>
-        <span>$14.99 weekly charged monthly</span>
+        <h4 className="text-white title">2-Week Trial</h4>
+        <span>$14.99 weekly. Charged monthly.</span>
       </div>
       <div className="text-right">
         <MDBBtn className="section-comment-btn-dark mr-3" onClick={() => onClick('previous')}>
