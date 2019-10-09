@@ -23,8 +23,8 @@ export const stepsInformation = [
     stepText: '95% of Goal Achievement.'
   },
   {
-    title: 'Commit To Your Actualization',
-    description: "To actualize is to make it real. Think of how far you can go if you simply follow what you promised yourself. With ACCOUNTABBLE, the self uncertainty gets left behind now.",
+    title: 'Commit To Actualization',
+    description: "To actualize is to make it real. Think of how far you can go if you simply follow what you promised yourself. With ACCOUNTABBLE, the uncertainty gets left behind now.",
     stepText: 'The First Step to become your better Self.'
   },
 ];
