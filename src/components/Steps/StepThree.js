@@ -92,8 +92,8 @@ const StepThree = ({ onClick, onChange, onError, data, isLoading, personalInform
                 </label>
               </div>
               <div className="mt-4">
-                <h4 className="text-white title">2-Weeks Trial</h4>
-                <span>$14.99 weekly charged monthly</span>
+                <h4 className="text-white title">2-Week Trial</h4>
+                <span>$14.99 weekly. Charged monthly.</span>
               </div>
             </MDBCol>
           </div>
