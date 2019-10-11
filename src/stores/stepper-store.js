@@ -10,10 +10,9 @@ export const ON_CHANGE_STEP = 'ON_CHANGE_STEP';
 export const stepsInformation = [
   {
     title: 'Tell Us Who You Are',
-    description: `We at ACCOUNTABBLE believe people have the capacity to learn, change, and achieve what they truly want.
-
-    We believe in the the deep-seated potential we carry inside each of us.
-    And our mission is to help people reach that potential and become their best self. Give us some basic information so we can start you in your journey.`,
+    description: `We at ACCOUNTABBLE believe people have a deep-seated potentail to learn, change, and achieve what they truly want.
+    And our mission is to help you reach that potential and become your best self. 
+Give us some basic information so we can start you in your journey.`,
     stepText: 'Accountabble probe that I can reach any goal that I set.',
     image: ImageStepOne
   },
