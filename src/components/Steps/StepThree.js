@@ -85,7 +85,7 @@ const StepThree = ({ onClick, onChange, onError, data, isLoading, personalInform
                     checked={terms.agreeTerms}
                   />
                   <span>
-                    <Link to="/terms-and-conditions" className={'link-step-3'}>
+                    <Link to="/terms-and-conditions" target="_blank" className={'link-step-3'}>
                       I agree to the terms and conditions
                     </Link>
                   </span>
