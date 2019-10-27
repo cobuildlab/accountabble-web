@@ -152,7 +152,7 @@ class LandingView extends View {
             <div className="section-comment">
               <SectionComment />
             </div>
-            <div id="blog" className="section-blog">
+            {/* <div id="blog" className="section-blog">
               <MDBContainer>
                 <h1 id="blog" className="title-blog text-white text-center mb-5">
                   Blog
@@ -223,22 +223,12 @@ class LandingView extends View {
                       </h5>
                     </div>
                   )}
-                  {/* <MDBCol md="3">
-                      <CardBlogSmall />
-                    </MDBCol>
-                    <MDBCol md="6">
-                      <CardBlogLarge />
-                    </MDBCol>
-                    <MDBCol md="3">
-                      <CardBlogSmall />
-                    </MDBCol>
-                  </MDBRow> */}
                 </div>
                 <div className="d-block d-sm-none">
                   <CardBlogCarousel />
                 </div>
               </MDBContainer>
-            </div>
+            </div> */}
             <Footer />
           </main>
         </div>

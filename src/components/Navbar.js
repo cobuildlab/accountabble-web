@@ -34,12 +34,12 @@ const Navbar = () => {
           <MDBNavbarToggler onClick={() => toggleNavbar('navbarCollapse')} />
           <MDBCollapse id="navbarCollapse" isOpen={toggle} navbar>
             <MDBNavbarNav right>
-              <MDBNavItem active>
+              {/* <MDBNavItem active>
                 <a className="link-nav" href="/#blog">
                   BLOG
                 </a>
               </MDBNavItem>
-              <div className="divider-vertical-link d-none d-sm-block" />
+              <div className="divider-vertical-link d-none d-sm-block" /> */}
               <MDBNavItem>
                 <Link className="link-nav" to="/faq/#root">
                   FAQ
