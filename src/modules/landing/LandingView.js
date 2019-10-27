@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDBRow, MDBCol, MDBView, MDBContainer } from 'mdbreact';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import BgHeader from '../../assets/img/bg/background-home-web.png';
 import CardBlogLarge from '../../components/CardBlogLarge';
 import SectionComment from '../../components/SectionComment';
@@ -83,7 +83,7 @@ class LandingView extends View {
 
   render() {
     const {
-      currentStepInformation: { title, description, stepText, image },
+      currentStepInformation: { title, description },
       loading,
       errorView,
       blogItems,
