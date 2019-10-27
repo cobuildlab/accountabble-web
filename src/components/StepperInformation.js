@@ -15,7 +15,6 @@ import StepContainer from './Steps/StepContainer';
 import { changeStepAction } from './stepper-actions';
 import { stepsInformation } from '../stores/stepper-store';
 import { Progress } from 'reactstrap';
-import RegisterSpinner from '../modules/register/components/RegisterSpinner';
 
 const stepsList = [
   { callback: (booleanProperty) => (booleanProperty ? IconUserB : IconUser) },
